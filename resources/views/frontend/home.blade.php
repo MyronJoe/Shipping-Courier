@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php
-include 'path.php';
-
-?>
-
 <head>
     <meta charset="utf-8">
     <title>Logistica - Shipping Company</title>
@@ -17,61 +12,61 @@ include 'path.php';
     <link href="assets/img/favicon.ico" rel="icon">
 
     <!-- All Styles -->
-    <?php include(ROOT_PATH . "/app/includes/styles.php"); ?>
+    @include('frontend.includes.styles')
     
 </head>
 
 <body>
     
     <!-- HEADER -->
-	<?php include(ROOT_PATH . "/app/includes/header.php"); ?>
+    @include('frontend.includes.header')
 	<!-- /HEADER -->
 
 
     <div class="content">
 
     <!-- Carousel Start -->
-    <?php include(ROOT_PATH . "/app/includes/carousel.php"); ?>
+    @include('frontend.includes.carousel')
     <!-- Carousel End -->
 
 
     <!-- About Start -->
-    <?php include(ROOT_PATH . "/app/includes/about.php"); ?>
+    @include('frontend.includes.about')
     <!-- About End -->
 
 
     <!-- Service Start -->
-    <?php include(ROOT_PATH . "/app/includes/service.php"); ?>
+    @include('frontend.includes.service')
     <!-- Service End -->
 
 
     <!-- Fact Start -->
-    <?php include(ROOT_PATH . "/app/includes/fact.php"); ?>
+    @include('frontend.includes.fact')
     <!-- Fact End -->
 
 
     <!-- Feature Start -->
-    <?php include(ROOT_PATH . "/app/includes/feature.php"); ?>
+    @include('frontend.includes.feature')
     <!-- Feature End -->
 
 
     <!-- FREIGHT Start -->
-    <?php include(ROOT_PATH . "/app/includes/freight.php"); ?>
+    @include('frontend.includes.freight')
     <!-- FREIGHT End -->
 
 
     <!-- Quote Start -->
-    <?php include(ROOT_PATH . "/app/includes/quote.php"); ?>
+    @include('frontend.includes.quote')
     <!-- Quote End -->
 
 
     <!-- Testimonial Start -->
-    <?php include(ROOT_PATH . "/app/includes/testimony.php"); ?>
+    @include('frontend.includes.testimony')
     <!-- Testimonial End -->
 
 
     <!-- Footer Start -->
-    <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
+    @include('frontend.includes.footer')
     <!-- Footer End -->
 
 
