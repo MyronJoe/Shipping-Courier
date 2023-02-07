@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php
-include 'path.php';
-
-?>
-
 <head>
     <meta charset="utf-8">
     <title>Logistica - Shipping Company</title>
@@ -17,7 +12,7 @@ include 'path.php';
     <link href="assets/img/favicon.ico" rel="icon">
 
     <!-- All Styles -->
-    <?php include(ROOT_PATH . "/app/includes/styles.php"); ?>
+    @include('frontend.includes.styles')
 
     <style>
         .track-box h2,
@@ -51,7 +46,7 @@ include 'path.php';
 <body>
 
     <!-- HEADER -->
-    <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
+    @include('frontend.includes.header')
     <!-- /HEADER -->
 
     <div class="content">
@@ -104,7 +99,7 @@ include 'path.php';
     <!-- Contact End -->
 
     <!-- Footer Start -->
-    <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
+    @include('frontend.includes.footer')
     <!-- Footer End -->
 
     </div>

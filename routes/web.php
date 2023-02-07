@@ -23,6 +23,10 @@ Route::get('/about', function () {
     return view('frontend.about');
 });
 
+Route::get('/tracking', function () {
+    return view('frontend.tracking');
+});
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
