@@ -19,12 +19,36 @@ Route::get('/', function () {
     return view('frontend.home');
 });
 
+Route::get('/404', function () {
+    return view('frontend.error');
+});
+
 Route::get('/about', function () {
     return view('frontend.about');
 });
 
 Route::get('/tracking', function () {
     return view('frontend.tracking');
+});
+
+Route::get('/contact', function () {
+    return view('frontend.contact');
+});
+
+Route::get('/services/air', function () {
+    return view('frontend.air');
+});
+
+Route::get('/services/road', function () {
+    return view('frontend.road');
+});
+
+Route::get('/services/storage', function () {
+    return view('frontend.storage');
+});
+
+Route::get('/services/warehouse', function () {
+    return view('frontend.warehouse');
 });
 
 Route::middleware([
@@ -38,3 +62,4 @@ Route::middleware([
 });
 
 Route::get('/Home', [HomeController::class, 'redirect']);
+

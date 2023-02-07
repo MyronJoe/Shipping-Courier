@@ -17,14 +17,14 @@ include 'path.php';
     <link href="assets/img/favicon.ico" rel="icon">
 
     <!-- All Styles -->
-    <?php include(ROOT_PATH . "/app/includes/styles.php"); ?>
+    @include('frontend.includes.styles')
     
 </head>
 
 <body>
     
     <!-- HEADER -->
-	<?php include(ROOT_PATH . "/app/includes/header.php"); ?>
+	@include('frontend.includes.header')
 	<!-- /HEADER -->
 
    
@@ -61,7 +61,7 @@ include 'path.php';
 
 
     <!-- Footer Start -->
-    <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
+    @include('frontend.includes.footer')
     <!-- Footer End -->
 
 

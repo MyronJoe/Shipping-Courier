@@ -1,11 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<?php
-include 'path.php';
-
-?>
-
 <head>
     <meta charset="utf-8">
     <title>Logistica - Shipping Company</title>
@@ -15,13 +9,13 @@ include 'path.php';
     <!-- Favicon -->
     <link href="assets/img/favicon.ico" rel="icon">
     <!-- All Styles -->
-    <?php include(ROOT_PATH . "/app/includes/styles.php"); ?>
+    @include('frontend.includes.styles')
 </head>
 
 <body>
 
     <!-- HEADER -->
-    <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
+    @include('frontend.includes.header')
     <!-- /HEADER -->
 
     <div class="content">
@@ -51,16 +45,16 @@ include 'path.php';
                             <h6>Service Category</h6>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <a href="/air">
-                                <li class="list-group-item text-primary">Air Service</li>
+                            <a href="/services/air">
+                                <li class="list-group-item text-warning">Air Service</li>
                             </a>
-                            <a href="/road">
+                            <a href="/services/road">
                                 <li class="list-group-item">Road Service</li>
                             </a>
-                            <a href="/storage">
+                            <a href="/services/storage">
                                 <li class="list-group-item">Storage Service</li>
                             </a>
-                            <a href="/warehouse">
+                            <a href="/services/warehouse">
                                 <li class="list-group-item">Warehouse Service</li>
                             </a>
 
@@ -93,7 +87,7 @@ include 'path.php';
     <!-- Contact End -->
 
     <!-- Footer Start -->
-    <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
+    @include('frontend.includes.footer')
     <!-- Footer End -->
 
     </div>

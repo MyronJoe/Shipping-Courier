@@ -1,11 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<?php
-include 'path.php';
-
-?>
-
 <head>
     <meta charset="utf-8">
     <title>Logistica - Shipping Company</title>
@@ -15,15 +9,14 @@ include 'path.php';
     <!-- Favicon -->
     <link href="assets/img/favicon.ico" rel="icon">
     <!-- All Styles -->
-    <?php include(ROOT_PATH . "/app/includes/styles.php"); ?>
+    @include('frontend.includes.styles')
 </head>
 
 <body>
 
     <!-- HEADER -->
-    <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
+    @include('frontend.includes.header')
     <!-- /HEADER -->
-
     <div class="content">
 
         <!-- Page Header Start -->
@@ -51,16 +44,16 @@ include 'path.php';
                             <h6>Service Category</h6>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <a href="/air">
+                            <a href="/services/air">
                                 <li class="list-group-item">Air Service</li>
                             </a>
-                            <a href="/road">
-                                <li class="list-group-item text-primary">Road Service</li>
+                            <a href="/services/road">
+                                <li class="list-group-item text-warning">Road Service</li>
                             </a>
-                            <a href="/storage">
+                            <a href="/services/storage">
                                 <li class="list-group-item">Storage Service</li>
                             </a>
-                            <a href="/warehouse">
+                            <a href="/services/warehouse">
                                 <li class="list-group-item">Warehouse Service</li>
                             </a>
                         </ul>
@@ -91,8 +84,8 @@ include 'path.php';
     </div>
     <!-- Contact End -->
 
-    <!-- Footer Start -->
-    <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
+   <!-- Footer Start -->
+   @include('frontend.includes.footer')
     <!-- Footer End -->
 
     </div>
