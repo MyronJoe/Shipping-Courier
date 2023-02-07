@@ -1,10 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<?php
-include 'path.php';
-
-?>
 <head>
     <meta charset="utf-8">
     <title>Logistica - Shipping Company</title>
@@ -14,12 +9,12 @@ include 'path.php';
     <!-- Favicon -->
     <link href="assets/img/favicon.ico" rel="icon">
     <!-- All Styles -->
-    <?php include(ROOT_PATH . "/app/includes/styles.php"); ?>
+    @include('frontend.includes.styles')
 </head>
 <body>
 
     <!-- HEADER -->
-    <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
+    @include('frontend.includes.header')
     <!-- /HEADER -->
 
     <div class="content">
@@ -84,27 +79,27 @@ include 'path.php';
 
 
     <!-- Service Start -->
-    <?php include(ROOT_PATH . "/app/includes/service.php"); ?>
+    @include('frontend.includes.service')
     <!-- Service End -->
 
 
     <!-- Fact Start -->
-    <?php include(ROOT_PATH . "/app/includes/service.php"); ?>
+    @include('frontend.includes.fact')
     <!-- Fact End -->
 
 
     <!-- Feature Start -->
-    <?php include(ROOT_PATH . "/app/includes/feature.php"); ?>
+    @include('frontend.includes.feature')
     <!-- Feature End -->
 
 
     <!-- FREIGHT Start -->
-    <?php include(ROOT_PATH . "/app/includes/freight.php"); ?>
+    @include('frontend.includes.freight')
     <!-- FREIGHT End -->
 
 
     <!-- Footer Start -->
-    <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
+    @include('frontend.includes.footer')
     <!-- Footer End -->
 
     </div>
