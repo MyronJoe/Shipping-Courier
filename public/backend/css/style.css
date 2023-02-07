@@ -1,0 +1,16 @@
+.form-control{
+    border-radius: 0 !important;
+    padding: 10px !important;
+}
+
+.divider{
+    border-top: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+    padding: 7px 0;
+}
+.form-control1{
+    border: 1px solid #ddd;
+    padding: 8px;
+    outline: none;
+    border-radius: 4px;
+}
