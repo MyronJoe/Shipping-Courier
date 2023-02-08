@@ -68,3 +68,5 @@ Route::get('/Home', [HomeController::class, 'redirect']);
 
 
 Route::get('/admin', [AdminController::class, 'admin']);
+
+Route::get('/shipments', [AdminController::class, 'shipments']);
