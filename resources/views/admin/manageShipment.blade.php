@@ -7,8 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
 	<meta name="author" content="AdminKit">
-	<meta name="keywords"
-		content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+	<meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
 	<title>Dashboard</title>
 
@@ -29,9 +28,12 @@
 			<main class="content">
 				<div class="container-fluid p-0">
 
-					<h1 class="h3 mb-3"><strong>Shipments</strong></h1>
+					<div class="mb-3">
 
-                    <a href="{{url('add_shipment')}}" class="btn btn-primary">Add Shipment</a>
+						<h1 class="h3 d-inline align-middle"><strong>Shipments</strong></h1>
+
+						<a href="{{url('add_shipment')}}" class="btn btn-primary" style="float: right;">Add Shipment</a>
+					</div>
 
 					<div class="row mt-3">
 						<div class="col-12 d-flex">
@@ -54,23 +56,23 @@
 											<td>Air Frieght</td>
 											<td>Done</td>
 											<td>
-                                                <a href="#" class="btn btn-primary btn-sm">Edit</a>
+												<a href="#" class="btn btn-primary btn-sm">Edit</a>
 
-                                                <a href="#" class="btn btn-danger btn-sm">Delete</a>
-                                            </td>
+												<a href="#" class="btn btn-danger btn-sm">Delete</a>
+											</td>
 										</tr>
 									</tbody>
 								</table>
 							</div>
 						</div>
-						
+
 					</div>
 
 				</div>
 			</main>
 
 			<!-- FOOTER -->
-            @include('admin.includes.footer')
+			@include('admin.includes.footer')
 
 
 		</div>
@@ -78,7 +80,7 @@
 
 	<script src="backend/js/app.js"></script>
 
-	
+
 
 </body>
 
