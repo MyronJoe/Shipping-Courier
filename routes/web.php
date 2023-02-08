@@ -70,3 +70,5 @@ Route::get('/Home', [HomeController::class, 'redirect']);
 Route::get('/admin', [AdminController::class, 'admin']);
 
 Route::get('/shipments', [AdminController::class, 'shipments']);
+
+Route::get('/add_shipment', [AdminController::class, 'add_shipment']);

@@ -31,7 +31,9 @@
 
 					<h1 class="h3 mb-3"><strong>Shipments</strong></h1>
 
-					<div class="row">
+                    <a href="{{url('add_shipment')}}" class="btn btn-primary">Add Shipment</a>
+
+					<div class="row mt-3">
 						<div class="col-12 d-flex">
 							<div class="card flex-fill">
 

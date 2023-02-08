@@ -15,4 +15,8 @@ class AdminController extends Controller
     public function shipments(){
         return view('admin.manageShipment');
     }
+
+    public function add_shipment(){
+        return view('admin.add_shipment');
+    }
 }
