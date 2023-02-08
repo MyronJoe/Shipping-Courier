@@ -9,7 +9,7 @@
 						<li class="nav-item dropdown">
 							<div>
 								<form action="">
-									<input type="text" class="form-control1" name="search">
+									<input type="text" class="form-control1" name="search" placeholder="Search...">
 								</form>
 							</div>
 						</li>

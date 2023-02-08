@@ -10,16 +10,16 @@
 					</li>
 
 					<li class="sidebar-item active">
-						<a class="sidebar-link" href="index.html">
+						<a class="sidebar-link" href="{{ url('admin')}}">
 							<i class="align-middle" data-feather="sliders"></i> <span
 								class="align-middle">Dashboard</span>
 						</a>
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="ui-forms.html">
+						<a class="sidebar-link" href="{{ url('shipments')}}">
 							<i class="align-middle" data-feather="check-square"></i> <span
-								class="align-middle">Forms</span>
+								class="align-middle">Shipments</span>
 						</a>
 					</li>
 					<li class="sidebar-item">
