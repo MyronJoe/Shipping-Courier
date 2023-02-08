@@ -6,7 +6,7 @@
 
 				<ul class="sidebar-nav">
 					<li class="sidebar-header">
-						Pages
+						Content Management
 					</li>
 
 					<li class="sidebar-item active">
@@ -23,16 +23,9 @@
 						</a>
 					</li>
 					
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="ui-forms2.html">
-							<i class="align-middle" data-feather="check-square"></i> <span
-								class="align-middle">Forms2</span>
-						</a>
-					</li>
-					
 
 					<li class="sidebar-header">
-						Tools & Components
+						Page Components
 					</li>
 
 
