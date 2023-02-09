@@ -26,7 +26,7 @@
 
 
 
-            <form action="{{url('addShipments')}}" method="POST">
+            <form action="{{url('addShipment')}}" method="POST">
 
                 @csrf
 

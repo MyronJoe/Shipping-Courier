@@ -76,10 +76,16 @@ Route::get('/Home', [HomeController::class, 'redirect']);
 
 
 
+
+
+//Admin Routes
+
 Route::get('/admin', [AdminController::class, 'admin']);
 
 Route::get('/shipments', [AdminController::class, 'shipments']);
 
 Route::get('/add_shipment', [AdminController::class, 'add_shipment']);
+
+Route::post('/addShipment', [AdminController::class, 'addShipment']);
 
 Route::get('/edit_shipment', [AdminController::class, 'edit_shipment']);
