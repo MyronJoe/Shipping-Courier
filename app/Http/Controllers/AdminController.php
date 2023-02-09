@@ -28,6 +28,8 @@ class AdminController extends Controller
 
     public function addShipment(Request $request){
 
+        $abrv = 'TR';
+
         $data = new Shipments;
 
         $data->senderName = $request->sender_name;
@@ -40,17 +42,20 @@ class AdminController extends Controller
         $data->receiverAddress = $request->receiverAddress;
         $data->receiverPhone = $request->receiverPhone;
 
-        $data->shippingType = $request->;
-        $data->weight = $request->;
-        $data->product = $request->;
-        $data->trackingID = $request->;
-        $data->comment = $request->;
-        $data->origin = $request->;
-        $data->quality = $request->;
-        $data->departDate = $request->;
-        $data->pickupDate = $request->;
-        $data->status = $request->;
-        $data->destination = $request->;
+        $data->shippingType = $request->freight;
+        $data->weight = $request->weight;
+        $data->product = $request->product;
+        $data->trackingID = $request->$abrv.rand('123456789', '098765409');
+        $data->comment = $request->comment;
+        $data->origin = $request->origin;
+        $data->quality = $request->quantity;
+        $data->departDate = $request->departure_date;
+        $data->pickupDate = $request->pickup_date;
+        $data->status = $request->status;
+        $data->destination = $request->destination;
 
+        $data->save();
+
+        return redirect('shipments');
     }
 }

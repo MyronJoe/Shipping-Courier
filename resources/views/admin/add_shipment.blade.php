@@ -115,6 +115,7 @@
                                     <div>
                                         <label for="freight" class="my-2">Shipping Type</label>
                                         <select name="freight" id="freight" class="form-control">
+                                            <option value=""></option>
                                             <option value="air freight">Air Freight</option>
                                             <option value="air freight">Road Freight</option>
                                             <option value="air freight">Air Freight</option>
