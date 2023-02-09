@@ -38,7 +38,7 @@
                     @if (Route::has('login'))
 
                     @auth
-                        <a href="#" class="dropdown-item"></a>
+                        <a href="{{url('logout')}}" class="dropdown-item">Logout</a>
                     @else
                         <a href="{{url('login')}}" class="dropdown-item">Login</a>
                     @endauth

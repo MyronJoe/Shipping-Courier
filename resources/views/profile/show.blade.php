@@ -1,4 +1,6 @@
 <x-app-layout>
+<a href="{{url('/Home')}}" style="background: navy; color:white; padding:8px 15px; margin:1em 2em; display:inline-block; border-radius:4px;">Home</a>
+
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Profile') }}
@@ -43,3 +45,6 @@
         </div>
     </div>
 </x-app-layout>
+
+
+
