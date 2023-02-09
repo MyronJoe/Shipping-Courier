@@ -10,7 +10,7 @@
 <!-- Navbar Start -->
 <nav style="position: absolute; z-index:100; width:100%;" class="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary  p-0">
     <a href="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-        <h2 class="mb-2">Logistica <i class="fa fa-ship fa-1x text-primary"></i></h2>
+        <h2 class="mb-2 logos">Logistica <i class="fa fa-ship fa-1x text-primary"></i></h2>
     </a>
     
     <!-- <p class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -35,10 +35,28 @@
                     <a href="/services/storage" class="dropdown-item">STORAGE SERVICE</a>
                     <a href="/services/warehouse" class="dropdown-item">WAREHOUSE SERVICE</a>
 
+                    @if (Route::has('login'))
+
+                    @auth
+                        <a href="#" class="dropdown-item"></a>
+                    @else
+                        <a href="{{url('login')}}" class="dropdown-item">Login</a>
+                    @endauth
+                    @endif
+
                 </div>
             </div>
             <a href="/tracking" class="nav-item nav-link">Tracking</a>
             <a href="/contact" class="nav-item nav-link">Contact</a>
+            
+            @if (Route::has('login'))
+
+            @auth
+                <x-app-layout>
+
+                </x-app-layout>
+            @endauth
+            @endif
         </div>
     </div>
 </nav>
