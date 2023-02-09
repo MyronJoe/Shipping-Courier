@@ -50,14 +50,6 @@
             <a href="/tracking" class="nav-item nav-link">Tracking</a>
             <a href="/contact" class="nav-item nav-link">Contact</a>
             
-            @if (Route::has('login'))
-
-            @auth
-                <x-app-layout>
-
-                </x-app-layout>
-            @endauth
-            @endif
         </div>
     </div>
 </nav>

@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
 
+use App\Http\Controllers\LogoutController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -62,6 +64,13 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+// Route::group(['middleware' => ['auth']], function() {
+//     Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
+// });
+
+
+Route::get('/logout', [LogoutController::class, 'logout']);
 
 Route::get('/Home', [HomeController::class, 'redirect']);
 
