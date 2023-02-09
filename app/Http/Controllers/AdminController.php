@@ -56,6 +56,6 @@ class AdminController extends Controller
 
         $data->save();
 
-        return redirect('shipments');
+        return redirect('shipments')->with('message', 'Shipment Added Successfully');
     }
 }

@@ -25,7 +25,10 @@
 			@include('admin.includes.nav')
 
 			<main class="content">
-				<div class="container-fluid p-0">
+
+			@include('admin.includes.successmsg')
+
+				<div class="container-fluid p-0 mt-2">
 
 					<div class="mb-3">
 
@@ -35,6 +38,9 @@
 					</div>
 
 					<div class="row mt-3">
+
+					<br>
+					<br>
 						<div class="col-12 d-flex">
 							<div class="card flex-fill">
 
