@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('shipments', function (Blueprint $table) {
             $table->id();
+            
             $table->string('senderName');
             $table->string('senderEmail');
             $table->string('senderAddress');

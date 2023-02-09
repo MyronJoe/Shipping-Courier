@@ -26,8 +26,9 @@
 
 
 
-            <form action="">
+            <form action="{{url('addShipments')}}" method="POST">
 
+                @csrf
 
                 <main class="content">
                     <div class="container-fluid p-0">
