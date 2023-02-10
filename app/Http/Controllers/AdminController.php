@@ -14,6 +14,7 @@ class AdminController extends Controller
         return view('admin.home');
     }
 
+    //shipments function
     public function shipments(){
 
         // $datas = Shipments::paginate(6);
@@ -22,10 +23,12 @@ class AdminController extends Controller
         return view('admin.manageShipment', compact('datas'));
     }
 
+    //add shipment function
     public function add_shipment(){
         return view('admin.add_shipment');
     }
 
+    //edit shipment
     public function edit_shipment(){
         return view('admin.edit_shipment');
     }
@@ -63,4 +66,7 @@ class AdminController extends Controller
 
         return redirect('shipments')->with('message', 'Shipment Added Successfully');
     }
+
+
+    
 }
