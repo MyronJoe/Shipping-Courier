@@ -90,12 +90,8 @@
 					{{ $datas->onEachSide(2)->links('pagination::bootstrap-4') }}
 				</div>
 			</main>
-			
-
 			<!-- FOOTER -->
 			@include('admin.includes.footer')
-
-
 		</div>
 	</div>
 
