@@ -8,6 +8,11 @@
     <meta name="author" content="">
     <meta name="keywords" content="">
 
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
 	<title>Dashboard</title>
 
 	<!-- STYLES -->
@@ -30,7 +35,7 @@
 
 				<div class="container-fluid p-0 mt-2">
 
-					<div class="mb-3">
+					<div class="mb-1">
 
 						<h1 class="h3 d-inline align-middle"><strong>Shipments</strong></h1>
 
@@ -47,6 +52,7 @@
 								<table class="table table-hover my-0">
 									<thead>
 										<tr>
+											<th>S|N</th>
 											<th>Product</th>
 											<th>Tracking ID</th>
 											<th>Shipping Type</th>
@@ -55,26 +61,36 @@
 										</tr>
 									</thead>
 									<tbody>
+										@foreach($datas as $key => $data)
 										<tr>
-											<td>Canabis</td>
-											<td>01/01/2021</td>
-											<td>Air Frieght</td>
-											<td>Done</td>
+											<td>{{$key + 1}}</td>
+											<td>{{$data->product}}</td>
+											<td>{{$data->trackingID}}</td>
+											<td>{{$data->shippingType}}</td>
+											<td>{{$data->status}}</td>
 											<td>
 												<a href="{{url('edit_shipment')}}" class="btn btn-primary btn-sm">Edit</a>
 
 												<a href="#" class="btn btn-danger btn-sm">Delete</a>
 											</td>
 										</tr>
+										@endforeach
 									</tbody>
 								</table>
+
+								
 							</div>
 						</div>
 
 					</div>
 
 				</div>
+
+				<div class="mt-3 text-center">
+					{{ $datas->onEachSide(2)->links('pagination::bootstrap-4') }}
+				</div>
 			</main>
+			
 
 			<!-- FOOTER -->
 			@include('admin.includes.footer')

@@ -15,7 +15,11 @@ class AdminController extends Controller
     }
 
     public function shipments(){
-        return view('admin.manageShipment');
+
+        // $datas = Shipments::paginate(6);
+        $datas = Shipments::orderBy('id', 'desc')->paginate(10);
+
+        return view('admin.manageShipment', compact('datas'));
     }
 
     public function add_shipment(){
@@ -26,6 +30,7 @@ class AdminController extends Controller
         return view('admin.edit_shipment');
     }
 
+    //Add Shipment Function:
     public function addShipment(Request $request){
 
         $abrv = 'TR';
@@ -45,7 +50,7 @@ class AdminController extends Controller
         $data->shippingType = $request->freight;
         $data->weight = $request->weight;
         $data->product = $request->product;
-        $data->trackingID = $request->$abrv.rand('123456789', '098765409');
+        $data->trackingID = $request->$abrv.'TR'.rand('123456789', '098765409');
         $data->comment = $request->comment;
         $data->origin = $request->origin;
         $data->quality = $request->quantity;
