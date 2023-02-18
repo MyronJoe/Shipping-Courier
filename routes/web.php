@@ -85,7 +85,7 @@ Route::get('/admin', [AdminController::class, 'admin']);
 
 //Shipment Routes
 
-Route::get('/shipments', [AdminController::class, 'shipments']);
+Route::get('/shipments', [AdminController::class, 'shipments'])->name('shipments');
 
 Route::get('/add_shipment', [AdminController::class, 'add_shipment']);
 
@@ -93,4 +93,4 @@ Route::post('/addShipment', [AdminController::class, 'addShipment']);
 
 Route::get('/edit_shipment', [AdminController::class, 'edit_shipment']);
 
-Route::get('/edit_shipment', [AdminController::class, 'edit_shipment']);
+Route::get('/admin/delete_shipment/{id}', [AdminController::class, 'Delete_shipment'])->name('delete_shipment');

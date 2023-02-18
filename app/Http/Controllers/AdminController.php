@@ -67,5 +67,18 @@ class AdminController extends Controller
     }
 
 
+    //Delete shipment function
+    public function Delete_shipment($id){
+
+        $data = Shipments::findOrFail($id);
+
+        $data->delete();
+
+        return redirect()->route('shipments')->with('message', 'Shipment Deleted Successfully');
+
+
+    }
+
+
 
 }
