@@ -71,7 +71,7 @@
 											<td>
 												<a href="{{url('edit_shipment')}}" class="btn btn-primary btn-sm">Edit</a>
 
-												<a href="#" class="btn btn-danger btn-sm">Delete</a>
+												<a href="{{route('delete_shipment', $data->id)}}" class="btn btn-danger btn-sm">Delete</a>
 											</td>
 										</tr>
 										@endforeach
