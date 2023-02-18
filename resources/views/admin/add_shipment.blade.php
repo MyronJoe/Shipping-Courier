@@ -26,7 +26,7 @@
 
 
 
-            <form action="{{url('addShipment')}}" method="POST">
+            <form action="{{url('addShipment')}}" method="POST" novalidate>
 
                 @csrf
 
@@ -46,10 +46,14 @@
                                     <h4 style="font-weight: bolder;">Sender's Details</h4>
 
                                     <hr>
+                                    
 
                                     <div>
                                         <label for="sender_name" class="my-2">Sender's Name</label>
                                         <input type="text" class="form-control" name="sender_name" id="sender_name">
+                                        @error('sender_name')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                                     </div>
 
                                     <div>

@@ -35,7 +35,7 @@ class AdminController extends Controller
     //Add Shipment Function:
     public function addShipment(Request $request){
 
-        validator([
+        $request->validate([
             'sender_name' => 'required|string',
             'sender_email' => 'required|string',
             'sender_address' => 'required|string',
