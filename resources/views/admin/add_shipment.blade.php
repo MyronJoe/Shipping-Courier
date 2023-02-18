@@ -58,7 +58,7 @@
 
                                     <div>
                                         <label for="sender_email" class="my-2">Sender's Email</label>
-                                        <input type="text" class="form-control" name="sender_email" id="sender_email" value="{{ old('sender_name') }}">
+                                        <input type="text" class="form-control" name="sender_email" id="sender_email" value="{{ old('sender_email') }}">
                                         @error('sender_email')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -66,7 +66,7 @@
 
                                     <div>
                                         <label for="sender_address" class="my-2">Sender's Address</label>
-                                        <input type="text" class="form-control mb-3" name="sender_address" id="sender_address" value="{{ old('sender_name') }}">
+                                        <input type="text" class="form-control mb-3" name="sender_address" id="sender_address" value="{{ old('sender_address') }}">
                                         @error('sender_address')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -82,7 +82,7 @@
 
                                     <div>
                                         <label for="receiverName" class="my-2">Receiver's Name</label>
-                                        <input type="text" class="form-control" name="receiverName" id="receiverName" value="{{ old('sender_name') }}">
+                                        <input type="text" class="form-control" name="receiverName" id="receiverName" value="{{ old('receiverName') }}">
                                         @error('receiverName')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -90,7 +90,7 @@
 
                                     <div>
                                         <label for="receiverPhone" class="my-2">Receiver's Phone</label>
-                                        <input type="text" class="form-control" name="receiverPhone" id="receiverPhone" value="{{ old('sender_name') }}">
+                                        <input type="text" class="form-control" name="receiverPhone" id="receiverPhone" value="{{ old('receiverPhone') }}">
                                         @error('receiverPhone')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -98,7 +98,7 @@
 
                                     <div>
                                         <label for="receiverEmail" class="my-2">Receiver's Email</label>
-                                        <input type="text" class="form-control" name="receiverEmail" id="receiverEmail" value="{{ old('sender_name') }}">
+                                        <input type="text" class="form-control" name="receiverEmail" id="receiverEmail" value="{{ old('receiverEmail') }}">
                                         @error('receiverEmail')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -106,7 +106,7 @@
 
                                     <div>
                                         <label for="receiverCountry" class="my-2">Receiver's Country</label>
-                                        <input type="text" class="form-control" name="receiverCountry" id="receiverCountry" value="{{ old('sender_name') }}">
+                                        <input type="text" class="form-control" name="receiverCountry" id="receiverCountry" value="{{ old('receiverCountry') }}">
                                         @error('receiverCountry')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -114,7 +114,7 @@
 
                                     <div>
                                         <label for="receiverAddress" class="my-2">Receiver's Address</label>
-                                        <input type="text" class="form-control" name="receiverAddress" id="receiverAddress" value="{{ old('sender_name') }}">
+                                        <input type="text" class="form-control" name="receiverAddress" id="receiverAddress" value="{{ old('receiverAddress') }}">
                                         @error('receiverAddress')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -140,9 +140,9 @@
                                     <div>
                                         <label for="freight" class="my-2">Shipping Type</label>
                                         <select name="freight" id="freight" class="form-control">
-                                            <option value="{{ old('sender_name') }}">{{ old('sender_name') }}</option>
-                                            <option value="air freight">Air Freight</option>
-                                            <option value="air freight">Road Freight</option>
+                                            <option value="{{ old('freight') }}">{{ old('freight') }}</option>
+                                            <option value="Air Freight">Air Freight</option>
+                                            <option value="Road Freight">Road Freight</option>
                                             <option value="air freight">Air Freight</option>
                                         </select>
                                         @error('freight')
@@ -152,7 +152,7 @@
 
                                     <div class="input">
                                         <label for="weight" class="my-2">Weight</label>
-                                        <input type="text" class="form-control" name="weight" id="weight" value="{{ old('sender_name') }}">
+                                        <input type="text" class="form-control" name="weight" id="weight" value="{{ old('weight') }}">
                                         @error('weight')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -160,7 +160,7 @@
 
                                     <div class="input">
                                         <label for="product" class="my-2">Product</label>
-                                        <input type="text" class="form-control" name="product" id="product" value="{{ old('sender_name') }}">
+                                        <input type="text" class="form-control" name="product" id="product" value="{{ old('product') }}">
                                         @error('product')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -168,7 +168,7 @@
 
                                     <div class="input">
                                         <label for="destination" class="my-2">Destination</label>
-                                        <input type="text" class="form-control" name="destination" id="destination" value="{{ old('sender_name') }}">
+                                        <input type="text" class="form-control" name="destination" id="destination" value="{{ old('destination') }}">
                                         @error('destination')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -176,7 +176,7 @@
 
                                     <div class="input">
                                         <label for="comment" class="my-2">Comment</label>
-                                        <input type="text" class="form-control" name="comment" id="comment" value="{{ old('sender_name') }}">
+                                        <input type="text" class="form-control" name="comment" id="comment" value="{{ old('comment') }}">
                                         @error('comment')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -191,7 +191,7 @@
 
                                     <div class="input">
                                         <label for="origin" class="my-2">Origin</label>
-                                        <input type="text" class="form-control" name="origin" id="origin" value="{{ old('sender_name') }}">
+                                        <input type="text" class="form-control" name="origin" id="origin" value="{{ old('origin') }}">
                                         @error('origin')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -199,7 +199,7 @@
 
                                     <div class="input">
                                         <label for="quantity" class="my-2">Quantity</label>
-                                        <input type="text" class="form-control" name="quantity" id="quantity" value="{{ old('sender_name') }}">
+                                        <input type="text" class="form-control" name="quantity" id="quantity" value="{{ old('quantity') }}">
                                         @error('quantity')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -207,7 +207,7 @@
 
                                     <div class="input">
                                         <label for="departure_date" class="my-2">Departure Date</label>
-                                        <input type="date" class="form-control" name="departure_date" id="departure_date" value="{{ old('sender_name') }}">
+                                        <input type="date" class="form-control" name="departure_date" id="departure_date" value="{{ old('departure_date') }}">
                                         @error('departure_date')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -215,7 +215,7 @@
 
                                     <div class="input">
                                         <label for="pickup_date" class="my-2">Pickup Date</label>
-                                        <input type="date" class="form-control" name="pickup_date" id="pickup_date" value="{{ old('sender_name') }}">
+                                        <input type="date" class="form-control" name="pickup_date" id="pickup_date" value="{{ old('pickup_date') }}">
                                         @error('pickup_date')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -223,7 +223,7 @@
 
                                     <div class="input">
                                         <label for="status" class="my-2">Status</label>
-                                        <input type="text" class="form-control" name="status" id="status" value="{{ old('sender_name') }}">
+                                        <input type="text" class="form-control" name="status" id="status" value="{{ old('status') }}">
                                         @error('status')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
