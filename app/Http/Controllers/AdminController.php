@@ -39,7 +39,7 @@ class AdminController extends Controller
             'sender_name' => 'required|string',
             'sender_email' => 'required|string',
             'sender_address' => 'required|string',
-            'sreceiverName' => 'required|string',
+            'receiverName' => 'required|string',
             'receiverEmail' => 'required|string',
             'receiverCountry' => 'required|string',
             'receiverAddress' => 'required|string',
