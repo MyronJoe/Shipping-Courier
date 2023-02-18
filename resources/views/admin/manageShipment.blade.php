@@ -3,15 +3,15 @@
 
 <head>
 	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="">
-    <meta name="keywords" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="">
+	<meta name="keywords" content="">
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
 	<title>Dashboard</title>
 
@@ -31,7 +31,7 @@
 
 			<main class="content">
 
-			@include('admin.includes.successmsg')
+				@include('admin.includes.successmsg')
 
 				<div class="container-fluid p-0 mt-2">
 
@@ -44,8 +44,8 @@
 
 					<div class="row mt-3">
 
-					<br>
-					<br>
+						<br>
+						<br>
 						<div class="col-12 d-flex">
 							<div class="card flex-fill">
 
@@ -65,7 +65,7 @@
 										<tr>
 											<td>{{$key + 1}}</td>
 											<td>{{$data->product}}</td>
-											<td>{{$data->trackingID}}</td>
+											<td>{{$data->trackingID}} </td>
 											<td>{{$data->shippingType}}</td>
 											<td>{{$data->status}}</td>
 											<td>
@@ -78,7 +78,7 @@
 									</tbody>
 								</table>
 
-								
+
 							</div>
 						</div>
 
@@ -96,7 +96,6 @@
 	</div>
 
 	<script src="backend/js/app.js"></script>
-
 
 
 </body>

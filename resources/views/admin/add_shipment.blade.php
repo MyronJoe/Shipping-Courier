@@ -229,8 +229,36 @@
                                         @enderror
                                     </div>
 
+
+
                                 </div>
 
+                                <h1 class="my-3">Payment Invoice</h1>
+
+                                <div class="input col-sm-12  px-4">
+
+                                    <div class="row divider">
+                                        <div class="input col-sm-12 col-md-5">
+                                            <label for="payment_method" class="my-2">Payment Method</label>
+                                            <input type="text" class="form-control mb-3" name="payment_method" id="payment_method">
+                                        </div>
+
+                                        <div class="input col-sm-12 col-md-5 mb-3">
+                                            <label for="payment_status" class="my-2">Payment Status</label>
+                                            <select name="payment_status" id="payment_status" class="form-control">
+                                                <option value="air freight">Air Freight</option>
+                                                <option value="air freight">Road Freight</option>
+                                                <option value="air freight">Air Freight</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="input col-sm-12 col-md-2">
+                                            <label for="amount" class="my-2">Amount</label>
+                                            <input type="text" class="form-control mb-3" name="amount" id="amount">
+                                        </div>
+                                    </div>
+
+                                </div>
 
                             </div>
                         </div>
@@ -250,7 +278,6 @@
     </div>
 
     <script src="backend/js/app.js"></script>
-
 
 
 </body>
