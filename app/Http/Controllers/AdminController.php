@@ -35,6 +35,28 @@ class AdminController extends Controller
     //Add Shipment Function:
     public function addShipment(Request $request){
 
+        validator([
+            'sender_name' => 'required|string',
+            'sender_email' => 'required|string',
+            'sender_address' => 'required|string',
+            'sreceiverName' => 'required|string',
+            'receiverEmail' => 'required|string',
+            'receiverCountry' => 'required|string',
+            'receiverAddress' => 'required|string',
+            'receiverPhone' => 'required|string',
+            'freight' => 'required|string',
+            'weight' => 'required|string',
+            'product' => 'required|string',
+            'comment' => 'required|string',
+            'origin' => 'required|string',
+            'quantity' => 'required|string',
+            'departure_date' => 'required|string',
+            'pickup_date' => 'required|string',
+            'status' => 'required|string',
+            'destination' => 'required|string',
+            
+        ]);
+
         $abrv = 'TR';
 
         $data = new Shipments;
