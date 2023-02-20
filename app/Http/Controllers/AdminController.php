@@ -27,10 +27,7 @@ class AdminController extends Controller
         return view('admin.add_shipment');
     }
 
-    //edit shipment
-    public function edit_shipment(){
-        return view('admin.edit_shipment');
-    }
+    
 
     //Add Shipment Function:
     public function addShipment(Request $request){
@@ -100,6 +97,18 @@ class AdminController extends Controller
 
 
     }
+
+    //Delete shipment function
+    public function Edit_shipment($id){
+
+        $data = Shipments::findOrFail($id);
+
+        dd($data);
+
+        return view('admin.edit_shipment');
+    }
+
+    
 
 
 
