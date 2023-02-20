@@ -41,7 +41,7 @@
                     <div class="container-fluid p-0">
 
                         <div class="mb-3">
-                            <h1 class="h3 d-inline align-middle">Add New Shipment</h1>
+                            <h1 class="h3 d-inline align-middle">Update Shipment</h1>
 
                             <a href="{{url('shipments')}}" class="btn btn-primary" style="float: right;">Manage Shipment</a>
                         </div>
@@ -57,7 +57,7 @@
 
                                     <div>
                                         <label for="sender_name" class="my-2">Sender's Name</label>
-                                        <input type="text" class="form-control" name="sender_name" id="sender_name" value="{{ old('sender_name') }}">
+                                        <input type="text" class="form-control" name="sender_name" id="sender_name" value="{{ $data->senderName }}">
                                         @error('sender_name')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -65,7 +65,7 @@
 
                                     <div>
                                         <label for="sender_email" class="my-2">Sender's Email</label>
-                                        <input type="text" class="form-control" name="sender_email" id="sender_email" value="{{ old('sender_email') }}">
+                                        <input type="text" class="form-control" name="sender_email" id="sender_email" value="{{ $data->senderEmail }}">
                                         @error('sender_email')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -73,7 +73,7 @@
 
                                     <div>
                                         <label for="sender_address" class="my-2">Sender's Address</label>
-                                        <input type="text" class="form-control mb-3" name="sender_address" id="sender_address" value="{{ old('sender_address') }}">
+                                        <input type="text" class="form-control mb-3" name="sender_address" id="sender_address" value="{{ $data->senderAddress }}">
                                         @error('sender_address')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -89,7 +89,7 @@
 
                                     <div>
                                         <label for="receiverName" class="my-2">Receiver's Name</label>
-                                        <input type="text" class="form-control" name="receiverName" id="receiverName" value="{{ old('receiverName') }}">
+                                        <input type="text" class="form-control" name="receiverName" id="receiverName" value="{{ $data->receiverName }}">
                                         @error('receiverName')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -97,7 +97,7 @@
 
                                     <div>
                                         <label for="receiverPhone" class="my-2">Receiver's Phone</label>
-                                        <input type="text" class="form-control" name="receiverPhone" id="receiverPhone" value="{{ old('receiverPhone') }}">
+                                        <input type="text" class="form-control" name="receiverPhone" id="receiverPhone" value="{{ $data->receiverPhone}}">
                                         @error('receiverPhone')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -105,7 +105,7 @@
 
                                     <div>
                                         <label for="receiverEmail" class="my-2">Receiver's Email</label>
-                                        <input type="text" class="form-control" name="receiverEmail" id="receiverEmail" value="{{ old('receiverEmail') }}">
+                                        <input type="text" class="form-control" name="receiverEmail" id="receiverEmail" value="{{ $data->receiverEmail }}">
                                         @error('receiverEmail')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -113,7 +113,7 @@
 
                                     <div>
                                         <label for="receiverCountry" class="my-2">Receiver's Country</label>
-                                        <input type="text" class="form-control" name="receiverCountry" id="receiverCountry" value="{{ old('receiverCountry') }}">
+                                        <input type="text" class="form-control" name="receiverCountry" id="receiverCountry" value="{{ $data->receiverCountry }}">
                                         @error('receiverCountry')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -121,7 +121,7 @@
 
                                     <div>
                                         <label for="receiverAddress" class="my-2">Receiver's Address</label>
-                                        <input type="text" class="form-control" name="receiverAddress" id="receiverAddress" value="{{ old('receiverAddress') }}">
+                                        <input type="text" class="form-control" name="receiverAddress" id="receiverAddress" value="{{ $data->receiverAddress }}">
                                         @error('receiverAddress')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -272,7 +272,7 @@
                     </div>
                 </main>
 
-                <input type="submit" name="update_shipment" value="Add Shipment" class="btn btn-primary my-3 " style="display:inline-block; margin-left:50px;">
+                <input type="submit" name="update_shipment" value="Update Shipment" class="btn btn-primary my-3 " style="display:inline-block; margin-left:50px;">
 
 
             </form>

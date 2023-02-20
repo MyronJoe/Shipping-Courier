@@ -98,12 +98,40 @@ class AdminController extends Controller
 
     }
 
-    //Delete shipment function
+    //Edit shipment Page
     public function Edit_shipment($id){
 
         $data = Shipments::findOrFail($id);
 
         return view('admin.edit_shipment', compact('data'));
+    }
+
+    //Updated shipment in database
+    public function Update_shipment(Request $request, $id){
+
+        $request->validate([
+            'sender_name' => 'required|string',
+            'sender_email' => 'required|string',
+            'sender_address' => 'required|string',
+            'receiverName' => 'required|string',
+            'receiverEmail' => 'required|string',
+            'receiverCountry' => 'required|string',
+            'receiverAddress' => 'required|string',
+            'receiverPhone' => 'required|string',
+            'freight' => 'required|string',
+            'weight' => 'required|string',
+            'product' => 'required|string',
+            'comment' => 'required|string',
+            'origin' => 'required|string',
+            'quantity' => 'required|string',
+            'departure_date' => 'required|string',
+            'pickup_date' => 'required|string',
+            'status' => 'required|string',
+            'destination' => 'required|string',
+            
+        ]);
+        
+
     }
 
     
