@@ -78,13 +78,14 @@
 
                 <h5>Enter Your Cargo Tracking, Door to Door Office Order Number</h5>
 
-                <form>
+                <form action="{{route('tracking_product')}}" method="POST">
+                    @csrf
                     <div>
-                        <input type="text" class="noRadius form-control border-0 inputs" placeholder="ENTER TRACKING ID" style="height: 55px;">
+                        <input type="text" class="noRadius form-control border-0 inputs" placeholder="ENTER TRACKING ID" style="height: 55px;" name="trackID">
                     </div>
 
                     <div>
-                        <button class="noRadius btn btn-primary w-100 py-3 inputs" type="submit">Track Now</button>
+                        <button class="noRadius btn btn-primary w-100 py-3 inputs" name="track" type="submit">Track Now</button>
                     </div>
                 </form>
 

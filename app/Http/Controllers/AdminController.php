@@ -162,6 +162,24 @@ class AdminController extends Controller
 
     }
 
+
+
+
+    //=====================================================>>>>Tracking Functions
+
+    public function TrackingID(Request $request){
+
+        $tracking_id = $request->trackID;
+
+        $track = Shipments::where('trackingID', $tracking_id)->get();
+
+        dd($track->id);
+        
+
+        // return redirect('shipments')->with('message', 'Shipment Updated Successfully');
+
+    }
+
     
 
 
