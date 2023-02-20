@@ -99,11 +99,9 @@ class AdminController extends Controller
     }
 
     //Delete shipment function
-    public function Edit_shipment($id){
+    public function edit_shipment($id){
 
-        $data = Shipments::findOrFail($id);
-
-        dd($data);
+       
 
         return view('admin.edit_shipment');
     }
