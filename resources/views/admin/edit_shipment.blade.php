@@ -147,7 +147,7 @@
                                     <div>
                                         <label for="freight" class="my-2">Shipping Type</label>
                                         <select name="freight" id="freight" class="form-control">
-                                            <option value="{{ old('freight') }}">{{ old('freight') }}</option>
+                                            <option value="{{ $data->receiverAddress }}">{{ $data->shippingType }}</option>
                                             <option value="Air Freight">Air Freight</option>
                                             <option value="Road Freight">Road Freight</option>
                                             <option value="air freight">Air Freight</option>
@@ -159,7 +159,7 @@
 
                                     <div class="input">
                                         <label for="weight" class="my-2">Weight</label>
-                                        <input type="text" class="form-control" name="weight" id="weight" value="{{ old('weight') }}">
+                                        <input type="text" class="form-control" name="weight" id="weight" value="{{ $data->weight }}">
                                         @error('weight')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -167,7 +167,7 @@
 
                                     <div class="input">
                                         <label for="product" class="my-2">Product</label>
-                                        <input type="text" class="form-control" name="product" id="product" value="{{ old('product') }}">
+                                        <input type="text" class="form-control" name="product" id="product" value="{{ $data->product }}">
                                         @error('product')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -175,7 +175,7 @@
 
                                     <div class="input">
                                         <label for="destination" class="my-2">Destination</label>
-                                        <input type="text" class="form-control" name="destination" id="destination" value="{{ old('destination') }}">
+                                        <input type="text" class="form-control" name="destination" id="destination" value="{{ $data->destination }}">
                                         @error('destination')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -183,7 +183,7 @@
 
                                     <div class="input">
                                         <label for="comment" class="my-2">Comment</label>
-                                        <input type="text" class="form-control" name="comment" id="comment" value="{{ old('comment') }}">
+                                        <input type="text" class="form-control" name="comment" id="comment" value="{{ $data->comment) }}">
                                         @error('comment')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
