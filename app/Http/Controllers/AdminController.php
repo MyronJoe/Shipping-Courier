@@ -177,23 +177,12 @@ class AdminController extends Controller
         $track = Shipments::where('trackingID', $tracking_id)->get();
         $tracker = Shipments::where('trackingID', $tracking_id)->exists();;
 
-        //error
-        // dd($track);
-
         if ($tracker) {
-
-            // return redirect('shipments')->with('message', 'Shipment found');
-
             return view('frontend.trackdetails', compact('track'));
         }else{
-            Alert::success('Product Added Successfully', 'Your product have been added to the cart');
+            Alert::error('Tracking ID Not Found', 'Check Your Tracking ID And Try Again');
             return redirect()->back();
-
-            
         }
-        
-
-        
 
     }
 
