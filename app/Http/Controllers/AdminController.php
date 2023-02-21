@@ -178,14 +178,16 @@ class AdminController extends Controller
         // dd($track);
 
         if ($tracker) {
+
+            // return redirect('shipments')->with('message', 'Shipment found');
             
-            return redirect('shipments')->with('message', 'Shipment found');
+            return view('frontend.trackdetails', compact('track'));
         }else{
             return redirect()->back()->with('message', 'Shipment not found');
         }
         
 
-        return view('order-details', compact('orders'));
+        
 
     }
 
