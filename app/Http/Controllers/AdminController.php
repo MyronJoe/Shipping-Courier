@@ -6,6 +6,9 @@ use App\Models\Shipments;
 
 use Illuminate\Http\Request;
 
+use RealRashid\SweetAlert\Facades\Alert;
+
+// use RealRashid\Swee
 class AdminController extends Controller
 {
 
@@ -180,10 +183,13 @@ class AdminController extends Controller
         if ($tracker) {
 
             // return redirect('shipments')->with('message', 'Shipment found');
-            
+
             return view('frontend.trackdetails', compact('track'));
         }else{
-            return redirect()->back()->with('message', 'Shipment not found');
+            Alert::success('Product Added Successfully', 'Your product have been added to the cart');
+            return redirect()->back();
+
+            
         }
         
 

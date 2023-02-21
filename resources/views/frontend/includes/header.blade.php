@@ -53,4 +53,5 @@
         </div>
     </div>
 </nav>
+@include('sweetalert::alert')
 <!-- Navbar End -->

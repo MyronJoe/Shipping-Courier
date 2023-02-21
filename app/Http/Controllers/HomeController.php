@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Models\User;
 
+use RealRashid\SweetAlert\Facades\Alert;
+
 class HomeController extends Controller
 {
     //Login pattern functions
