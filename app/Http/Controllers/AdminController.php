@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
 
+    //=====================================================>>>>Shipping Functions
+
     public function admin(){
         return view('admin.home');
     }
@@ -28,7 +30,6 @@ class AdminController extends Controller
     }
 
     
-
     //Add Shipment Function:
     public function addShipment(Request $request){
 
@@ -159,7 +160,6 @@ class AdminController extends Controller
 
         return redirect('shipments')->with('message', 'Shipment Updated Successfully');
 
-
     }
 
 
@@ -172,11 +172,20 @@ class AdminController extends Controller
         $tracking_id = $request->trackID;
 
         $track = Shipments::where('trackingID', $tracking_id)->get();
+        $tracker = Shipments::where('trackingID', $tracking_id)->exists();;
 
-        dd($track->id);
+        //error
+        // dd($track);
+
+        if ($tracker) {
+            
+            return redirect('shipments')->with('message', 'Shipment found');
+        }else{
+            return redirect()->back()->with('message', 'Shipment not found');
+        }
         
 
-        // return redirect('shipments')->with('message', 'Shipment Updated Successfully');
+        return view('order-details', compact('orders'));
 
     }
 
