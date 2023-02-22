@@ -9,7 +9,7 @@
                     <p>* PLEASE TYPE IN YOUR TRACKING ID TO GET YOUR TRACKING LOCATION INFORMATION</p>
 
                     <form action="{{route('tracking_product')}}" method="POST">
-                    @csrf
+                        @csrf
                         <div>
                             <input type="text" class="noRadius form-control border-0 inputs" placeholder="ENTER TRACKING ID" style="height: 55px;" name="trackID">
                         </div>
