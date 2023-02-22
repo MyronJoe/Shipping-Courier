@@ -31,13 +31,9 @@
 
         @endforeach
 
-
-
         <!-- Footer Start -->
         @include('frontend.includes.footer')
         <!-- Footer End -->
-
-
 
     </div>
 
