@@ -52,56 +52,56 @@
     <div class="content">
 
         <!-- Page Header Start -->
-    <div class="container-fluid page-header py-5" style="margin-bottom: 3rem;">
-        <div class="container py-5">
-            <h1 class="display-3 text-white mb-3 animated slideInDown" style="font-size: 45px;">TRACK PACKAGE</h1>
-            <nav aria-label="breadcrumb animated slideInDown">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a class="text-white" href="#">Track Package</a></li>
-                </ol>
-            </nav>
+        <div class="container-fluid page-header py-5" style="margin-bottom: 3rem;">
+            <div class="container py-5">
+                <h1 class="display-3 text-white mb-3 animated slideInDown" style="font-size: 45px;">TRACK PACKAGE</h1>
+                <nav aria-label="breadcrumb animated slideInDown">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-white" href="#">Track Package</a></li>
+                    </ol>
+                </nav>
+            </div>
         </div>
-    </div>
-    <!-- Page Header End -->
+        <!-- Page Header End -->
 
 
-    <!-- <span>Error Msg</span> -->
+        <!-- <span>Error Msg</span> -->
 
 
-    <!-- Contact Start -->
-    <div class=" container trackBox" style="margin-bottom: 3rem;">
+        <!-- Contact Start -->
+        <div class=" container trackBox" style="margin-bottom: 3rem;">
 
-        <div class="track-box-0" style="background-image: url(assets/img/about.jpg);">
+            <div class="track-box-0" style="background-image: url(assets/img/about.jpg);">
 
-            <div class="track-box">
+                <div class="track-box">
 
-                <h5>Enter Your Cargo Tracking, Door to Door Office Order Number</h5>
+                    <h5>Enter Your Cargo Tracking, Door to Door Office Order Number</h5>
 
-                <form action="{{route('tracking_product')}}" method="POST">
-                    @csrf
-                    <div>
-                        <input type="text" class="noRadius form-control border-0 inputs" placeholder="ENTER TRACKING ID" style="height: 55px;" name="trackID">
-                    </div>
+                    <form action="{{route('tracking_product')}}" method="POST">
+                        @csrf
+                        <div>
+                            <input type="text" class="noRadius form-control border-0 inputs" placeholder="ENTER TRACKING ID" style="height: 55px;" name="trackID">
+                        </div>
 
-                    <div>
-                        <button class="noRadius btn btn-primary w-100 py-3 inputs" name="track" type="submit">Track Now</button>
-                    </div>
-                </form>
+                        <div>
+                            <button class="noRadius btn btn-primary w-100 py-3 inputs" name="track" type="submit">Track Now</button>
+                        </div>
+                    </form>
+
+
+                </div>
 
 
             </div>
 
 
         </div>
+        <!-- Contact End -->
 
-
-    </div>
-    <!-- Contact End -->
-
-    <!-- Footer Start -->
-    @include('frontend.includes.footer')
-    <!-- Footer End -->
+        <!-- Footer Start -->
+        @include('frontend.includes.footer')
+        <!-- Footer End -->
 
     </div>
 
