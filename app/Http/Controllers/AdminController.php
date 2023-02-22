@@ -14,12 +14,14 @@ class AdminController extends Controller
 
     //=====================================================>>>>Shipping Functions
 
-    public function admin(){
+    public function admin()
+    {
         return view('admin.home');
     }
 
     //shipments function
-    public function shipments(){
+    public function shipments()
+    {
 
         // $datas = Shipments::paginate(6);
         $datas = Shipments::orderBy('id', 'desc')->paginate(10);
@@ -28,13 +30,15 @@ class AdminController extends Controller
     }
 
     //add shipment function
-    public function add_shipment(){
+    public function add_shipment()
+    {
         return view('admin.add_shipment');
     }
 
-    
+
     //Add Shipment Function:
-    public function addShipment(Request $request){
+    public function addShipment(Request $request)
+    {
 
         $request->validate([
             'sender_name' => 'required|string',
@@ -55,7 +59,7 @@ class AdminController extends Controller
             'pickup_date' => 'required|string',
             'status' => 'required|string',
             'destination' => 'required|string',
-            
+
         ]);
 
         $abrv = 'TR';
@@ -75,7 +79,7 @@ class AdminController extends Controller
         $data->shippingType = $request->freight;
         $data->weight = $request->weight;
         $data->product = $request->product;
-        $data->trackingID = $request->$abrv.'TR'.rand('123456789', '098765409');
+        $data->trackingID = $request->$abrv . 'TR' . rand('123456789', '098765409');
         $data->comment = $request->comment;
         $data->origin = $request->origin;
         $data->quality = $request->quantity;
@@ -91,19 +95,19 @@ class AdminController extends Controller
 
 
     //Delete shipment function
-    public function Delete_shipment($id){
+    public function Delete_shipment($id)
+    {
 
         $data = Shipments::findOrFail($id);
 
         $data->delete();
 
         return redirect()->route('shipments')->with('message', 'Shipment Deleted Successfully');
-
-
     }
 
     //Edit shipment Page
-    public function Edit_shipment($id){
+    public function Edit_shipment($id)
+    {
 
         $data = Shipments::findOrFail($id);
 
@@ -112,7 +116,8 @@ class AdminController extends Controller
 
 
     //Updated shipment in database
-    public function Update_shipment(Request $request, $id){
+    public function Update_shipment(Request $request, $id)
+    {
 
         $request->validate([
             'sender_name' => 'required|string',
@@ -133,7 +138,7 @@ class AdminController extends Controller
             'pickup_date' => 'required|string',
             'status' => 'required|string',
             'destination' => 'required|string',
-            
+
         ]);
 
         $data = Shipments::findOrFail($id);
@@ -162,7 +167,6 @@ class AdminController extends Controller
         $data->save();
 
         return redirect('shipments')->with('message', 'Shipment Updated Successfully');
-
     }
 
 
@@ -170,7 +174,8 @@ class AdminController extends Controller
 
     //=====================================================>>>>Tracking Functions
 
-    public function TrackingID(Request $request){
+    public function TrackingID(Request $request)
+    {
 
         $tracking_id = $request->trackID;
 
@@ -179,15 +184,9 @@ class AdminController extends Controller
 
         if ($tracker) {
             return view('frontend.trackdetails', compact('track'));
-        }else{
+        } else {
             Alert::error('Tracking ID Not Found', 'Check Your Tracking ID And Try Again');
             return redirect()->back();
         }
-
     }
-
-    
-
-
-
 }
