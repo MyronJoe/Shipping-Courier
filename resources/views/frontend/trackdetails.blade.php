@@ -25,11 +25,13 @@
 
     <div class="content">
 
-        @foreach($track as $data)
+        <div class="container">
+            @foreach($track as $data)
 
-        <h1>{{$data->status}}</h1>
+            <h1>{{$data->status}}</h1>
 
-        @endforeach
+            @endforeach
+        </div>
 
         <!-- Footer Start -->
         @include('frontend.includes.footer')
