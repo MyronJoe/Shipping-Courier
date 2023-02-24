@@ -18,16 +18,16 @@ include 'path.php';
 
     <!-- All Styles -->
     @include('frontend.includes.styles')
-    
+
 </head>
 
 <body>
-    
-    <!-- HEADER -->
-	@include('frontend.includes.header')
-	<!-- /HEADER -->
 
-   
+    <!-- HEADER -->
+    @include('frontend.includes.header')
+    <!-- /HEADER -->
+
+
     <!-- Page Header Start -->
     <div class="container-fluid page-header py-5" style="margin-bottom: 1rem;">
         <div class="container py-5">
