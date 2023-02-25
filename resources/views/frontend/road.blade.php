@@ -12,14 +12,11 @@
     <!-- All Styles -->
     @include('frontend.includes.styles')
 </head>
-
 <body>
-
     <!-- HEADER -->
     @include('frontend.includes.header')
     <!-- /HEADER -->
     <div class="content">
-
         <!-- Page Header Start -->
         <div class="container-fluid page-header py-5" style="margin-bottom: 6rem;">
             <div class="container py-5">
