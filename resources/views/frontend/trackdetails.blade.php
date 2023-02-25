@@ -17,12 +17,9 @@
 </head>
 
 <body>
-
     <!-- HEADER -->
     @include('frontend.includes.header')
     <!-- /HEADER -->
-
-
     <div class="content">
 
         <div class="container">
