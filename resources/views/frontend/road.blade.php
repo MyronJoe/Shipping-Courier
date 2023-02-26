@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <title>Logistica - Shipping Company</title>
@@ -30,7 +29,6 @@
             </div>
         </div>
         <!-- Page Header End -->
-
         <!-- Contact Start -->
         <div class="container overflow-hidden px-lg-0">
             <div class="container contact-page px-lg-0">
@@ -87,12 +85,8 @@
         <!-- Footer End -->
 
     </div>
-
-
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
