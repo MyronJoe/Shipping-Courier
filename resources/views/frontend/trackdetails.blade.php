@@ -21,7 +21,6 @@
     @include('frontend.includes.header')
     <!-- /HEADER -->
     <div class="content">
-
         <div class="container">
             @foreach($track as $data)
 
@@ -29,7 +28,6 @@
 
             @endforeach
         </div>
-
         <!-- Footer Start -->
         @include('frontend.includes.footer')
         <!-- Footer End -->
