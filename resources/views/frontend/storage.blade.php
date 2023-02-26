@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <title>Logistica - Shipping Company</title>
@@ -12,9 +11,7 @@
     <!-- All Styles -->
     @include('frontend.includes.styles')
 </head>
-
 <body>
-
     <!-- HEADER -->
     @include('frontend.includes.header')
     <!-- /HEADER -->
@@ -33,7 +30,6 @@
             </div>
         </div>
         <!-- Page Header End -->
-
         <!-- Contact Start -->
         <div class="container overflow-hidden px-lg-0">
             <div class="container contact-page px-lg-0">
