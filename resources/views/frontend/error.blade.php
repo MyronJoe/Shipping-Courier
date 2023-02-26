@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <?php
 include 'path.php';
-
 ?>
-
 <head>
     <meta charset="utf-8">
     <title>Logistica - Shipping Company</title>
