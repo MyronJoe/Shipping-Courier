@@ -79,11 +79,9 @@
             </div>
         </div>
         <!-- Contact End -->
-
         <!-- Footer Start -->
         @include('frontend.includes.footer')
         <!-- Footer End -->
-
     </div>
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
@@ -95,7 +93,6 @@
     <script src="assets/lib/waypoints/waypoints.min.js"></script>
     <script src="assets/lib/counterup/counterup.min.js"></script>
     <script src="assets/lib/owlcarousel/owl.carousel.min.js"></script>
-
     <!-- Template Javascript -->
     <script src="assets/js/main.js"></script>
 </body>
