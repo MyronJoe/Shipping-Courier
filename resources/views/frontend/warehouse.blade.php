@@ -7,15 +7,11 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
-
     <link href="assets/img/favicon.ico" rel="icon">
-
     <!-- All Styles -->
     @include('frontend.includes.styles')
 </head>
-
 <body>
-
     <!-- HEADER -->
     @include('frontend.includes.header')
     <!-- /HEADER -->
