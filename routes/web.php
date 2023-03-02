@@ -97,7 +97,5 @@ Route::get('/edit_shipment/{id}', [AdminController::class, 'Edit_shipment'])->na
 
 Route::post('/update_shipment/{id}', [AdminController::class, 'Update_shipment'])->name('update_shipment');
 
-
-
 //Tracking Routes
 Route::post('/tracking_product', [AdminController::class, 'TrackingID'])->name('tracking_product');
