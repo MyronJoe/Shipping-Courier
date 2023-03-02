@@ -184,9 +184,9 @@
                     {{ __('Create New Team') }}
                 </x-jet-responsive-nav-link>
                 @endcan
-
-                <div class="border-t border-gray-200"></div>
-
+                <div class="border-t border-gray-200">
+                    
+                </div>
                 <!-- Team Switcher -->
                 <div class="block px-4 py-2 text-xs text-gray-400">
                     {{ __('Switch Teams') }}
