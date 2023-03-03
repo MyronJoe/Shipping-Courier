@@ -39,7 +39,6 @@ class AdminController extends Controller
     //Add Shipment Function:
     public function addShipment(Request $request)
     {
-
         $request->validate([
             'sender_name' => 'required|string',
             'sender_email' => 'required|string',
@@ -161,6 +160,7 @@ class AdminController extends Controller
         $data->quality = $request->quantity;
         $data->departDate = $request->departure_date;
         $data->pickupDate = $request->pickup_date;
+        $data->status = $request->status;
         $data->status = $request->status;
         $data->destination = $request->destination;
 
