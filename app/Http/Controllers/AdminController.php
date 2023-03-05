@@ -92,7 +92,7 @@ class AdminController extends Controller
 
         $data->payment_method = $request->payment_method;
         $data->payment_status = $request->payment_status;
-        $data->destination = $request->destination;
+        $data->amount = $request->amount;
 
         $data->save();
 
