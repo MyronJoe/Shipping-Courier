@@ -241,8 +241,8 @@
                                         
 
                                         <div class="input col-sm-12 col-md-5 mb-3">
-                                            <label for="payment_status" class="my-2">Payment Method</label>
-                                            <select name="payment_method" id="payment_status" class="form-control">
+                                            <label for="payment_method" class="my-2">Payment Method</label>
+                                            <select name="payment_method" id="payment_method" class="form-control">
                                                 <option value=""></option>
                                                 <option value="Kuda">kudah</option>
                                                 <option value="Opay">opay</option>
@@ -254,8 +254,8 @@
                                             <label for="payment_status" class="my-2">Payment Status</label>
                                             <select name="payment_status" id="payment_status" class="form-control">
                                                 <option value=""></option>
-                                                <option value="air freight">Road Freight</option>
-                                                <option value="air freight">Air Freight</option>
+                                                <option value="air freight">Paid</option>
+                                                <option value="air freight">Not Paid</option>
                                             </select>
                                         </div>
 

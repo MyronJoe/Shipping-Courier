@@ -40,7 +40,7 @@ return new class extends Migration
 
             $table->text('payment_method')->nullable();
             $table->text('payment_status')->nullable();
-            $table->text('title')->nullable();
+            $table->text('amount')->nullable();
 
             $table->timestamps();
         });
