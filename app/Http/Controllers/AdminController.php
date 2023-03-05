@@ -78,7 +78,7 @@ class AdminController extends Controller
         $data->shippingType = $request->freight;
         $data->weight = $request->weight;
         $data->product = $request->product;
-        $data->trackingID = $request->$abrv . 'TR' . rand('123456789', '098765409');
+        $data->trackingID = 'TR' . rand('123456789', '098765409');
         $data->comment = $request->comment;
         $data->origin = $request->origin;
         $data->quality = $request->quantity;
@@ -86,6 +86,10 @@ class AdminController extends Controller
         $data->pickupDate = $request->pickup_date;
         $data->status = $request->status;
         $data->destination = $request->destination;
+
+        $data->ref_no = 'RF' . rand('123456789', '098765409');
+        $data->invoice_no = 'IV' . rand('123456789', '098765409');
+
 
         $data->save();
 
