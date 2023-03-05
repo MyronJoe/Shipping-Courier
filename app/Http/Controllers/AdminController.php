@@ -92,7 +92,6 @@ class AdminController extends Controller
         return redirect('shipments')->with('message', 'Shipment Added Successfully');
     }
 
-
     //Delete shipment function
     public function Delete_shipment($id)
     {
