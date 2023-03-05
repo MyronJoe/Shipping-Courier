@@ -91,7 +91,7 @@ class AdminController extends Controller
         $data->invoice_no = 'IV' . rand('123456789', '098765409');
 
         $data->payment_method = $request->payment_method;
-        $data->destination = $request->destination;
+        $data->payment_status = $request->payment_status;
         $data->destination = $request->destination;
 
         $data->save();
