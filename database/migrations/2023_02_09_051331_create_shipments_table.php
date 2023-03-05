@@ -38,8 +38,8 @@ return new class extends Migration
             $table->string('status');
             $table->string('destination');
 
-            $table->text('title')->nullable();
-            $table->text('title')->nullable();
+            $table->text('payment_method')->nullable();
+            $table->text('payment_status')->nullable();
             $table->text('title')->nullable();
 
             $table->timestamps();
