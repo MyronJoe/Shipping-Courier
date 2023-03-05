@@ -20,23 +20,26 @@ return new class extends Migration
             $table->string('senderEmail');
             $table->string('senderAddress');
 
-            $table->string('receiverName');
-            $table->string('receiverEmail');
-            $table->string('receiverCountry');
-            $table->string('receiverAddress');
-            $table->string('receiverPhone');
+            $table->string('receiverName')->nullable();
+            $table->string('receiverEmail')->nullable();
+            $table->string('receiverCountry')->nullable();
+            $table->string('receiverAddress')->nullable();
+            $table->string('receiverPhone')->nullable();
 
-            $table->string('shippingType');
-            $table->string('weight');
-            $table->string('product');
-            $table->string('trackingID');
-            $table->string('comment');
-            $table->string('origin');
-            $table->string('quality');
-            $table->string('departDate');
-            $table->string('pickupDate');
-            $table->string('status');
-            $table->string('destination');
+            $table->string('shippingType')->nullable();
+            $table->string('weight')->nullable();
+            $table->string('product')->nullable();
+            $table->string('trackingID')->nullable();
+            $table->string('comment')->nullable();
+            $table->string('origin')->nullable();
+            $table->string('quality')->nullable();
+            $table->string('departDate')->nullable();
+            $table->string('pickupDate')->nullable();
+            $table->string('status')->nullable();
+            $table->string('destination')->nullable();
+
+            $table->string('ref_no')->nullable();
+            $table->string('invoice_no')->nullable();
 
             $table->text('payment_method')->nullable();
             $table->text('payment_status')->nullable();
