@@ -38,6 +38,10 @@ return new class extends Migration
             $table->string('status');
             $table->string('destination');
 
+            $table->text('title')->nullable();
+            $table->text('title')->nullable();
+            $table->text('title')->nullable();
+
             $table->timestamps();
         });
     }
