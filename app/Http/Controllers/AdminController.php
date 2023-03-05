@@ -90,6 +90,9 @@ class AdminController extends Controller
         $data->ref_no = 'RF' . rand('123456789', '098765409');
         $data->invoice_no = 'IV' . rand('123456789', '098765409');
 
+        $data->destination = $request->destination;
+        $data->destination = $request->destination;
+        $data->destination = $request->destination;
 
         $data->save();
 
