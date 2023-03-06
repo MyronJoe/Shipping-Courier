@@ -64,7 +64,7 @@
 
                                     <div>
                                         <label for="sender_address" class="my-2">Sender's Address</label>
-                                        <input type="text" class="form-control  readonlymb-3" name="sender_address" id="sender_address" value="{{ $data->senderAddress }}">
+                                        <input type="text" class="form-control mb-3" readonly name="sender_address" id="sender_address" value="{{ $data->senderAddress }}">
                                         @error('sender_address')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -135,15 +135,11 @@
                         <div>
                             <div class="row">
                                 <div class="input col-sm-12 col-md-6">
-                                    <div>
-                                        <label for="freight" class="my-2">Shipping Type</label>
-                                        <select name="freight" id="freight" class="form-control" readonly>
-                                            <option value="{{ $data->receiverAddress }}">{{ $data->shippingType }}</option>
-                                            <option value="Air Freight">Air Freight</option>
-                                            <option value="Road Freight">Road Freight</option>
-                                            <option value="air freight">Air Freight</option>
-                                        </select>
-                                        @error('freight')
+
+                                    <div class="input">
+                                    <label for="freight" class="my-2">Shipping Type</label>
+                                        <input type="text" class="form-control" readonly name="weight" id="weight" value="{{ $data->shippingType }}">
+                                        @error('weight')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
