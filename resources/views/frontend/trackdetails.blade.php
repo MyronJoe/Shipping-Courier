@@ -17,15 +17,19 @@
             outline: none !important;
             border: none !important;
         }
-        .holder-cont{
+
+        .holder-cont {
             /* background-color: seashell; */
             width: 80%;
             margin: auto;
             padding: 10px;
+            box-shadow: -2px -2px 2px #eee,
+                2px 2px 2px #eee;
         }
 
         .holder {
             background-color: whitesmoke;
+            padding: 0 1em 0 1em !important;
         }
 
         .barcode-div {
@@ -39,6 +43,12 @@
             margin-bottom: 15px;
             object-fit: cover;
 
+        }
+
+        @media screen and (max-width: 900px) {
+            .holder-cont {
+            width: 100%;
+            }
         }
     </style>
 
@@ -61,11 +71,11 @@
 
             <div class="holder-cont">
 
-            <h3 class="my-2">Shipment Details</h3>
+                <h3 class="my-2">Shipping Details</h3>
 
                 @foreach($track as $data)
 
-                <form method="POST" novalidate class="holder px-5">
+                <form method="POST" novalidate class="holder">
 
                     @csrf
 
@@ -84,7 +94,9 @@
                                 <div class="row">
                                     <div class="input col-sm-12 col-md-6">
 
-                                        <h4 style="font-weight: bolder;">Sender's Details</h4>
+                                       
+
+                                        <h5 class="h3 d-inline align-middle pt-3" style="margin-top:20px;">Sender's Details</h5>
 
                                         <hr>
 
@@ -172,7 +184,7 @@
                         <div class="container-fluid p-0">
 
                             <div class="mb-3">
-                                <h1 class="h3 d-inline align-middle" style="font-weight: bolder;">Shipment Details</h1>
+                                <h5 class="h3 d-inline align-middle pt-3" style="margin-top:20px;">Shipment Details</h5>
 
                             </div>
                             <div>
@@ -265,7 +277,7 @@
                                             @enderror
                                         </div>
 
-                                        <div style="height:125px">
+                                        <div style="height:90px">
 
                                         </div>
 
