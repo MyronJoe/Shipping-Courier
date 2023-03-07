@@ -8,6 +8,23 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
 
+    <style>
+        .form-control {
+            border-radius: 0 !important;
+        }
+
+        .form-control:focus {
+            outline: none !important;
+            border: none !important;
+        }
+
+        .holder {
+            width: 80%;
+            margin: auto;
+            background-color: #ddd;
+        }
+    </style>
+
     <!-- Favicon -->
     <link href="assets/img/favicon.ico" rel="icon">
 
@@ -21,10 +38,10 @@
     @include('frontend.includes.header')
     <!-- /HEADER -->
     <div class="content">
-        <div class="container holder">
+        <div class="container">
             @foreach($track as $data)
 
-            <form method="POST" novalidate >
+            <form method="POST" novalidate class="holder">
 
                 @csrf
 
@@ -137,7 +154,7 @@
                                 <div class="input col-sm-12 col-md-6">
 
                                     <div class="input">
-                                    <label for="freight" class="my-2">Shipping Type</label>
+                                        <label for="freight" class="my-2">Shipping Type</label>
                                         <input type="text" class="form-control" readonly name="weight" id="weight" value="{{ $data->shippingType }}">
                                         @error('weight')
                                         <span class="text-danger">{{ $message }}</span>
@@ -214,20 +231,22 @@
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
-
                                     <div class="input">
                                         <label for="status" class="my-2">Status</label>
-                                        <input type="text" class="form-control" readonly name="status" id="status" value="{{ $data->status }}">
-                                        @error('status')
+                                        <input type="text" class="form-control" readonly name="pickup_date" id="status" value="{{ $data->status }}">
+                                        @error('pickup_date')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
 
+                                    <div style="height:100px">
+
+                                    </div>
 
 
                                 </div>
 
-                               
+
                             </div>
                         </div>
                     </div>
@@ -238,9 +257,7 @@
             @endforeach
         </div>
 
-        <div style="height:100px">
 
-        </div>
         <!-- Footer Start -->
         @include('frontend.includes.footer')
         <!-- Footer End -->
