@@ -18,7 +18,7 @@
             border: none !important;
         }
         .holder-cont{
-            background-color: seashell;
+            /* background-color: seashell; */
             width: 80%;
             margin: auto;
             padding: 10px;
@@ -60,6 +60,8 @@
             <div style="height:50px"></div>
 
             <div class="holder-cont">
+
+            <h3 class="my-2">Shipment Details</h3>
 
                 @foreach($track as $data)
 
