@@ -94,9 +94,7 @@
                                 <div class="row">
                                     <div class="input col-sm-12 col-md-6">
 
-                                       
-
-                                        <h5 class="h3 d-inline align-middle pt-3" style="margin-top:20px;">Sender's Details</h5>
+                                        <h4 style="font-weight: bolder;">Sender's Details</h4>
 
                                         <hr>
 
@@ -184,7 +182,7 @@
                         <div class="container-fluid p-0">
 
                             <div class="mb-3">
-                                <h5 class="h3 d-inline align-middle pt-3" style="margin-top:20px;">Shipment Details</h5>
+                                <h5 class="h3 align-middle pt-2 " style="margin-top:20px;">Shipment Details</h5>
 
                             </div>
                             <div>
