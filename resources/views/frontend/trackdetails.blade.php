@@ -23,6 +23,17 @@
             margin: auto;
             background-color: #ddd;
         }
+        .barcode-div{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .barcode{
+            width: 200px;
+            margin-bottom: 15px;
+            object-fit: cover;
+            
+        }
     </style>
 
     <!-- Favicon -->
@@ -39,19 +50,24 @@
     <!-- /HEADER -->
     <div class="content">
         <div class="container">
+        <div style="height:100px">
+
+        </div>
             @foreach($track as $data)
 
-            <form method="POST" novalidate class="holder">
+            <form method="POST" novalidate class="holder px-5">
 
                 @csrf
 
                 <main class="content">
                     <div class="container-fluid p-0">
 
-                        <div class="mb-3">
-                            <h1 class="h3 d-inline align-middle">Update Shipment</h1>
+                        <div class="barcode-div">
+                            <img class="barcode" src="assets/img/barcode.png"  alt="">
+                        </div>
 
-                            <a href="{{url('shipments')}}" class="btn btn-primary" style="float: right;">Manage Shipment</a>
+                        <div class="mb-3 text-center">
+                            <h1 class="h3 d-inline text-danger">{{ $data->trackingID }}</h1>
                         </div>
                         <hr>
                         <div>
