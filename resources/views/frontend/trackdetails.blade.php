@@ -18,14 +18,14 @@
             border: none !important;
         }
         .holder-cont{
-            background-color: red;
+            background-color: seashell;
             width: 80%;
             margin: auto;
             padding: 10px;
         }
 
         .holder {
-            background-color: #ddd;
+            background-color: whitesmoke;
         }
 
         .barcode-div {
