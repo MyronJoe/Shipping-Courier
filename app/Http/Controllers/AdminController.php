@@ -175,6 +175,15 @@ class AdminController extends Controller
     }
 
 
+    //Shipment Label Page
+    public function Shipment_label($id)
+    {
+
+        $data = Shipments::findOrFail($id);
+
+        return view('admin.label.label', compact('data'));
+    }
+
 
 
     //=====================================================>>>>Tracking Functions
