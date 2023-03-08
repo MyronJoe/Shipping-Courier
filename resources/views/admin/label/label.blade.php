@@ -26,6 +26,16 @@
     <link href="../backend/css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
+    <style>
+        .left{
+            background: #ddd;
+        }
+        .barcode{
+            width: 100%;
+            height: 200px;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -43,11 +53,16 @@
 
                 <div class="row">
 
-                    <div class="col-sm-12 col-md-6">
+                    <div class="col-sm-12 col-md-3 left">
+
                         <h1>Logistica</h1>
+
                     </div>
 
-                    <div class="col-sm-12 col-md-6">
+                    <div class="col-sm-12 col-md-9">
+                        <div class="barcode-div">
+                            <img class="barcode" src="../assets/img/barcode.png" alt="">
+                        </div>
 
                         <h1>{{$data->product}}</h1>
 
