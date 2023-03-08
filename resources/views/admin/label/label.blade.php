@@ -29,10 +29,19 @@
     <style>
         .left{
             background: #ddd;
+            margin-bottom: 15px;
+        }
+        .left h1{
+            font-size: 50px;
+            text-transform: uppercase;
         }
         .barcode{
             width: 100%;
-            height: 200px;
+            height: 150px;
+        }
+        .table2{
+            width: 100% !important;
+            overflow: auto !important;
         }
     </style>
 
@@ -51,9 +60,9 @@
 
                 
 
-                <div class="row">
+                <div class="row px-2">
 
-                    <div class="col-sm-12 col-md-3 left">
+                    <div class="col-sm-12 col-md-3 left p-3">
 
                         <h1>Logistica</h1>
 
@@ -89,7 +98,9 @@
                             <p>Name: <strong>{{$data->senderName}}</strong> </p>
                             <p>Email: <strong>{{$data->senderEmail}}</strong> </p>
 
-                            <div class="card flex-fill">
+                            <br>
+
+                            <div class="table2 card flex-fill">
 
                                 <h1 class="my-2 mx-3">Parcel Details</h1>
 
@@ -111,8 +122,10 @@
 										<tr>
 											
 											<td>{{$data->product}}</td>
-											<td>{{$data->trackingID}} </td>
+											<td>{{$data->origin}} </td>
+											<td>{{$data->destination}}</td>
 											<td>{{$data->shippingType}}</td>
+											<td>{{$data->pickupDate}}</td>
 											<td>{{$data->status}}</td>
 											
 										</tr>
