@@ -75,7 +75,54 @@
 
                             <hr>
 
-                            
+                            <h1>Shipping To:</h1>
+
+                            <p>Name: <strong>{{$data->receiverName}}</strong> </p>
+                            <p>Email: <strong>{{$data->receiverEmail}}</strong> </p>
+                            <p>Country: <strong>{{$data->receiverCountry}}</strong> </p>
+                            <p>Address: <strong>{{$data->receiverAddress}}</strong> </p>
+
+                            <hr>
+
+                            <h1>Shipping From:</h1>
+
+                            <p>Name: <strong>{{$data->senderName}}</strong> </p>
+                            <p>Email: <strong>{{$data->senderEmail}}</strong> </p>
+
+                            <div class="card flex-fill">
+
+                                <h1 class="my-2 mx-3">Parcel Details</h1>
+
+								<table class="table table-hover my-0">
+									<thead>
+										<tr>
+											
+											<th>Product</th>
+											<th>Origin</th>
+											<th>Destination</th>
+											<th>Shipping Type</th>
+											<th>Pickup Date</th>
+											<th>Status</th>
+											
+										</tr>
+									</thead>
+									<tbody>
+								
+										<tr>
+											
+											<td>{{$data->product}}</td>
+											<td>{{$data->trackingID}} </td>
+											<td>{{$data->shippingType}}</td>
+											<td>{{$data->status}}</td>
+											
+										</tr>
+									
+									</tbody>
+								</table>
+
+
+							</div>
+
                         </div>
                     </div>
 
