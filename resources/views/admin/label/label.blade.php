@@ -61,11 +61,22 @@
 
                     <div class="col-sm-12 col-md-9">
                         <div class="barcode-div">
-                            <img class="barcode" src="../assets/img/barcode.png" alt="">
+                            <img class="barcode" src="../assets/img/barcode1.png" alt="">
                         </div>
 
-                        <h1>{{$data->product}}</h1>
+                        <div class="details px-2">
+                            <h4>{{$data->trackingID}}</h4>
 
+
+                            <h1>Order Information</h1>
+
+                            <p>Tracking Number: <strong>{{$data->trackingID}}</strong> </p>
+                            <p>Reference Number: <strong>{{$data->ref_no}}</strong> </p>
+
+                            <hr>
+
+                            
+                        </div>
                     </div>
 
                 </div>
