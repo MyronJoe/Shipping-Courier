@@ -71,7 +71,7 @@
 											<td>
 												<a href="{{route('edit_shipment', $data->id)}}" class="btn btn-success btn-sm">Reciept</a>
 
-												<a href="{{route('edit_shipment', $data->id)}}" class="btn btn-info btn-sm">Label</a>
+												<a href="{{route('shipment_label', $data->id)}}" class="btn btn-info btn-sm">Label</a>
 												
 												<a href="{{route('edit_shipment', $data->id)}}" class="btn btn-primary btn-sm">Edit</a>
 
