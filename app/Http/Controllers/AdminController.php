@@ -18,7 +18,7 @@ class AdminController extends Controller
 
     public function admin()
     {
-        $datas = Shipments::orderBy('id', 'desc')->paginate(10);
+        $datas = Shipments::orderBy('id', 'desc')->paginate(5);
 
         return view('admin.home', compact('datas'));
     }

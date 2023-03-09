@@ -128,6 +128,53 @@
 					</div>
 
 			
+					<div class="col-12 d-flex">
+							<div class="card flex-fill">
+
+								<table class="table table-hover my-0">
+									<thead>
+										<tr>
+											<th>S|N</th>
+											<th>Product</th>
+											<th>Tracking ID</th>
+											<th>Shipping Type</th>
+											<th>Status</th>
+											<th>Payment Status</th>
+											<th>Action</th>
+										</tr>
+									</thead>
+									<tbody>
+										@foreach($datas as $key => $data)
+										<tr>
+											<td>{{$key + 1}}</td>
+											<td>{{$data->product}}</td>
+											<td>{{$data->trackingID}} </td>
+											<td>{{$data->shippingType}}</td>
+											<td>{{$data->status}}</td>
+
+											@if($data->payment_status == 'Paid')
+
+											<td class="text-success">{{$data->payment_status}}</td>
+
+											@else
+
+											<td>{{$data->payment_status}}</td>
+
+											@endif
+											<td>
+												<a href="{{route('receipt', $data->id)}}" class="btn btn-success btn-sm">Reciept</a>
+
+												<a href="{{route('shipment_label', $data->id)}}" class="btn btn-info btn-sm">Label</a>
+												
+											</td>
+										</tr>
+										@endforeach
+									</tbody>
+								</table>
+
+
+							</div>
+						</div>
 
 					
 
