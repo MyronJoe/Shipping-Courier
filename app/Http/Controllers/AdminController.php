@@ -20,7 +20,9 @@ class AdminController extends Controller
     {
         $datas = Shipments::orderBy('id', 'desc')->paginate(5);
 
-        return view('admin.home', compact('datas'));
+        $shipments = Shipments::all()->count();
+
+        return view('admin.home', compact('datas', 'shipments'));
     }
 
     //shipments function
