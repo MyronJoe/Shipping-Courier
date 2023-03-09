@@ -174,19 +174,14 @@ class AdminController extends Controller
         return redirect('shipments')->with('message', 'Shipment Updated Successfully');
     }
 
-
     //Shipment Label Page
     public function Shipment_label($id)
     {
-
         $data = Shipments::findOrFail($id);
-
         return view('admin.label.label', compact('data'));
     }
 
-
-
-    //=====================================================>>>>Tracking Functions
+    //======================================>>>>Tracking Functions
 
     public function TrackingID(Request $request)
     {
