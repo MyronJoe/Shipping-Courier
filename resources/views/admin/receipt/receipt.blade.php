@@ -21,29 +21,25 @@
     <link rel="shortcut icon" href="backend/img/icons/icon-48x48.png" />
 
     <link rel="canonical" href="https://demo-basic.adminkit.io/" />
+    <script src="https://use.fontawesome.com/34a4d426e8.js"></script>
 
     <link href="backend/css/app.css" rel="stylesheet">
     <link href="backend/css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        .left{
-            background: #ddd;
-            margin-bottom: 15px;
+        .top{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ddd;
         }
-        .left h1{
-            font-size: 50px;
-            text-transform: uppercase;
-        }
-        .barcode{
-            width: 100%;
-            height: 150px;
-        }
-        .table2{
-            width: 100% !important;
-            overflow: auto !important;
+        .row2{
+            background-color: #ddd;
+            align-items: center;
         }
     </style>
+ 
 
 </head>
 
@@ -55,19 +51,46 @@
         <div class="main">
             <!-- NAV-TOP -->
 
-            <main class="content">
+            <main class="container">
 
                 
 
-                <div class="row px-2">
+                <div class="p-2">
 
-                    <div class="col-sm-12 col-md-3 left p-3">
+                    <div class="top p-3">
 
-                        <h1>Logistica</h1>
+                        <h1>Logistica <i class="fa fa-ship fa-1x"></i></h1>
+
+                        <div class="details text-right">
+                            <h4>Logistica</h4>
+                            <p>No 434 A1 Chime Avenue Enugu Nigeria</p>
+                            <p>logistica@gmail.com</p>
+                        </div>
 
                     </div>
 
-                    <div class="col-sm-12 col-md-9">
+                    <div class="row row2 p-3 mt-4">
+
+                        <div class="col-sm-6">
+                            <p>Name: <strong>{{$data->receiverName}}</strong> </p>
+                            <p>Email: <strong>{{$data->receiverEmail}}</strong> </p>
+                            <p>Phone: <strong>{{$data->receiverPhone}}</strong> </p>
+                            <p>Country: <strong>{{$data->receiverCountry}}</strong> </p>
+                            <p>Address: <strong>{{$data->receiverAddress}}</strong> </p>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <p><strong class="text-success">Invoice:</strong> <strong>#{{$data->invoice_no}}</strong> </p>
+                                <br>
+                            <p>Destination: <strong>{{$data->destination}}</strong> </p>
+                            <p>Delivery Date: <strong>{{$data->pickupDate}}</strong> </p>
+                            <p>Payment type: <strong>{{$data->payment_method}}</strong> </p>
+                            
+                        </div>
+
+                    </div>
+
+                    <div class="">
                         <div class="barcode-div">
                             <img class="barcode" src="assets/img/barcode1.png" alt="">
                         </div>
