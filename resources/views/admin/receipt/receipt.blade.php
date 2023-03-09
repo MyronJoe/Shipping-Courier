@@ -35,10 +35,6 @@
             background-color: #ddd;
         }
 
-        .row2 {
-            background-color: #ddd;
-            align-items: center;
-        }
 
         .total {
             display: flex;
@@ -46,106 +42,103 @@
             flex-direction: column;
             align-items: flex-end;
         }
+
+        th {
+            border: 4px solid white;
+            background: #28A745;
+            padding: 5px 10px;
+            color: white;
+        }
+
+        td {
+
+            padding: 5px 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
     </style>
 
 
 </head>
 
 <body>
-    <div class="wrapper">
-        <!-- NAV-SIDE -->
 
 
-        <div class="main">
-            <!-- NAV-TOP -->
+    <div class="p-2">
 
-            <main class="container p-2">
+        <div class="top p-3">
 
-                <div class="top p-3">
+            <h1>Logistica <i class="fa fa-ship fa-1x"></i></h1>
 
-                    <h1>Logistica <i class="fa fa-ship fa-1x"></i></h1>
-
-                    <div class="details text-right">
-                        <h4>Logistica</h4>
-                        <p>No 434 A1 Chime Avenue Enugu Nigeria</p>
-                        <p>logistica@gmail.com</p>
-                    </div>
-
-                </div>
-
-                <div class="row px-3 mt-4">
-
-                    <div class="col-sm-6 row2 pt-2">
-                        <p>Name: <strong>{{$data->receiverName}}</strong> </p>
-                        <p>Email: <strong>{{$data->receiverEmail}}</strong> </p>
-                        <p>Phone: <strong>{{$data->receiverPhone}}</strong> </p>
-                        <p>Country: <strong>{{$data->receiverCountry}}</strong> </p>
-                        <p>Address: <strong>{{$data->receiverAddress}}</strong> </p>
-                    </div>
-
-                    <div class="col-sm-6 row2 pt-2">
-                        <p><strong class="text-success">Invoice:</strong> <strong>#{{$data->invoice_no}}</strong> </p>
-                        <br>
-                        <p>Destination: <strong>{{$data->destination}}</strong> </p>
-                        <p>Delivery Date: <strong>{{$data->pickupDate}}</strong> </p>
-                        <p>Payment type: <strong>{{$data->payment_method}}</strong> </p>
-
-                    </div>
-
-                </div>
-
-                <div class="">
-                    <div class="barcode-div">
-                        <img class="barcode" src="assets/img/barcode1.png" alt="">
-                    </div>
-
-                    <div class="details px-2">
-                        <h4>Shipment</h4>
-
-
-                        <table class="table table-hover my-0">
-                            <thead>
-                                <tr>
-
-                                    <th>Tracking Number</th>
-                                    <th>Parcel</th>
-                                    <th>Quantity</th>
-                                    <th>Weight</th>
-                                    <th>Pickup Date</th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                                <tr>
-                                    <td class="text-danger">{{$data->trackingID}}</td>
-                                    <td>{{$data->product}}</td>
-                                    <td>{{$data->quality}} </td>
-                                    <td>{{$data->weight}}</td>
-                                    <td>{{$data->pickupDate}}</td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-
-                    </div>
-                </div>
-
-                <div class="total mt-4">
-
-                    <h4 class="mb-3"><span class="text-success">Subtotal: </span>${{$data->amount}}</h4>
-
-                    <h4 class="mb-3"><span class="text-success">Total: </span>${{$data->amount * $data->quality}}</h4>
-
-                    <h4 class="mb-3"><span class="text-success">Payment Status: </span>{{$data->payment_status}}</h4>
-
-                </div>
-
-            </main>
-
+            <div class="details text-right">
+                <h4>Logistica</h4>
+                <p>No 434 A1 Chime Avenue Enugu Nigeria</p>
+                <p>logistica@gmail.com</p>
+            </div>
 
         </div>
+
+        <div class="top mt-4 p-3">
+
+            <div class="">
+                <p>Name: <strong>{{$data->receiverName}}</strong> </p>
+                <p>Email: <strong>{{$data->receiverEmail}}</strong> </p>
+                <p>Phone: <strong>{{$data->receiverPhone}}</strong> </p>
+                <p>Country: <strong>{{$data->receiverCountry}}</strong> </p>
+                <p>Address: <strong>{{$data->receiverAddress}}</strong> </p>
+            </div>
+
+            <div class="text-right">
+                <p><strong class="text-success">Invoice:</strong> <strong>#{{$data->invoice_no}}</strong> </p>
+                <br>
+                <p>Destination: <strong>{{$data->destination}}</strong> </p>
+                <p>Delivery Date: <strong>{{$data->pickupDate}}</strong> </p>
+                <p>Payment type: <strong>{{$data->payment_method}}</strong> </p>
+
+            </div>
+
+        </div>
+
+        <div class="mt-3">
+            <div class="details px-2">
+                <h4>Shipment</h4>
+
+
+                <table>
+                    <tr>
+                        <th>Tracking Number</th>
+                        <th>Parcel</th>
+                        <th>Quantity</th>
+                        <th>Weight</th>
+                        <th>Pickup Date</th>
+                    </tr>
+                    <tr>
+                        <td class="text-danger">{{$data->trackingID}}</td>
+                        <td>{{$data->product}}</td>
+                        <td>{{$data->quality}} </td>
+                        <td>{{$data->weight}}</td>
+                        <td>{{$data->pickupDate}}</td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+
+        <div class="total mt-4">
+
+            <h4 class="mb-3"><span class="text-success">Subtotal: </span>${{$data->amount}}</h4>
+
+            <h4 class="mb-3"><span class="text-success">Total: </span>${{$data->amount * $data->quality}}</h4>
+
+            <h4 class="mb-3"><span class="text-success">Payment Status: </span>{{$data->payment_status}}</h4>
+
+        </div>
+
     </div>
+
 
     <script src="backend/js/app.js"></script>
 
