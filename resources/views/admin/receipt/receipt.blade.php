@@ -18,12 +18,12 @@
 
     <!-- STYLES -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="shortcut icon" href="../backend/img/icons/icon-48x48.png" />
+    <link rel="shortcut icon" href="backend/img/icons/icon-48x48.png" />
 
     <link rel="canonical" href="https://demo-basic.adminkit.io/" />
 
-    <link href="../backend/css/app.css" rel="stylesheet">
-    <link href="../backend/css/style.css" rel="stylesheet">
+    <link href="backend/css/app.css" rel="stylesheet">
+    <link href="backend/css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
@@ -50,11 +50,10 @@
 <body>
     <div class="wrapper">
         <!-- NAV-SIDE -->
-        @include('admin.includes.sidebar')
+
 
         <div class="main">
             <!-- NAV-TOP -->
-            @include('admin.includes.nav')
 
             <main class="content">
 
@@ -70,7 +69,7 @@
 
                     <div class="col-sm-12 col-md-9">
                         <div class="barcode-div">
-                            <img class="barcode" src="../assets/img/barcode1.png" alt="">
+                            <img class="barcode" src="assets/img/barcode1.png" alt="">
                         </div>
 
                         <div class="details px-2">
@@ -145,11 +144,11 @@
 
             </main>
             <!-- FOOTER -->
-            @include('admin.includes.footer')
+
         </div>
     </div>
 
-    <script src="../backend/js/app.js"></script>
+    <script src="backend/js/app.js"></script>
 
 
 </body>
