@@ -96,6 +96,42 @@
                         </div>
 
                         <div class="details px-2">
+                            <h4>Shipment</h4>
+
+
+                            <table class="table table-hover my-0">
+									<thead>
+										<tr>
+											
+											<th>Tracking Number</th>
+											<th>Product</th>
+											<th>Origin</th>
+											<th>Destination</th>
+											<th>Shipping Type</th>
+											<th>Pickup Date</th>
+											<th>Status</th>
+											
+										</tr>
+									</thead>
+									<tbody>
+								
+										<tr>
+											
+											<td class="text-danger">{{$data->trackingID}}</td>
+											<td>{{$data->product}}</td>
+											<td>{{$data->origin}} </td>
+											<td>{{$data->destination}}</td>
+											<td>{{$data->shippingType}}</td>
+											<td>{{$data->pickupDate}}</td>
+											<td>{{$data->status}}</td>
+											
+										</tr>
+									
+									</tbody>
+								</table>
+
+
+
                             <h4>{{$data->trackingID}}</h4>
 
 
@@ -126,34 +162,7 @@
 
                                 <h1 class="my-2 mx-3">Parcel Details</h1>
 
-								<table class="table table-hover my-0">
-									<thead>
-										<tr>
-											
-											<th>Product</th>
-											<th>Origin</th>
-											<th>Destination</th>
-											<th>Shipping Type</th>
-											<th>Pickup Date</th>
-											<th>Status</th>
-											
-										</tr>
-									</thead>
-									<tbody>
 								
-										<tr>
-											
-											<td>{{$data->product}}</td>
-											<td>{{$data->origin}} </td>
-											<td>{{$data->destination}}</td>
-											<td>{{$data->shippingType}}</td>
-											<td>{{$data->pickupDate}}</td>
-											<td>{{$data->status}}</td>
-											
-										</tr>
-									
-									</tbody>
-								</table>
 
 
 							</div>
