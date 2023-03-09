@@ -188,9 +188,9 @@ class AdminController extends Controller
     {
         $data = Shipments::findOrFail($id);
 
-        $pdf = PDF::loadview('admin.label.label', compact('data'));
+        $pdf = PDF::loadView('admin.receipt.receipt', compact('data'));
 
-        // return 
+        return $pdf->download('receipt.pdf');
     }
 
     //======================================>>>>Tracking Functions
