@@ -104,27 +104,21 @@
 										<tr>
 											
 											<th>Tracking Number</th>
-											<th>Product</th>
-											<th>Origin</th>
-											<th>Destination</th>
-											<th>Shipping Type</th>
+											<th>Parcel</th>
+											<th>Quantity</th>
+											<th>Weight</th>
 											<th>Pickup Date</th>
-											<th>Status</th>
 											
 										</tr>
 									</thead>
 									<tbody>
 								
 										<tr>
-											
 											<td class="text-danger">{{$data->trackingID}}</td>
 											<td>{{$data->product}}</td>
-											<td>{{$data->origin}} </td>
-											<td>{{$data->destination}}</td>
-											<td>{{$data->shippingType}}</td>
-											<td>{{$data->pickupDate}}</td>
-											<td>{{$data->status}}</td>
-											
+											<td>{{$data->quality}} </td>
+											<td>{{$data->weight}}</td>
+											<td>{{$data->pickupDate}}</td>	
 										</tr>
 									
 									</tbody>
