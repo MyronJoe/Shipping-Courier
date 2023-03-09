@@ -39,6 +39,13 @@
             background-color: #ddd;
             align-items: center;
         }
+
+        .total {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: flex-end;
+        }
     </style>
 
 
@@ -126,17 +133,16 @@
 
                 <div class="total mt-4">
 
-                <h4 class="mb-3"><span class="text-success">Subtotal: </span>${{$data->amount}}</h4>
+                    <h4 class="mb-3"><span class="text-success">Subtotal: </span>${{$data->amount}}</h4>
 
-                <h4 class="mb-3"><span class="text-success">Total: </span>${{$data->amount * $data->quality}}</h4>
+                    <h4 class="mb-3"><span class="text-success">Total: </span>${{$data->amount * $data->quality}}</h4>
 
-                <h4 class="mb-3"><span class="text-success">Payment Status: </span>{{$data->payment_status}}</h4>
-
+                    <h4 class="mb-3"><span class="text-success">Payment Status: </span>{{$data->payment_status}}</h4>
 
                 </div>
 
             </main>
-            
+
 
         </div>
     </div>
