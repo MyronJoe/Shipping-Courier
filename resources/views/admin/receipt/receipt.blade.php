@@ -28,18 +28,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        .top{
+        .top {
             display: flex;
             justify-content: space-between;
             align-items: center;
             background-color: #ddd;
         }
-        .row2{
+
+        .row2 {
             background-color: #ddd;
             align-items: center;
         }
     </style>
- 
+
 
 </head>
 
@@ -51,125 +52,91 @@
         <div class="main">
             <!-- NAV-TOP -->
 
-            <main class="container">
+            <main class="container p-2">
 
-                
+                <div class="top p-3">
 
-                <div class="p-2">
+                    <h1>Logistica <i class="fa fa-ship fa-1x"></i></h1>
 
-                    <div class="top p-3">
-
-                        <h1>Logistica <i class="fa fa-ship fa-1x"></i></h1>
-
-                        <div class="details text-right">
-                            <h4>Logistica</h4>
-                            <p>No 434 A1 Chime Avenue Enugu Nigeria</p>
-                            <p>logistica@gmail.com</p>
-                        </div>
-
-                    </div>
-
-                    <div class="row row2 p-3 mt-4">
-
-                        <div class="col-sm-6">
-                            <p>Name: <strong>{{$data->receiverName}}</strong> </p>
-                            <p>Email: <strong>{{$data->receiverEmail}}</strong> </p>
-                            <p>Phone: <strong>{{$data->receiverPhone}}</strong> </p>
-                            <p>Country: <strong>{{$data->receiverCountry}}</strong> </p>
-                            <p>Address: <strong>{{$data->receiverAddress}}</strong> </p>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <p><strong class="text-success">Invoice:</strong> <strong>#{{$data->invoice_no}}</strong> </p>
-                                <br>
-                            <p>Destination: <strong>{{$data->destination}}</strong> </p>
-                            <p>Delivery Date: <strong>{{$data->pickupDate}}</strong> </p>
-                            <p>Payment type: <strong>{{$data->payment_method}}</strong> </p>
-                            
-                        </div>
-
-                    </div>
-
-                    <div class="">
-                        <div class="barcode-div">
-                            <img class="barcode" src="assets/img/barcode1.png" alt="">
-                        </div>
-
-                        <div class="details px-2">
-                            <h4>Shipment</h4>
-
-
-                            <table class="table table-hover my-0">
-									<thead>
-										<tr>
-											
-											<th>Tracking Number</th>
-											<th>Parcel</th>
-											<th>Quantity</th>
-											<th>Weight</th>
-											<th>Pickup Date</th>
-											
-										</tr>
-									</thead>
-									<tbody>
-								
-										<tr>
-											<td class="text-danger">{{$data->trackingID}}</td>
-											<td>{{$data->product}}</td>
-											<td>{{$data->quality}} </td>
-											<td>{{$data->weight}}</td>
-											<td>{{$data->pickupDate}}</td>	
-										</tr>
-									
-									</tbody>
-								</table>
-
-
-
-                            <h4>{{$data->trackingID}}</h4>
-
-
-                            <h1>Order Information</h1>
-
-                            <p>Tracking Number: <strong>{{$data->trackingID}}</strong> </p>
-                            <p>Reference Number: <strong>{{$data->ref_no}}</strong> </p>
-
-                            <hr>
-
-                            <h1>Shipping To:</h1>
-
-                            <p>Name: <strong>{{$data->receiverName}}</strong> </p>
-                            <p>Email: <strong>{{$data->receiverEmail}}</strong> </p>
-                            <p>Country: <strong>{{$data->receiverCountry}}</strong> </p>
-                            <p>Address: <strong>{{$data->receiverAddress}}</strong> </p>
-
-                            <hr>
-
-                            <h1>Shipping From:</h1>
-
-                            <p>Name: <strong>{{$data->senderName}}</strong> </p>
-                            <p>Email: <strong>{{$data->senderEmail}}</strong> </p>
-
-                            <br>
-
-                            <div class="table2 card flex-fill">
-
-                                <h1 class="my-2 mx-3">Parcel Details</h1>
-
-								
-
-
-							</div>
-
-                        </div>
+                    <div class="details text-right">
+                        <h4>Logistica</h4>
+                        <p>No 434 A1 Chime Avenue Enugu Nigeria</p>
+                        <p>logistica@gmail.com</p>
                     </div>
 
                 </div>
 
-    
+                <div class="row px-3 mt-4">
+
+                    <div class="col-sm-6 row2 pt-2">
+                        <p>Name: <strong>{{$data->receiverName}}</strong> </p>
+                        <p>Email: <strong>{{$data->receiverEmail}}</strong> </p>
+                        <p>Phone: <strong>{{$data->receiverPhone}}</strong> </p>
+                        <p>Country: <strong>{{$data->receiverCountry}}</strong> </p>
+                        <p>Address: <strong>{{$data->receiverAddress}}</strong> </p>
+                    </div>
+
+                    <div class="col-sm-6 row2 pt-2">
+                        <p><strong class="text-success">Invoice:</strong> <strong>#{{$data->invoice_no}}</strong> </p>
+                        <br>
+                        <p>Destination: <strong>{{$data->destination}}</strong> </p>
+                        <p>Delivery Date: <strong>{{$data->pickupDate}}</strong> </p>
+                        <p>Payment type: <strong>{{$data->payment_method}}</strong> </p>
+
+                    </div>
+
+                </div>
+
+                <div class="">
+                    <div class="barcode-div">
+                        <img class="barcode" src="assets/img/barcode1.png" alt="">
+                    </div>
+
+                    <div class="details px-2">
+                        <h4>Shipment</h4>
+
+
+                        <table class="table table-hover my-0">
+                            <thead>
+                                <tr>
+
+                                    <th>Tracking Number</th>
+                                    <th>Parcel</th>
+                                    <th>Quantity</th>
+                                    <th>Weight</th>
+                                    <th>Pickup Date</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td class="text-danger">{{$data->trackingID}}</td>
+                                    <td>{{$data->product}}</td>
+                                    <td>{{$data->quality}} </td>
+                                    <td>{{$data->weight}}</td>
+                                    <td>{{$data->pickupDate}}</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+                <div class="total mt-4">
+
+                <h4 class="mb-3"><span class="text-success">Subtotal: </span>${{$data->amount}}</h4>
+
+                <h4 class="mb-3"><span class="text-success">Total: </span>${{$data->amount * $data->quality}}</h4>
+
+                <h4 class="mb-3"><span class="text-success">Payment Status: </span>{{$data->payment_status}}</h4>
+
+
+                </div>
 
             </main>
-            <!-- FOOTER -->
+            
 
         </div>
     </div>

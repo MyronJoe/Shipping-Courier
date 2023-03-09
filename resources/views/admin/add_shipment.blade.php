@@ -254,8 +254,8 @@
                                             <label for="payment_status" class="my-2">Payment Status</label>
                                             <select name="payment_status" id="payment_status" class="form-control">
                                                 <option value=""></option>
-                                                <option value="air freight">Paid</option>
-                                                <option value="air freight">Not Paid</option>
+                                                <option value="Paid">Paid</option>
+                                                <option value="Not Paid">Not Paid</option>
                                             </select>
                                         </div>
 
