@@ -18,6 +18,12 @@
 	<!-- STYLES -->
 	@include('admin.includes.styles')
 
+	<style>
+		.flex-fill{
+			overflow: auto;
+		}
+	</style>
+
 </head>
 
 <body>
