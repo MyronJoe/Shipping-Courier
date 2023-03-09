@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 use RealRashid\SweetAlert\Facades\Alert;
 
+use PDF;
+
 // use RealRashid\Swee
 class AdminController extends Controller
 {
@@ -179,6 +181,16 @@ class AdminController extends Controller
     {
         $data = Shipments::findOrFail($id);
         return view('admin.label.label', compact('data'));
+    }
+
+    //Download Receipt PDF Page
+    public function Receipt($id)
+    {
+        $data = Shipments::findOrFail($id);
+
+        $pdf = PDF::loadview('admin.label.label', compact('data'));
+
+        // return 
     }
 
     //======================================>>>>Tracking Functions
