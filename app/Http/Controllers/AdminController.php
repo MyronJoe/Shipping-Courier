@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Shipments;
 
+use App\Models\User;
+
 use Illuminate\Http\Request;
 
 use RealRashid\SweetAlert\Facades\Alert;
@@ -22,9 +24,11 @@ class AdminController extends Controller
 
         $shipments = Shipments::all()->count();
 
+        $users = User::all()->count();
+
         $paid = Shipments::where('payment_status', '=', 'Paid')->get()->count();
 
-        return view('admin.home', compact('datas', 'shipments', 'paid'));
+        return view('admin.home', compact('datas', 'shipments', 'paid', 'users'));
     }
 
     //shipments function
