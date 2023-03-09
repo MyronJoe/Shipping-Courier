@@ -171,6 +171,10 @@ class AdminController extends Controller
         $data->status = $request->status;
         $data->destination = $request->destination;
 
+        $data->payment_method = $request->payment_method;
+        $data->payment_status = $request->payment_status;
+        $data->amount = $request->amount;
+
         $data->save();
 
         return redirect('shipments')->with('message', 'Shipment Updated Successfully');
