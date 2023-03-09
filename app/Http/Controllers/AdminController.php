@@ -22,7 +22,9 @@ class AdminController extends Controller
 
         $shipments = Shipments::all()->count();
 
-        return view('admin.home', compact('datas', 'shipments'));
+        $paid = Shipments::where('payment_status', '=', 'Paid')->get()->count();
+
+        return view('admin.home', compact('datas', 'shipments', 'paid'));
     }
 
     //shipments function
