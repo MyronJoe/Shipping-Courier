@@ -99,5 +99,7 @@ Route::post('/update_shipment/{id}', [AdminController::class, 'Update_shipment']
 
 Route::get('/label/{id}', [AdminController::class, 'Shipment_label'])->name('shipment_label');
 
+Route::get('/receipt/{id}', [AdminController::class, 'Receipt'])->name('receipt');
+
 //Tracking Routes
 Route::post('/tracking_product', [AdminController::class, 'TrackingID'])->name('tracking_product');
