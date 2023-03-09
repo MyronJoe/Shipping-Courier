@@ -253,15 +253,15 @@
                                         <div class="input col-sm-12 col-md-5 mb-3">
                                             <label for="payment_status" class="my-2">Payment Status</label>
                                             <select name="payment_status" id="payment_status" class="form-control">
-                                                <option value="air freight">Air Freight</option>
-                                                <option value="air freight">Road Freight</option>
-                                                <option value="air freight">Air Freight</option>
+                                                <option value="{{ $data->payment_status }}">{{ $data->payment_status }}</option>
+                                                <option value="Paid">Paid</option>
+                                                <option value="Not Paid">Not Paid</option>
                                             </select>
                                         </div>
 
                                         <div class="input col-sm-12 col-md-2">
                                             <label for="amount" class="my-2">Amount</label>
-                                            <input type="text" class="form-control mb-3" name="amount" id="amount">
+                                            <input type="text" class="form-control mb-3" name="amount" id="amount" value="{{ $data->amount }}">
                                         </div>
                                     </div>
 
