@@ -13,7 +13,7 @@
                         </div>
                         <h4 class="mb-3">Air Freight</h4>
                         <p>Fastest method of delivery for your time sensitive packages.</p>
-                        <a class="btn-slide mt-2" href="/services/air"><i class="fa fa-arrow-right"></i><span>Read More</span></a>
+                        <a class="btn-slide mt-2" href="/services/air"><i class="fa fa-arrow-right"></i><span class="read">Read More</span></a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
@@ -23,7 +23,7 @@
                         </div>
                         <h4 class="mb-3">Warehouse Solutions</h4>
                         <p>Warehousing and storage solutions you can trust.</p>
-                        <a class="btn-slide mt-2" href="/services/warehouse"><i class="fa fa-arrow-right"></i><span>Read More</span></a>
+                        <a class="btn-slide mt-2" href="/services/warehouse"><i class="fa fa-arrow-right"></i><span class="read">Read More</span></a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
