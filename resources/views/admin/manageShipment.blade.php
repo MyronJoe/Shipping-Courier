@@ -13,6 +13,8 @@
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 	<title>Dashboard</title>
 
 	<!-- STYLES -->
@@ -81,7 +83,7 @@
 												
 												<a href="{{route('edit_shipment', $data->id)}}" class="btn btn-primary btn-sm">Edit</a>
 
-												<a href="{{route('delete_shipment', $data->id)}}" class="btn btn-danger btn-sm">Delete</a>
+												<a href="{{route('delete_shipment', $data->id)}}" class="btn btn-danger btn-sm" onclick="confirmation(event)">Delete</a>
 											</td>
 										</tr>
 										@endforeach
@@ -104,6 +106,28 @@
 			@include('admin.includes.footer')
 		</div>
 	</div>
+
+	<script>
+
+        function confirmation(ev){
+
+        ev.preventDefault()
+        var UrlToRedirect = ev.currentTarget.getAttribute('href')
+        swal({
+            title: "Are you sure you want to delete this shipment",
+            text: "You will not be able to revert this!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        }).then((willCancel) => {
+            if(willCancel){
+                window.location.href = UrlToRedirect
+            }
+        })
+
+        }
+        
+    </script>
 
 	<script src="backend/js/app.js"></script>
 
