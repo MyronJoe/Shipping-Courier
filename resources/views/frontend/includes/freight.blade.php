@@ -45,7 +45,7 @@
                 <div class="price-item text-center">
                     <div class="border-bottom p-3 mb-3">
                         <p><i class="fa fa-ship fa-3x text-primary"></i></p>
-                        <a href="/warehouse">
+                        <a href="/services/warehouse">
                             <h5 class="text-primary">WAREHOUSE</h5>
                         </a>
                     </div>
