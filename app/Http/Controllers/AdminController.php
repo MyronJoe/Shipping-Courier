@@ -118,7 +118,10 @@ class AdminController extends Controller
 
         $data->delete();
 
-        return redirect()->route('shipments')->with('message', 'Shipment Deleted Successfully');
+        // return redirect()->route('shipments')->with('message', 'Shipment Deleted Successfully');
+
+        Alert::success('Shipment Deleted Successfully');
+        return redirect()->route('shipments');
     }
 
     //Edit shipment Page
