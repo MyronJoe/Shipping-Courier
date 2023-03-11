@@ -467,6 +467,10 @@ h4 {
     transform: scale(1.1);
 }
 
+.read{
+    top: 1px;
+}
+
 .service-item a.btn-slide,
 .price-item a.btn-slide,
 .team-item div.btn-slide {

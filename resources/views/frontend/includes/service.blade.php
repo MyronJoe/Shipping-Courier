@@ -33,7 +33,7 @@
                         </div>
                         <h4 class="mb-3">Road Freight</h4>
                         <p>Most cost-effective method of delivering your package.</p>
-                        <a class="btn-slide mt-2" href="/services/road"><i class="fa fa-arrow-right"></i><span>Read More</span></a>
+                        <a class="btn-slide mt-2" href="/services/road"><i class="fa fa-arrow-right"></i><span class="read">Read More</span></a>
                     </div>
                 </div>
 
