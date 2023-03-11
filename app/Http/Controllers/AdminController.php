@@ -108,7 +108,10 @@ class AdminController extends Controller
 
         $data->save();
 
-        return redirect('shipments')->with('message', 'Shipment Added Successfully');
+        // return redirect('shipments')->with('message', 'Shipment Added Successfully');
+
+        Alert::success('Shipment Added Successfully');
+        return redirect('shipments');
     }
 
     //Delete shipment function
