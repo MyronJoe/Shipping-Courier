@@ -29,7 +29,7 @@
                 <div class="price-item text-center">
                     <div class="border-bottom p-3 mb-3">
                         <i style="transform: scaleX(-1)" class="fa fa-truck fa-3x text-primary mb-3"></i>
-                        <a href="/road">
+                        <a href="/services/road">
                             <h5 class="text-primary">ROAD FREIGHT</h5>
                         </a>
                     </div>
