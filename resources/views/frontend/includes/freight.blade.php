@@ -13,7 +13,7 @@
                 <div class="price-item text-center">
                     <div class="border-bottom p-3 mb-3">
                         <p><i class="fa fa-plane fa-3x text-primary"></i></p>
-                        <a href="/air">
+                        <a href="/services/air">
                             <h5 class="text-primary">AIR FREIGHT</h5>
                         </a>
                     </div>
