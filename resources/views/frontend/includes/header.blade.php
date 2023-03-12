@@ -12,12 +12,12 @@
     <a href="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
         <h2 class="mb-2 logos">Logistica <i class="fa fa-ship fa-1x text-primary"></i></h2>
     </a>
- 
+
     <input type="checkbox" id="show-menu">
 
     <label for="show-menu" class="menu-icon me-4 navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" style="cursor:pointer;">
         <span style="font-size: 25px;" class="fa fa-bars"></span>
-    </label> 
+    </label>
 
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
@@ -34,10 +34,10 @@
                     @if (Route::has('login'))
 
                     @auth
-                        <a href="{{url('logout')}}" class="dropdown-item">Logout</a>
-                        
+                    <a href="{{url('logout')}}" class="dropdown-item">Logout</a>
+
                     @else
-                        <a href="{{url('login')}}" class="dropdown-item">Login</a>
+                    <a href="{{url('login')}}" class="dropdown-item">Login</a>
                     @endauth
                     @endif
 
@@ -45,7 +45,7 @@
             </div>
             <a href="/tracking" class="nav-item nav-link">Tracking</a>
             <a href="/contact" class="nav-item nav-link">Contact</a>
-            
+
         </div>
     </div>
 </nav>
