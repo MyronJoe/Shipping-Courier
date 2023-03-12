@@ -12,11 +12,7 @@
     <a href="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
         <h2 class="mb-2 logos">Logistica <i class="fa fa-ship fa-1x text-primary"></i></h2>
     </a>
-    
-    <!-- <p class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-    </p> -->
-
+ 
     <input type="checkbox" id="show-menu">
 
     <label for="show-menu" class="menu-icon me-4 navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" style="cursor:pointer;">
