@@ -121,8 +121,6 @@ class AdminController extends Controller
 
         $data->delete();
 
-        // return redirect()->route('shipments')->with('message', 'Shipment Deleted Successfully');
-
         Alert::success('Shipment Deleted Successfully');
         return redirect()->route('shipments');
     }
@@ -193,8 +191,6 @@ class AdminController extends Controller
 
         $data->save();
 
-        // return redirect('shipments')->with('message', 'Shipment Updated Successfully');
-        
         Alert::success('Shipment Updated Successfully');
         return redirect('shipments');
     }
