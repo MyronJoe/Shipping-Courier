@@ -213,6 +213,7 @@ class AdminController extends Controller
 
         $pdf = PDF::loadView('admin.receipt.receipt', compact('data'));
 
+
         return $pdf->download('receipt.pdf');
 
         // return view('admin.receipt.receipt', compact('data'));

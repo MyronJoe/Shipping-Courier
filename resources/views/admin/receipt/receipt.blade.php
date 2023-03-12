@@ -25,7 +25,6 @@
 
     <link href="backend/css/app.css" rel="stylesheet">
     <link href="backend/css/style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
         .top {
@@ -140,7 +139,7 @@
     </div>
 
 
-    <script src="backend/js/app.js"></script>
+    <!-- <script src="backend/js/app.js"></script> -->
 
 
 </body>
