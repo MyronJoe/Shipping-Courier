@@ -72,7 +72,6 @@ class DynamicController extends Controller
         return redirect('all_cat');
     }
 
-
     //edit page category
     public function Edit_cat($id, Request $request)
     {
@@ -115,6 +114,4 @@ class DynamicController extends Controller
             return redirect('all_cat');
         }
     }
-
-    
 }
