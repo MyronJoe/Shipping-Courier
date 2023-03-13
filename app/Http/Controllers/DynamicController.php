@@ -16,7 +16,6 @@ class DynamicController extends Controller
         $data = page_cats::orderBy('id', 'desc')->get();
 
         return view('admin.addpage.all_cat', compact('data'));
-
     }
 
 
@@ -31,19 +30,7 @@ class DynamicController extends Controller
     {
         $data = new page_cats;
 
-        // $request->validate([
-        //     'name' => 'required|string',
-        //     'slug' => 'required|string',
-        // ]);
-
-        // $data->name = $request->name;
-        // $data->slug = $request->slug;
-
-        // $data->save();
-
-        // Alert::success('Category Added Successfully');
-        // return redirect('all_cat');
-
+        //checks if the name and slug already exist
         $name = page_cats::where('name', $request->name)->exists();
         $slug = page_cats::where('slug', $request->slug)->exists();
 
@@ -52,24 +39,22 @@ class DynamicController extends Controller
             //checks if name already exist
             Alert::error('Name Already Exist');
             return redirect()->back();
-        }
-        elseif ($slug) {
+        } elseif ($slug) {
             //checks if slug already exist
             Alert::error('Slug Already Exist');
             return redirect()->back();
-        }
-        else {
+        } else {
             //validate and updates the database
             $request->validate([
                 'name' => 'required|string',
                 'slug' => 'required|string',
             ]);
-    
+
             $data->name = $request->name;
             $data->slug = $request->slug;
-    
+
             $data->save();
-    
+
             Alert::success('Category Added Successfully');
             return redirect('all_cat');
         }
@@ -110,26 +95,26 @@ class DynamicController extends Controller
             //checks if name already exist
             Alert::error('Name Already Exist');
             return redirect()->back();
-        }
-        elseif ($slug && $data->slug !== $request->slug) {
+        } elseif ($slug && $data->slug !== $request->slug) {
             //checks if slug already exist
             Alert::error('Slug Already Exist');
             return redirect()->back();
-        }
-        else {
+        } else {
             //validate and updates the database
             $request->validate([
                 'name' => 'required|string',
                 'slug' => 'required|string',
             ]);
-    
+
             $data->name = $request->name;
             $data->slug = $request->slug;
-    
+
             $data->save();
-    
+
             Alert::success('Category Updated Successfully');
             return redirect('all_cat');
         }
     }
+
+    
 }
