@@ -114,4 +114,11 @@ class DynamicController extends Controller
             return redirect('all_cat');
         }
     }
+
+
+    //Create Page
+    public function Createpage()
+    {
+        return view('admin.addpage.page.createpage');
+    }
 }

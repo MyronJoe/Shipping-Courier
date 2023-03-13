@@ -34,8 +34,8 @@
 			</li>
 
 			<li class="sidebar-item">
-				<a class="sidebar-link" href="ui-typography.html">
-					<i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Typography</span>
+				<a class="sidebar-link" href="{{ url('createpage')}}">
+					<i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Page</span>
 				</a>
 			</li>
 
