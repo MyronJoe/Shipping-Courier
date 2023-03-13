@@ -73,7 +73,6 @@ class AdminController extends Controller
 
         ]);
 
-        $abrv = 'TR';
 
         $data = new Shipments;
 

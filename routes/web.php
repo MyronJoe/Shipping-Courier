@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AdminController;
 
+use App\Http\Controllers\DynamicController;
+
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
@@ -101,5 +103,13 @@ Route::get('/label/{id}', [AdminController::class, 'Shipment_label'])->name('shi
 
 Route::get('/receipt/{id}', [AdminController::class, 'Receipt'])->name('receipt');
 
+
 //Tracking Routes
 Route::post('/tracking_product', [AdminController::class, 'TrackingID'])->name('tracking_product');
+
+
+//Dynamics Routes
+
+Route::get('/page_cat', [DynamicController::class, 'Page_cat'])->name('page_cat');
+
+Route::post('/addCat', [DynamicController::class, 'AddCat'])->name('addCat');
