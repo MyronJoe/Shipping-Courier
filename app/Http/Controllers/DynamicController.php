@@ -31,18 +31,48 @@ class DynamicController extends Controller
     {
         $data = new page_cats;
 
-        $request->validate([
-            'name' => 'required|string',
-            'slug' => 'required|string',
-        ]);
+        // $request->validate([
+        //     'name' => 'required|string',
+        //     'slug' => 'required|string',
+        // ]);
 
-        $data->name = $request->name;
-        $data->slug = $request->slug;
+        // $data->name = $request->name;
+        // $data->slug = $request->slug;
 
-        $data->save();
+        // $data->save();
 
-        Alert::success('Category Added Successfully');
-        return redirect('all_cat');
+        // Alert::success('Category Added Successfully');
+        // return redirect('all_cat');
+
+        $name = page_cats::where('name', $request->name)->exists();
+        $slug = page_cats::where('slug', $request->slug)->exists();
+
+
+        if ($name) {
+            //checks if name already exist
+            Alert::error('Name Already Exist');
+            return redirect()->back();
+        }
+        elseif ($slug) {
+            //checks if slug already exist
+            Alert::error('Slug Already Exist');
+            return redirect()->back();
+        }
+        else {
+            //validate and updates the database
+            $request->validate([
+                'name' => 'required|string',
+                'slug' => 'required|string',
+            ]);
+    
+            $data->name = $request->name;
+            $data->slug = $request->slug;
+    
+            $data->save();
+    
+            Alert::success('Category Added Successfully');
+            return redirect('all_cat');
+        }
     }
 
 
@@ -64,5 +94,42 @@ class DynamicController extends Controller
         $data = page_cats::findOrFail($id);
 
         return view('admin.addpage.edit_cat', compact('data'));
+    }
+
+    //Update Page category
+    public function UpdateCat($id, Request $request)
+    {
+        $data = page_cats::findOrFail($id);
+
+        //checks if the name and slug already exist && != any other name and slug in the database b4 adding to database
+        $name = page_cats::where('name', $request->name)->exists();
+        $slug = page_cats::where('slug', $request->slug)->exists();
+
+
+        if ($name && $data->name !== $request->name) {
+            //checks if name already exist
+            Alert::error('Name Already Exist');
+            return redirect()->back();
+        }
+        elseif ($slug && $data->slug !== $request->slug) {
+            //checks if slug already exist
+            Alert::error('Slug Already Exist');
+            return redirect()->back();
+        }
+        else {
+            //validate and updates the database
+            $request->validate([
+                'name' => 'required|string',
+                'slug' => 'required|string',
+            ]);
+    
+            $data->name = $request->name;
+            $data->slug = $request->slug;
+    
+            $data->save();
+    
+            Alert::success('Category Updated Successfully');
+            return redirect('all_cat');
+        }
     }
 }

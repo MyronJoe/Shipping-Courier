@@ -118,3 +118,5 @@ Route::post('/addCat', [DynamicController::class, 'AddCat'])->name('addCat');
 Route::get('/delete_cat/{id}', [DynamicController::class, 'Delete_cat'])->name('delete_cat');
 
 Route::get('/edit_cat/{id}', [DynamicController::class, 'Edit_cat'])->name('edit_cat');
+
+Route::post('/updateCat/{id}', [DynamicController::class, 'UpdateCat'])->name('updateCat');

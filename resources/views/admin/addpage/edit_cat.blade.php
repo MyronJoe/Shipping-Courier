@@ -33,7 +33,7 @@
 
 
 
-            <form action="{{url('updateCat')}}" method="POST" novalidate>
+            <form action="{{url('updateCat', $data->id)}}" method="POST" novalidate>
 
                 @csrf
 
