@@ -118,6 +118,14 @@ class DynamicController extends Controller
     }
 
 
+    //All Pages
+    public function Allpages()
+    {
+        $data = pages::orderBy('id', 'desc')->get();
+
+        return view('admin.addpage.page.allpages', compact('data'));
+    }
+
     //Create Page
     public function Createpage()
     {
@@ -143,6 +151,6 @@ class DynamicController extends Controller
         $data->save();
 
         Alert::success('Page Created Successfully');
-        return redirect('all_cat');
+        return redirect('allpages');
     }
 }

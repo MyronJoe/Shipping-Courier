@@ -38,7 +38,7 @@
                         <div class="mb-3">
                             <h1 class="h3 d-inline align-middle">Add Page</h1>
 
-                            <a href="{{url('all_cat')}}" class="btn btn-primary" style="float: right;">All Pages</a>
+                            <a href="{{url('allpages')}}" class="btn btn-primary" style="float: right;">All Pages</a>
                         </div>
                         <hr>
                         <div>

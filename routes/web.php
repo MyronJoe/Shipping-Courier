@@ -121,6 +121,8 @@ Route::get('/edit_cat/{id}', [DynamicController::class, 'Edit_cat'])->name('edit
 
 Route::post('/updateCat/{id}', [DynamicController::class, 'UpdateCat'])->name('updateCat');
 
+Route::get('/allpages', [DynamicController::class, 'Allpages'])->name('allpages');
+
 Route::get('/createpage', [DynamicController::class, 'Createpage'])->name('createpage');
 
 Route::post('/addPage', [DynamicController::class, 'AddPage'])->name('addPage');

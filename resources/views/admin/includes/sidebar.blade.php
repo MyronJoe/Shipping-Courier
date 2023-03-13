@@ -34,7 +34,7 @@
 			</li>
 
 			<li class="sidebar-item">
-				<a class="sidebar-link" href="{{ url('createpage')}}">
+				<a class="sidebar-link" href="{{ url('allpages')}}">
 					<i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Page</span>
 				</a>
 			</li>
