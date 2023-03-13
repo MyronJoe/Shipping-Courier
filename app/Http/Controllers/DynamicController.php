@@ -56,4 +56,13 @@ class DynamicController extends Controller
         Alert::success('Category Deleted Successfully');
         return redirect('all_cat');
     }
+
+
+    //edit page category
+    public function Edit_cat($id, Request $request)
+    {
+        $data = page_cats::findOrFail($id);
+
+        return view('admin.addpage.edit_cat');
+    }
 }
