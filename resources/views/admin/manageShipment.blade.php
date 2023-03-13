@@ -21,7 +21,7 @@
 	@include('admin.includes.styles')
 
 	<style>
-		.flex-fill{
+		.flex-fill {
 			overflow: auto;
 		}
 	</style>
@@ -80,7 +80,7 @@
 												<a href="{{route('receipt', $data->id)}}" class="btn btn-success btn-sm">Reciept</a>
 
 												<a href="{{route('shipment_label', $data->id)}}" class="btn btn-info btn-sm">Label</a>
-												
+
 												<a href="{{route('edit_shipment', $data->id)}}" class="btn btn-primary btn-sm">Edit</a>
 
 												<a href="{{route('delete_shipment', $data->id)}}" class="btn btn-danger btn-sm" onclick="confirmation(event)">Delete</a>
@@ -108,26 +108,24 @@
 	</div>
 
 	<script>
+		function confirmation(ev) {
 
-        function confirmation(ev){
+			ev.preventDefault()
+			var UrlToRedirect = ev.currentTarget.getAttribute('href')
+			swal({
+				title: "Are you sure you want to delete this shipment",
+				text: "You will not be able to revert this!",
+				icon: "warning",
+				buttons: true,
+				dangerMode: true,
+			}).then((willCancel) => {
+				if (willCancel) {
+					window.location.href = UrlToRedirect
+				}
+			})
 
-        ev.preventDefault()
-        var UrlToRedirect = ev.currentTarget.getAttribute('href')
-        swal({
-            title: "Are you sure you want to delete this shipment",
-            text: "You will not be able to revert this!",
-            icon: "warning",
-            buttons: true,
-            dangerMode: true,
-        }).then((willCancel) => {
-            if(willCancel){
-                window.location.href = UrlToRedirect
-            }
-        })
-
-        }
-        
-    </script>
+		}
+	</script>
 
 	<script src="backend/js/app.js"></script>
 

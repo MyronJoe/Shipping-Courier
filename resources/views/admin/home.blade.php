@@ -27,7 +27,8 @@
 		.text-danger {
 			color: red !important;
 		}
-		.flex-fill{
+
+		.flex-fill {
 			overflow: auto;
 		}
 	</style>
