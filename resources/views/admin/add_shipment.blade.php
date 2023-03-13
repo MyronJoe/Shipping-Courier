@@ -238,7 +238,7 @@
                                 <div class="input col-sm-12  px-4">
 
                                     <div class="row divider">
-                                        
+
 
                                         <div class="input col-sm-12 col-md-5 mb-3">
                                             <label for="payment_method" class="my-2">Payment Method</label>
