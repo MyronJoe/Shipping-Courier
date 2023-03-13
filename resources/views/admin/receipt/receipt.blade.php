@@ -138,10 +138,6 @@
 
     </div>
 
-
-    <!-- <script src="backend/js/app.js"></script> -->
-
-
 </body>
 
 </html>
