@@ -10,6 +10,16 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class DynamicController extends Controller
 {
+    //Show all category
+    public function All_cat()
+    {
+        $data = page_cats::orderBy('id', 'desc')->get();
+
+        return view('admin.addpage.all_cat', compact('data'));
+
+    }
+
+
     //add_page category page
     public function Page_cat()
     {
@@ -32,6 +42,6 @@ class DynamicController extends Controller
         $data->save();
 
         Alert::success('Category Added Successfully');
-        return redirect('shipments');
+        return redirect('all_cat');
     }
 }

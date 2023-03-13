@@ -109,7 +109,10 @@ Route::post('/tracking_product', [AdminController::class, 'TrackingID'])->name('
 
 
 //Dynamics Routes
+Route::get('/all_cat', [DynamicController::class, 'All_cat'])->name('all_cat');
 
 Route::get('/page_cat', [DynamicController::class, 'Page_cat'])->name('page_cat');
 
 Route::post('/addCat', [DynamicController::class, 'AddCat'])->name('addCat');
+
+Route::post('/delete_cat', [DynamicController::class, 'Delete_cat'])->name('delete_cat');

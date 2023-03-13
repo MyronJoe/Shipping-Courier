@@ -28,8 +28,8 @@
 
 
 			<li class="sidebar-item">
-				<a class="sidebar-link" href="{{ url('page_cat')}}">
-					<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Add Page Category</span>
+				<a class="sidebar-link" href="{{ url('all_cat')}}">
+					<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Page Category</span>
 				</a>
 			</li>
 

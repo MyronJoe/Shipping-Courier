@@ -36,7 +36,7 @@
                         <div class="mb-3">
                             <h1 class="h3 d-inline align-middle">Add Page Category</h1>
 
-                            <a href="{{url('addCat')}}" class="btn btn-primary" style="float: right;">All Categories</a>
+                            <a href="{{url('all_cat')}}" class="btn btn-primary" style="float: right;">All Categories</a>
                         </div>
                         <hr>
                         <div>
