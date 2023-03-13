@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\page_cats;
 
+use App\Models\pages;
+
 use Illuminate\Http\Request;
 
 use RealRashid\SweetAlert\Facades\Alert;
@@ -120,5 +122,27 @@ class DynamicController extends Controller
     public function Createpage()
     {
         return view('admin.addpage.page.createpage');
+    }
+
+    //Add Page Function
+    public function AddPage(Request $request)
+    {
+        $data = new pages;
+
+        $request->validate([
+            'name' => 'required|string',
+            'slug' => 'required|string',
+            'body' => 'required|string',
+        ]);
+
+        $data->pagecat_id = '1';
+        $data->name = $request->name;
+        $data->slug = $request->slug;
+        $data->body = $request->body;
+
+        $data->save();
+
+        Alert::success('Page Created Successfully');
+        return redirect('all_cat');
     }
 }
