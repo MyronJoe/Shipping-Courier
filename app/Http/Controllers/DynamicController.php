@@ -63,6 +63,6 @@ class DynamicController extends Controller
     {
         $data = page_cats::findOrFail($id);
 
-        return view('admin.addpage.edit_cat');
+        return view('admin.addpage.edit_cat', compact('data'));
     }
 }
