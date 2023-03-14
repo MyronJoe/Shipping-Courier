@@ -154,6 +154,8 @@
 
 	<script src="backend/js/app.js"></script>
 
+	<script src="backend/js/sweetalert2.all.min.js"></script>
+
 
 </body>
 
