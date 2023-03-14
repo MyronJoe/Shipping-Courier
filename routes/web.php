@@ -131,4 +131,4 @@ Route::get('/delete_page/{id}', [DynamicController::class, 'Delete_page'])->name
 
 Route::get('/edit_page/{id}', [DynamicController::class, 'Edit_page'])->name('edit_page');
 
-Route::get('/updatePage/{id}', [DynamicController::class, 'UpdatePage'])->name('updatePage');
+Route::post('/updatePage/{id}', [DynamicController::class, 'UpdatePage'])->name('updatePage');
