@@ -166,8 +166,31 @@ class DynamicController extends Controller
     }
 
     //Edit_page function
-    public function Edit_page()
+    public function Edit_page($id)
     {
-        return view('admin.addpage.page.editpage');
+        $data = pages::findOrFail($id);
+
+        return view('admin.addpage.page.editpage', compact('data'));
+    }
+
+    //UpdatePage function
+    public function UpdatePage($id, Request $request)
+    {
+        $data = pages::findOrFail($id);
+
+        $request->validate([
+            'name' => 'required|string',
+            'slug' => 'required|string',
+            'body' => 'required|string',
+        ]);
+
+        $data->name = $request->name;
+        $data->slug = $request->slug;
+        $data->body = $request->body;
+
+        $data->save();
+
+        Alert::success('Page Deleted Successfully');
+        return redirect('allpages');
     }
 }

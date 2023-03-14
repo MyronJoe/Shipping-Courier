@@ -35,7 +35,7 @@
 
 
 
-            <form action="{{url('updatePage')}}" method="POST" novalidate>
+            <form action="{{url('updatePage', $data->id)}}" method="POST" novalidate>
 
                 @csrf
 
