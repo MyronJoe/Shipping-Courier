@@ -128,3 +128,5 @@ Route::get('/createpage', [DynamicController::class, 'Createpage'])->name('creat
 Route::post('/addPage', [DynamicController::class, 'AddPage'])->name('addPage');
 
 Route::get('/delete_page/{id}', [DynamicController::class, 'Delete_page'])->name('delete_page');
+
+Route::get('/edit_page/{id}', [DynamicController::class, 'Edit_page'])->name('edit_page');

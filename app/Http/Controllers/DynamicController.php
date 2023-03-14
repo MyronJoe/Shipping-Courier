@@ -164,4 +164,10 @@ class DynamicController extends Controller
         Alert::success('Page Deleted Successfully');
         return redirect('allpages');
     }
+
+    //Edit_page function
+    public function Edit_page()
+    {
+        return view('admin.addpage.page.editpage');
+    }
 }

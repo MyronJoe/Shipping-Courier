@@ -75,7 +75,7 @@
 											<td>{{$data->slug}} </td>
 											<td>{!! Str::limit($data->body, 40, '...') !!}</td>
 											<td>
-												<a href="{{route('edit_cat', $data->id)}}" class="btn btn-primary btn-sm">Edit</a>
+												<a href="{{route('edit_page', $data->id)}}" class="btn btn-primary btn-sm">Edit</a>
 
 												<a href="{{route('delete_page', $data->id)}}" class="btn btn-danger btn-sm" onclick="confirmation(event)">Delete</a>
 											</td>

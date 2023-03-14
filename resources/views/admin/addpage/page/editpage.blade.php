@@ -28,7 +28,7 @@
 
 
 
-            <form action="{{url('addPage')}}" method="POST" novalidate>
+            <form action="{{url('updatePage')}}" method="POST" novalidate>
 
                 @csrf
 
@@ -36,7 +36,7 @@
                     <div class="container-fluid p-0">
 
                         <div class="mb-3">
-                            <h1 class="h3 d-inline align-middle">Add Page</h1>
+                            <h1 class="h3 d-inline align-middle">Update Page</h1>
 
                             <a href="{{url('allpages')}}" class="btn btn-primary" style="float: right;">All Pages</a>
                         </div>
@@ -78,7 +78,7 @@
                     </div>
                 </main>
 
-                <input type="submit" name="add_shipment" value="Add Page" class="btn btn-primary my-3 " style="display:inline-block; margin-left:50px;">
+                <input type="submit" name="add_shipment" value="Update Page" class="btn btn-primary my-3 " style="display:inline-block; margin-left:50px;">
 
             </form>
 
