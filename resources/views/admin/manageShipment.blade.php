@@ -15,6 +15,7 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<title>Dashboard</title>
 
 	<!-- STYLES -->
@@ -108,21 +109,45 @@
 	</div>
 
 	<script>
-		function confirmation(ev) {
+		function confirmation(e) {
 
-			ev.preventDefault()
-			var UrlToRedirect = ev.currentTarget.getAttribute('href')
-			swal({
-				title: "Are you sure you want to delete this shipment",
-				text: "You will not be able to revert this!",
-				icon: "warning",
-				buttons: true,
-				dangerMode: true,
-			}).then((willCancel) => {
-				if (willCancel) {
-					window.location.href = UrlToRedirect
-				}
-			})
+			// ev.preventDefault()
+			// var UrlToRedirect = ev.currentTarget.getAttribute('href')
+			// swal({
+			// 	title: "Are you sure you want to delete this shipment",
+			// 	text: "You will not be able to revert this!",
+			// 	icon: "warning",
+			// 	buttons: true,
+			// 	dangerMode: true,
+			// }).then((willCancel) => {
+			// 	if (willCancel) {
+			// 		window.location.href = UrlToRedirect
+			// 	}
+			// })
+
+			e.preventDefault();
+            var link = e.currentTarget.getAttribute('href');
+
+
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "To Deleted This Data!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                cancelButtonText: 'No',
+                confirmButtonText: 'Yes, Delete!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire(
+                        'Deleted!',
+                        'Data Has Been Deleted Successfully.',
+                        'success'
+                    )
+                    window.location.href = link
+                }
+            });
 
 		}
 	</script>
