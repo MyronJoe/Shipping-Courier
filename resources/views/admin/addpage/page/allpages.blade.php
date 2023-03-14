@@ -77,7 +77,7 @@
 											<td>
 												<a href="{{route('edit_cat', $data->id)}}" class="btn btn-primary btn-sm">Edit</a>
 
-												<a href="{{route('delete_cat', $data->id)}}" class="btn btn-danger btn-sm" onclick="confirmation(event)">Delete</a>
+												<a href="{{route('delete_page', $data->id)}}" class="btn btn-danger btn-sm" onclick="confirmation(event)">Delete</a>
 											</td>
 										</tr>
 										@endforeach

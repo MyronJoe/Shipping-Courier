@@ -153,4 +153,15 @@ class DynamicController extends Controller
         Alert::success('Page Created Successfully');
         return redirect('allpages');
     }
+
+    //delete page funtion
+    public function Delete_page($id)
+    {
+        $data = pages::findOrFail($id);
+
+        $data->delete();
+
+        Alert::success('Page Deleted Successfully');
+        return redirect('allpages');
+    }
 }
