@@ -70,7 +70,7 @@ class DynamicController extends Controller
 
         $data->delete();
 
-        Alert::success('Category Deleted Successfully');
+        // Alert::success('Category Deleted Successfully');
         return redirect('all_cat');
     }
 
@@ -161,7 +161,7 @@ class DynamicController extends Controller
 
         $data->delete();
 
-        Alert::success('Page Deleted Successfully');
+        // Alert::success('Page Deleted Successfully');
         return redirect('allpages');
     }
 
@@ -190,7 +190,7 @@ class DynamicController extends Controller
 
         $data->save();
 
-        Alert::success('Page Deleted Successfully');
+        Alert::success('Page Updated Successfully');
         return redirect('allpages');
     }
 }
