@@ -36,29 +36,26 @@ class DynamicController extends Controller
             //checks if name already exist
             Alert::error('Name Already Exist');
             return redirect()->back();
-        }
-        else {
+        } else {
             //validate and updates the database
             $pageCat_id = page_cats::insertGetId([
                 'name' => $request->name,
                 'slug' => strtolower(str_replace(' ', '-', $request->name)),
                 'created_at' => Carbon::now(),
-    
+
             ]);
-    
+
             pages::insert([
                 'pagecat_id' => $pageCat_id,
                 'name' => $request->name,
                 'slug' => strtolower(str_replace(' ', '-', $request->name)),
                 'created_at' => Carbon::now(),
             ]);
-    
-    
+
+
             Alert::success('Category Added Successfully');
             return redirect('all_cat');
         }
-
-        
     }
 
     //delete category funtion
@@ -72,6 +69,14 @@ class DynamicController extends Controller
         return redirect('all_cat');
     }
 
+    //Edit_page function
+    public function Add_page($id)
+    {
+        $data = page_cats::findOrFail($id);
+
+        return view('admin.addpage.page.createbody', compact('data'));
+    }
+
 
     //CreateBody function
     public function CreateBody($id, Request $request)
@@ -83,9 +88,10 @@ class DynamicController extends Controller
 
 
         pages::where('pagecat_id', $id)->update([
-           'body' => $request->body,
-        ]);
 
+            'body' => $request->body,
+
+        ]);
 
         Alert::success('Page Updated Successfully');
         return redirect('allpages');
@@ -99,7 +105,7 @@ class DynamicController extends Controller
         return view('admin.addpage.page.allpages', compact('data'));
     }
 
-    
+
     //Edit_page function
     public function Edit_page($id)
     {
@@ -128,14 +134,14 @@ class DynamicController extends Controller
     }
 
 
-     //delete page funtion
-     public function Delete_page($id)
-     {
-         $data = pages::findOrFail($id);
- 
-         $data->delete();
- 
-         // Alert::success('Page Deleted Successfully');
-         return redirect('allpages');
-     }
+    //delete page funtion
+    public function Delete_page($id)
+    {
+        $data = pages::findOrFail($id);
+
+        $data->delete();
+
+        // Alert::success('Page Deleted Successfully');
+        return redirect('allpages');
+    }
 }

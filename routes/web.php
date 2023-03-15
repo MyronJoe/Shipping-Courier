@@ -117,6 +117,8 @@ Route::post('/createbody/{id}', [DynamicController::class, 'CreateBody'])->name(
 
 Route::get('/allpages', [DynamicController::class, 'Allpages'])->name('allpages');
 
+Route::get('/add_page/{id}', [DynamicController::class, 'Add_page'])->name('add_page');
+
 Route::get('/edit_page/{id}', [DynamicController::class, 'Edit_page'])->name('edit_page');
 
 Route::post('/updatebody/{id}', [DynamicController::class, 'Updatebody'])->name('updatebody');
