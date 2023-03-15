@@ -61,7 +61,6 @@ class DynamicController extends Controller
         
     }
 
-
     //delete category funtion
     public function Delete_cat($id)
     {
@@ -74,38 +73,52 @@ class DynamicController extends Controller
     }
 
 
-    //delete page funtion
-    public function Delete_page($id)
+    //CreateBody function
+    public function CreateBody($id, Request $request)
     {
-        $data = pages::findOrFail($id);
+        // dd($request->all());
+        $request->validate([
+            'body' => 'required|string',
+        ]);
 
-        $data->delete();
 
-        // Alert::success('Page Deleted Successfully');
+        pages::where('pagecat_id', $id)->update([
+           'body' => $request->body,
+        ]);
+
+
+        Alert::success('Page Updated Successfully');
         return redirect('allpages');
     }
 
+    //Allpages function
+    public function Allpages()
+    {
+        $data = pages::orderBy('id', 'desc')->get();
+
+        return view('admin.addpage.page.allpages', compact('data'));
+    }
+
+    
     //Edit_page function
     public function Edit_page($id)
     {
-        $data = pages::where('pagecat_id', $id)->get();
+        $data = pages::findOrFail($id);
 
-        return view('admin.addpage.page.editpage', compact('data'));
+        return view('admin.addpage.page.editbody', compact('data'));
     }
 
-    //UpdatePage function
-    public function UpdatePage($id, Request $request)
+
+
+    // //UpdateBody function
+    public function Updatebody($id, Request $request)
     {
         $data = pages::findOrFail($id);
 
         $request->validate([
-            'name' => 'required|string',
-            'slug' => 'required|string',
             'body' => 'required|string',
         ]);
 
-        $data->name = $request->name;
-        $data->slug = $request->slug;
         $data->body = $request->body;
 
         $data->save();
@@ -113,4 +126,16 @@ class DynamicController extends Controller
         Alert::success('Page Updated Successfully');
         return redirect('allpages');
     }
+
+
+     //delete page funtion
+     public function Delete_page($id)
+     {
+         $data = pages::findOrFail($id);
+ 
+         $data->delete();
+ 
+         // Alert::success('Page Deleted Successfully');
+         return redirect('allpages');
+     }
 }

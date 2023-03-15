@@ -113,12 +113,24 @@ Route::get('/all_cat', [DynamicController::class, 'All_cat'])->name('all_cat');
 
 Route::post('/addCat', [DynamicController::class, 'AddCat'])->name('addCat');
 
-Route::get('/delete_cat/{id}', [DynamicController::class, 'Delete_cat'])->name('delete_cat');
+Route::post('/createbody/{id}', [DynamicController::class, 'CreateBody'])->name('update_page');
 
 Route::get('/allpages', [DynamicController::class, 'Allpages'])->name('allpages');
 
-Route::get('/delete_page/{id}', [DynamicController::class, 'Delete_page'])->name('delete_page');
-
 Route::get('/edit_page/{id}', [DynamicController::class, 'Edit_page'])->name('edit_page');
 
-Route::post('/updatePage/{id}', [DynamicController::class, 'UpdatePage'])->name('updatePage');
+Route::post('/updatebody/{id}', [DynamicController::class, 'Updatebody'])->name('updatebody');
+
+
+Route::get('/delete_cat/{id}', [DynamicController::class, 'Delete_cat'])->name('delete_cat');
+
+
+
+Route::get('/delete_page/{id}', [DynamicController::class, 'Delete_page'])->name('delete_page');
+
+
+
+
+
+
+

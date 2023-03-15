@@ -47,9 +47,8 @@
 
 					<div class="mb-1">
 
-						<h1 class="h3 d-inline align-middle"><strong>Page Categories</strong></h1>
+						<h1 class="h3 d-inline align-middle"><strong>All Pages</strong></h1>
 
-						<a href="{{url('createpage')}}" class="btn btn-primary" style="float: right;">Add Page</a>
 					</div>
 
 					<div class="row mt-3">

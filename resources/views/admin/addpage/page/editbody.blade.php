@@ -20,6 +20,7 @@
     <link href="../backend/css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
+
     <script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
 
 </head>
@@ -35,7 +36,7 @@
 
 
 
-            <form action="{{url('updatePage')}}" method="POST" novalidate>
+            <form action="{{url('updatebody', $data->id)}}" method="POST" novalidate>
 
                 @csrf
 
@@ -53,7 +54,7 @@
                                 <div class="input col-sm-12 mt-1">
                                     <div>
                                         <label for="editor" class="my-2">Body</label>
-                                        <textarea name="body" id="editor1"class="form-control" cols="30" rows="10"></textarea>
+                                        <textarea name="body" id="editor1" value="" class="form-control" cols="30" rows="10">{{ $data->body }}</textarea>
                                         @error('body')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
