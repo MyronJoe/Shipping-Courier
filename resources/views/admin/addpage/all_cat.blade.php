@@ -47,15 +47,35 @@
 
 						<h1 class="h3 d-inline align-middle"><strong>Page Categories</strong></h1>
 
-						<a href="{{url('page_cat')}}" class="btn btn-primary" style="float: right;">Add Page Category</a>
+						<hr>
 					</div>
 
 					<div class="row mt-3">
 
-						<br>
-						<br>
-						<div class="col-12 d-flex">
-							<div class="card flex-fill">
+
+						<div class="input col-sm-12 col-md-6 col-lg-4">
+							<form action="{{url('addCat')}}" method="POST" novalidate>
+
+								@csrf
+
+								<div>
+									<label for="name" class="my-2">Name</label>
+									<input type="text" class="form-control" placeholder="Add Category" name="name" id="name" value="{{ old('name') }}">
+									@error('name')
+									<span class="text-danger">{{ $message }}</span>
+									@enderror
+								</div>
+
+
+								<input type="submit" name="add_shipment" value="Add Category" class="btn btn-primary my-3 ">
+
+
+							</form>
+						</div>
+
+						
+						<div class="col-sm-12 col-md-6 col-lg-8 d-flex my-4">
+							<div class="card flex-fill ">
 
 								<table class="table table-hover my-0">
 									<thead>
@@ -113,28 +133,28 @@
 			// })
 
 			e.preventDefault();
-            var link = e.currentTarget.getAttribute('href');
+			var link = e.currentTarget.getAttribute('href');
 
 
-            Swal.fire({
-                title: 'Are you sure?',
-                text: "To Deleted This Data!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                cancelButtonText: 'No',
-                confirmButtonText: 'Yes, Delete!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire(
-                        'Deleted!',
-                        'Data Has Been Deleted Successfully.',
-                        'success'
-                    )
-                    window.location.href = link
-                }
-            });
+			Swal.fire({
+				title: 'Are you sure?',
+				text: "To Deleted This Data!",
+				icon: 'warning',
+				showCancelButton: true,
+				confirmButtonColor: '#3085d6',
+				cancelButtonColor: '#d33',
+				cancelButtonText: 'No',
+				confirmButtonText: 'Yes, Delete!'
+			}).then((result) => {
+				if (result.isConfirmed) {
+					Swal.fire(
+						'Deleted!',
+						'Data Has Been Deleted Successfully.',
+						'success'
+					)
+					window.location.href = link
+				}
+			});
 
 		}
 	</script>
