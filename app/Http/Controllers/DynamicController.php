@@ -74,42 +74,6 @@ class DynamicController extends Controller
     }
 
 
-    //All Pages
-    public function Allpages()
-    {
-        $data = pages::orderBy('id', 'desc')->get();
-
-        return view('admin.addpage.page.allpages', compact('data'));
-    }
-
-    //Create Page
-    public function Createpage()
-    {
-        return view('admin.addpage.page.createpage');
-    }
-
-    //Add Page Function
-    public function AddPage(Request $request)
-    {
-        $data = new pages;
-
-        $request->validate([
-            'name' => 'required|string',
-            'slug' => 'required|string',
-            'body' => 'required|string',
-        ]);
-
-        $data->pagecat_id = '1';
-        $data->name = $request->name;
-        $data->slug = $request->slug;
-        $data->body = $request->body;
-
-        $data->save();
-
-        Alert::success('Page Created Successfully');
-        return redirect('allpages');
-    }
-
     //delete page funtion
     public function Delete_page($id)
     {
@@ -124,7 +88,7 @@ class DynamicController extends Controller
     //Edit_page function
     public function Edit_page($id)
     {
-        $data = pages::findOrFail($id);
+        $data = pages::where('pagecat_id', $id)->get();
 
         return view('admin.addpage.page.editpage', compact('data'));
     }
