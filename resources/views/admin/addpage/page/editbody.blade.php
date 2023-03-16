@@ -74,8 +74,8 @@
     </div>
 
     <script>
-    CKEDITOR.replace('editor1');
-</script>
+        CKEDITOR.replace('editor1');
+    </script>
 
     <script src="../backend/js/app.js"></script>
 
