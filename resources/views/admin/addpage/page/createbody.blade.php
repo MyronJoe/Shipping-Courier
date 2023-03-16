@@ -53,7 +53,7 @@
                                 <div class="input col-sm-12 mt-1">
                                     <div>
                                         <label for="editor" class="my-2">Body</label>
-                                        <textarea name="body" id="editor1"class="form-control" cols="30" rows="10"></textarea>
+                                        <textarea name="body" id="editor1" class="form-control" cols="30" rows="10"></textarea>
                                         @error('body')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -73,8 +73,8 @@
     </div>
 
     <script>
-    CKEDITOR.replace('editor1');
-</script>
+        CKEDITOR.replace('editor1');
+    </script>
 
     <script src="../backend/js/app.js"></script>
 
