@@ -73,7 +73,7 @@
 							</form>
 						</div>
 
-						
+
 						<div class="col-sm-12 col-md-6 col-lg-8 d-flex my-4">
 							<div class="card flex-fill ">
 
