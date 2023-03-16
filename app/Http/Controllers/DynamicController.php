@@ -64,8 +64,7 @@ class DynamicController extends Controller
         $data = page_cats::findOrFail($id);
 
         $data->delete();
-
-        // Alert::success('Category Deleted Successfully');
+        
         return redirect('all_cat');
     }
 
@@ -141,7 +140,6 @@ class DynamicController extends Controller
 
         $data->delete();
 
-        // Alert::success('Page Deleted Successfully');
         return redirect('allpages');
     }
 }
