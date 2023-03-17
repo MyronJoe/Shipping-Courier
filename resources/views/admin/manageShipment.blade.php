@@ -111,20 +111,6 @@
 	<script>
 		function confirmation(e) {
 
-			// ev.preventDefault()
-			// var UrlToRedirect = ev.currentTarget.getAttribute('href')
-			// swal({
-			// 	title: "Are you sure you want to delete this shipment",
-			// 	text: "You will not be able to revert this!",
-			// 	icon: "warning",
-			// 	buttons: true,
-			// 	dangerMode: true,
-			// }).then((willCancel) => {
-			// 	if (willCancel) {
-			// 		window.location.href = UrlToRedirect
-			// 	}
-			// })
-
 			e.preventDefault();
             var link = e.currentTarget.getAttribute('href');
 
