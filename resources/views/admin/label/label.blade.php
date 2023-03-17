@@ -27,19 +27,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        .left{
+        .left {
             background: #ddd;
             margin-bottom: 15px;
         }
-        .left h1{
+
+        .left h1 {
             font-size: 50px;
             text-transform: uppercase;
         }
-        .barcode{
+
+        .barcode {
             width: 100%;
             height: 150px;
         }
-        .table2{
+
+        .table2 {
             width: 100% !important;
             overflow: auto !important;
         }
@@ -58,7 +61,7 @@
 
             <main class="content">
 
-                
+
 
                 <div class="row px-2">
 
@@ -104,44 +107,44 @@
 
                                 <h1 class="my-2 mx-3">Parcel Details</h1>
 
-								<table class="table table-hover my-0">
-									<thead>
-										<tr>
-											
-											<th>Product</th>
-											<th>Origin</th>
-											<th>Destination</th>
-											<th>Shipping Type</th>
-											<th>Pickup Date</th>
-											<th>Status</th>
-											
-										</tr>
-									</thead>
-									<tbody>
-								
-										<tr>
-											
-											<td>{{$data->product}}</td>
-											<td>{{$data->origin}} </td>
-											<td>{{$data->destination}}</td>
-											<td>{{$data->shippingType}}</td>
-											<td>{{$data->pickupDate}}</td>
-											<td>{{$data->status}}</td>
-											
-										</tr>
-									
-									</tbody>
-								</table>
+                                <table class="table table-hover my-0">
+                                    <thead>
+                                        <tr>
+
+                                            <th>Product</th>
+                                            <th>Origin</th>
+                                            <th>Destination</th>
+                                            <th>Shipping Type</th>
+                                            <th>Pickup Date</th>
+                                            <th>Status</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr>
+
+                                            <td>{{$data->product}}</td>
+                                            <td>{{$data->origin}} </td>
+                                            <td>{{$data->destination}}</td>
+                                            <td>{{$data->shippingType}}</td>
+                                            <td>{{$data->pickupDate}}</td>
+                                            <td>{{$data->status}}</td>
+
+                                        </tr>
+
+                                    </tbody>
+                                </table>
 
 
-							</div>
+                            </div>
 
                         </div>
                     </div>
 
                 </div>
 
-    
+
 
             </main>
             <!-- FOOTER -->
