@@ -112,28 +112,28 @@
 		function confirmation(e) {
 
 			e.preventDefault();
-            var link = e.currentTarget.getAttribute('href');
+			var link = e.currentTarget.getAttribute('href');
 
 
-            Swal.fire({
-                title: 'Are you sure?',
-                text: "To Deleted This Data!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                cancelButtonText: 'No',
-                confirmButtonText: 'Yes, Delete!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire(
-                        'Deleted!',
-                        'Data Has Been Deleted Successfully.',
-                        'success'
-                    )
-                    window.location.href = link
-                }
-            });
+			Swal.fire({
+				title: 'Are you sure?',
+				text: "To Deleted This Data!",
+				icon: 'warning',
+				showCancelButton: true,
+				confirmButtonColor: '#3085d6',
+				cancelButtonColor: '#d33',
+				cancelButtonText: 'No',
+				confirmButtonText: 'Yes, Delete!'
+			}).then((result) => {
+				if (result.isConfirmed) {
+					Swal.fire(
+						'Deleted!',
+						'Data Has Been Deleted Successfully.',
+						'success'
+					)
+					window.location.href = link
+				}
+			});
 
 		}
 	</script>
