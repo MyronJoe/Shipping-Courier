@@ -67,10 +67,6 @@ Route::middleware([
     })->name('dashboard');
 });
 
-// Route::group(['middleware' => ['auth']], function() {
-//     Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
-// });
-
 
 Route::get('/logout', [LogoutController::class, 'logout']);
 
