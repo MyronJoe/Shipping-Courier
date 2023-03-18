@@ -129,10 +129,3 @@ Route::get('/delete_cat/{id}', [DynamicController::class, 'Delete_cat'])->name('
 
 
 Route::get('/delete_page/{id}', [DynamicController::class, 'Delete_page'])->name('delete_page');
-
-
-
-
-
-
-
