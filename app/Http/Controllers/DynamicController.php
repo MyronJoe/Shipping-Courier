@@ -64,7 +64,7 @@ class DynamicController extends Controller
         $data = page_cats::findOrFail($id);
 
         $data->delete();
-        
+
         return redirect('all_cat');
     }
 
