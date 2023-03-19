@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
             $table->text('about')->nullable();
+            $table->text('image')->nullable();
             $table->text('icon')->nullable();
             $table->text('title')->nullable();
             $table->text('sub_title')->nullable();
