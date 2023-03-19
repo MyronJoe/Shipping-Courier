@@ -73,9 +73,6 @@ Route::get('/logout', [LogoutController::class, 'logout']);
 Route::get('/Home', [HomeController::class, 'redirect']);
 
 
-
-
-
 //Admin Routes
 
 Route::get('/admin', [AdminController::class, 'admin']);
