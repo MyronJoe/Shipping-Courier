@@ -11,7 +11,7 @@ use App\Models\headers;
 use App\Models\page_cats;
 
 use App\Models\pages;
-
+use App\Models\service;
 use Carbon\Carbon;
 
 use Illuminate\Http\Request;
@@ -361,4 +361,42 @@ class DynamicController extends Controller
         Alert::success('About Us Updated Successfully');
         return redirect('about');
     }
+
+    //All Service
+    public function service()
+    {
+        $header = headers::orderBy('id', 'desc')->get();
+
+        $data = service::orderBy('id', 'desc')->get();
+
+        return view('admin.site.service.service', compact('data', 'header'));
+    }
+
+
+    //update_service
+    public function update_service($id, Request $request)
+    {
+        $request->validate([
+            'service_title' => 'required|string',
+            'service_sub' => 'required|string',
+            
+        ]);
+
+        $data = headers::findOrFail($id);
+
+        $data->service_title = $request->service_title;
+        $data->service_sub = $request->service_sub;
+
+        $data->save();
+
+        Alert::success('Service Title Updated Successfully');
+        return redirect('service');
+    }
+
+    //add_service page
+    public function add_service()
+    {
+        return view('admin.site.service.add_service');
+    }
+    
 }

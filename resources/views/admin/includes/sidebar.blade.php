@@ -57,8 +57,8 @@
 			</li>
 
 			<li class="sidebar-item">
-				<a class="sidebar-link" href="icons-feather.html">
-					<i class="align-middle" data-feather="coffee"></i> <span class="align-middle">Icons</span>
+				<a class="sidebar-link" href="{{ url('service')}}">
+					<i class="align-middle" data-feather="coffee"></i> <span class="align-middle">Services</span>
 				</a>
 			</li>
 

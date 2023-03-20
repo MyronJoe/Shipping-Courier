@@ -151,3 +151,10 @@ Route::post('/update_about/{id}', [DynamicController::class, 'update_about'])->n
 Route::post('/update_aboutus', [DynamicController::class, 'update_aboutus'])->name('update_aboutus');
 
 Route::post('/update_about_us/{id}', [DynamicController::class, 'update_about_us'])->name('update_about_us');
+
+//service
+Route::get('/service', [DynamicController::class, 'service'])->name('service');
+
+Route::get('/add_service', [DynamicController::class, 'add_service'])->name('add_service');
+
+Route::post('/update_service/{id}', [DynamicController::class, 'update_service'])->name('update_service');
