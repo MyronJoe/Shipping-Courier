@@ -70,7 +70,7 @@
                             <div>
                                 <label for="image" class="my-2">Carousel Image</label>
                                 <br>
-                                <input type="file" name="image" id="image" value="{{ old('image') }}"><br>
+                                <input type="file" name="image" id="image" value="{{ old('image') }}" accept=".gif, .jpg, .png"><br>
                                 @error('image')
                                 <span class="text-danger">{{ $message }}</span>
                                 @enderror

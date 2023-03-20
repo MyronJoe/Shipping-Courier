@@ -75,15 +75,23 @@
 
                             <br>
                             <div>
-                                <label for="image" class="my-2">Carousel Image</label>
+
                                 <br>
-                                <input type="file" name="image" id="image" value="{{ old('image') }}"><br>
+                                <input type="file" name="image" id="image" value="{{ old('image') }}" accept=".gif, .jpg, .png"><br>
+
+                                <label for="image" class="my-2" style="background-image: url(../assets/img/{{$data->image}})">
+
+                                    <img style="width:150px; " src="../assets/img/{{$data->image}}" alt="{{$data->name}}">
+
+                                    <span>Update Carousel Image</span>
+                                </label>
+
                                 @error('image')
                                 <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
 
-                            <input type="submit" name="add_carousel" value="Add Carousel" class="btn btn-primary my-3 " >
+                            <input type="submit" name="add_carousel" value="Add Carousel" class="btn btn-primary my-3 ">
                         </div>
                     </div>
                 </main>
