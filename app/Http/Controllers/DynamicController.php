@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\carousel;
+
 use App\Models\page_cats;
 
 use App\Models\pages;
+
 use Carbon\Carbon;
+
 use Illuminate\Http\Request;
 
 use RealRashid\SweetAlert\Facades\Alert;
@@ -164,6 +168,22 @@ class DynamicController extends Controller
             'sub_title' => 'required|string',
             'image' => 'required',
         ]);
-        
+
+        $data = new carousel;
+
+        $data->title = $request->title;
+        $data->sub_title = $request->sub_title;
+
+        $imageName = time() . '_' . $request->image->getClientOriginalExtension();
+        $request->image->move('assets.img', $imageName);
+
+        $data->image = $imageName;
+
+        $data->save();
+
+        Alert::success('Category Added Successfully');
+        return redirect('carousel');
     }
+
+
 }
