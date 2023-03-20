@@ -20,6 +20,39 @@
     <link href="../backend/css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
+    <style>
+        .label img{
+            width: 100%;
+            height: 200px;
+            margin: auto;
+            object-fit: cover;
+            opacity: 0.7;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            transition: .6s ease-out;
+        }
+        .label img:hover{
+            opacity: 1;
+        }
+        .upload-sec{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        label span{
+            display: inline-block;
+            text-align: center;
+            background-color: #ddd;
+            width: 100%;
+            padding: 10px;
+
+        }
+        .label{
+            cursor: pointer;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -41,9 +74,9 @@
                     <div class="container-fluid p-0">
 
                         <div class="mb-3">
-                            <h1 class="h3 d-inline align-middle">Add Carousel</h1>
+                            <h1 class="h3 d-inline align-middle">Update Carousel</h1>
 
-                            <a href="{{url('carousel')}}" class="btn btn-primary" style="float: right;">All Carousel</a>
+                            <a href="{{url('update_carousel')}}" class="btn btn-primary" style="float: right;">All Carousel</a>
                         </div>
                         <hr>
                         <div>
@@ -73,15 +106,13 @@
                             </div>
 
 
-                            <br>
-                            <div>
+                            <div class="upload-sec">
 
-                                <br>
-                                <input type="file" name="image" id="image" value="{{ old('image') }}" accept=".gif, .jpg, .png"><br>
+                                <input type="file" name="image" style="display:none;" id="image" value="{{ old('image') }}" accept=".gif, .jpg, .png"><br>
 
-                                <label for="image" class="my-2" style="background-image: url(../assets/img/{{$data->image}})">
+                                <label for="image" class="my-2 label">
 
-                                    <img style="width:150px; " src="../assets/img/{{$data->image}}" alt="{{$data->name}}">
+                                    <img src="../assets/img/{{$data->image}}" alt="{{$data->name}}">
 
                                     <span>Update Carousel Image</span>
                                 </label>
@@ -91,7 +122,7 @@
                                 @enderror
                             </div>
 
-                            <input type="submit" name="add_carousel" value="Add Carousel" class="btn btn-primary my-3 ">
+                            <input type="submit" name="add_carousel" value="Update Carousel" class="btn btn-primary my-3 ">
                         </div>
                     </div>
                 </main>
