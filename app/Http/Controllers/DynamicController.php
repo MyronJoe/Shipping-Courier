@@ -205,7 +205,7 @@ class DynamicController extends Controller
     {
         $data = carousel::findOrFail($id);
 
-        return view('admin.addpage.page.editbody', compact('data')); 
+        return view('admin.site.carousel.editcarousel', compact('data')); 
     }
 
 
