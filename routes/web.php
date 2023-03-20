@@ -137,3 +137,7 @@ Route::post('/update_carousel/{id}', [DynamicController::class, 'update_carousel
 
 //about
 Route::get('/about', [DynamicController::class, 'about'])->name('about');
+
+Route::get('/add_about', [DynamicController::class, 'add_about'])->name('add_about');
+
+Route::post('/addAbout', [DynamicController::class, 'addAbout'])->name('addAbout');

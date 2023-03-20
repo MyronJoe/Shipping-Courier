@@ -46,7 +46,7 @@
 
 					<div class="mb-1">
 
-						<h1 class="h3 d-inline align-middle"><strong>Carousel</strong></h1>
+						<h1 class="h3 d-inline align-middle"><strong>About</strong></h1>
 
 						<a href="{{url('add_about')}}" class="btn btn-primary" style="float: right;">Add About</a>
 					</div>
@@ -74,15 +74,16 @@
 										<tr>
 											<td>{{$key + 1}}</td>
 											<td>
-                                                <img style="width:150px; " src="assets/img/{{$data->image}}" alt="{{$data->name}}">
+                                                <img style="width:80px; " src="assets/img/{{$data->image}}" alt="{{$data->name}}">
                                             </td>
-											<td>{{$data->title}}</td>
-											<td>{{$data->sub_title}}</td>
+											<td><b>{{$data->title}}</b></td>
+											
+											<td>{!! Str::limit($data->sub_title, 40, '...') !!}</td>
 											<td>
 
-												<a href="{{route('edit_carousel', $data->id)}}" class="btn btn-primary btn-sm">Edit</a>
+												<a href="{{route('edit_about', $data->id)}}" class="btn btn-primary btn-sm">Edit</a>
 
-												<a href="{{route('delete_carousel', $data->id)}}" class="btn btn-danger btn-sm" onclick="confirmation(event)">Delete</a>
+												<a href="{{route('delete_about', $data->id)}}" class="btn btn-danger btn-sm" onclick="confirmation(event)">Delete</a>
 											</td>
 										</tr>
 										@endforeach

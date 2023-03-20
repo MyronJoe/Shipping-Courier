@@ -246,5 +246,38 @@ class DynamicController extends Controller
         return view('admin.site.about.about', compact('data'));
     }
 
+    public function add_about()
+    {
+        return view('admin.site.about.add_about');
+    }
+
+    //add_about
+    public function addAbout(Request $request)
+    {
+        $request->validate([
+            'title' => 'required|string',
+            'sub_title' => 'required|string',
+            'image' => 'required',
+        ]);
+
+        $data = new about;
+
+        $data->title = $request->title;
+        $data->sub_title = $request->sub_title;
+
+        $imageName = time() . '_' . $request->image->getClientOriginalExtension();
+
+        // dd($imageName);
+        
+        $request->image->move('assets/img', $imageName);
+
+        $data->image = $imageName;
+
+        $data->save();
+
+        Alert::success('About Added Successfully');
+        return redirect('about');
+    }
+
 
 }
