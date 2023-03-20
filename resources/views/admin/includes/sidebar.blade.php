@@ -23,13 +23,30 @@
 
 
 			<li class="sidebar-header">
-				Page Components
+				Create Page
 			</li>
 
 
 			<li class="sidebar-item">
 				<a class="sidebar-link" href="{{ url('all_cat')}}">
 					<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Page Category</span>
+				</a>
+			</li>
+
+			<li class="sidebar-item">
+				<a class="sidebar-link" href="{{ url('allpages')}}">
+					<i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Pages</span>
+				</a>
+			</li>
+
+			<li class="sidebar-header">
+				Site Essentials
+			</li>
+
+
+			<li class="sidebar-item">
+				<a class="sidebar-link" href="{{ url('carousel')}}">
+					<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Carousel</span>
 				</a>
 			</li>
 

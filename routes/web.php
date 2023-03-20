@@ -101,7 +101,7 @@ Route::get('/receipt/{id}', [AdminController::class, 'Receipt'])->name('receipt'
 Route::post('/tracking_product', [AdminController::class, 'TrackingID'])->name('tracking_product');
 
 
-//Dynamics Routes
+//Dynamics Routes(Create Pages)
 Route::get('/all_cat', [DynamicController::class, 'All_cat'])->name('all_cat');
 
 Route::post('/addCat', [DynamicController::class, 'AddCat'])->name('addCat');
@@ -116,9 +116,13 @@ Route::get('/edit_page/{id}', [DynamicController::class, 'Edit_page'])->name('ed
 
 Route::post('/updatebody/{id}', [DynamicController::class, 'Updatebody'])->name('updatebody');
 
-
 Route::get('/delete_cat/{id}', [DynamicController::class, 'Delete_cat'])->name('delete_cat');
 
-
-
 Route::get('/delete_page/{id}', [DynamicController::class, 'Delete_page'])->name('delete_page');
+
+
+//Dynamics Routes(Site Essentials)
+
+Route::get('/carousel', [DynamicController::class, 'Carousel'])->name('carousel');
+
+Route::get('/add_carousel', [DynamicController::class, 'Add_Carousel'])->name('add_carousel');

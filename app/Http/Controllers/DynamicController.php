@@ -142,4 +142,11 @@ class DynamicController extends Controller
 
         return redirect('allpages');
     }
+
+
+    //Carousel
+    public function Carousel()
+    {
+        return view('admin.site.carousel.carousel');
+    }
 }
