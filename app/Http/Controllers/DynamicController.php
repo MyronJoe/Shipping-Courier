@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\about;
 use App\Models\carousel;
 
 use App\Models\page_cats;
@@ -235,6 +236,14 @@ class DynamicController extends Controller
 
         Alert::success('Carousel Updated Successfully');
         return redirect('carousel');
+    }
+
+
+    public function about()
+    {
+        $data = about::orderBy('id', 'desc')->get();;
+
+        return view('admin.site.about.about', compact('data'));
     }
 
 
