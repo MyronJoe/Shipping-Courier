@@ -193,13 +193,19 @@ class DynamicController extends Controller
     //delete_carousel
     public function delete_carousel($id)
     {
-
         $data = carousel::findOrFail($id);
 
         $data->delete();
 
-        return redirect('carousel');
-        
+        return redirect('carousel');  
+    }
+
+    //edit_carousel
+    public function edit_carousel($id)
+    {
+        $data = carousel::findOrFail($id);
+
+        return view('admin.addpage.page.editbody', compact('data')); 
     }
 
 
