@@ -190,5 +190,17 @@ class DynamicController extends Controller
         return redirect('carousel');
     }
 
+    //delete_carousel
+    public function delete_carousel($id)
+    {
+
+        $data = carousel::findOrFail($id);
+
+        $data->delete();
+
+        return redirect('carousel');
+        
+    }
+
 
 }
