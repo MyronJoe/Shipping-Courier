@@ -149,4 +149,10 @@ class DynamicController extends Controller
     {
         return view('admin.site.carousel.carousel');
     }
+
+    //Add_Carousel
+    public function Add_Carousel()
+    {
+        return view('admin.site.carousel.add_carousel');
+    }
 }
