@@ -126,3 +126,5 @@ Route::get('/delete_page/{id}', [DynamicController::class, 'Delete_page'])->name
 Route::get('/carousel', [DynamicController::class, 'Carousel'])->name('carousel');
 
 Route::get('/add_carousel', [DynamicController::class, 'Add_Carousel'])->name('add_carousel');
+
+Route::post('/addCarousel', [DynamicController::class, 'addCarousel'])->name('addCarousel');

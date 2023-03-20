@@ -26,7 +26,7 @@
 
 
 
-            <form action="{{url('addShipment')}}" method="POST" novalidate>
+            <form action="{{url('addCarousel')}}" method="POST" novalidate>
 
                 @csrf
 
@@ -55,9 +55,9 @@
 
                                 <div class="input col-sm-12 col-md-6">
                                     <div>
-                                        <label for="sun_title" class="my-2">Sub Title</label>
-                                        <input type="text" class="form-control" name="sun_title" id="sun_title" value="{{ old('sun_title') }}">
-                                        @error('sun_title')
+                                        <label for="sub_title" class="my-2">Sub Title</label>
+                                        <input type="text" class="form-control" name="sub_title" id="sub_title" value="{{ old('sub_title') }}">
+                                        @error('sub_title')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
@@ -70,7 +70,7 @@
                             <div>
                                 <label for="image" class="my-2">Carousel Image</label>
                                 <br>
-                                <input type="file" name="image" id="image" value="{{ old('image') }}">
+                                <input type="file" name="image" id="image" value="{{ old('image') }}"><br>
                                 @error('image')
                                 <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -80,9 +80,6 @@
                         </div>
                     </div>
                 </main>
-
-
-
 
             </form>
 

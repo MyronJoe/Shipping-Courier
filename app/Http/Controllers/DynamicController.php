@@ -150,9 +150,20 @@ class DynamicController extends Controller
         return view('admin.site.carousel.carousel');
     }
 
-    //Add_Carousel
+    //Add_Carousel Page
     public function Add_Carousel()
     {
         return view('admin.site.carousel.add_carousel');
+    }
+
+    //addCarousel to DB
+    public function addCarousel(Request $request)
+    {
+        $request->validate([
+            'title' => 'required|string',
+            'sub_title' => 'required|string',
+            'image' => 'required',
+        ]);
+        
     }
 }
