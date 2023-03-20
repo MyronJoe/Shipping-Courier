@@ -332,4 +332,33 @@ class DynamicController extends Controller
         Alert::success('About Updated Successfully');
         return redirect('about');
     }
+
+
+    //update_about in DB
+    public function update_about_us($id, Request $request)
+    {
+        $request->validate([
+            'about_us' => 'required|string',
+            // 'image' => 'required',
+        ]);
+
+        $data = headers::findOrFail($id);
+
+        $data->about_us = $request->about_us;
+
+        $image = $request->image;
+        if ($image) {
+
+            $imageName = time() . '_' . $request->image->getClientOriginalExtension();
+        
+            $request->image->move('assets/img', $imageName);
+
+            $data->image = $imageName;
+        }
+
+        $data->save();
+
+        Alert::success('About Us Updated Successfully');
+        return redirect('about');
+    }
 }

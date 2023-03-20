@@ -150,4 +150,4 @@ Route::post('/update_about/{id}', [DynamicController::class, 'update_about'])->n
 
 Route::post('/update_aboutus', [DynamicController::class, 'update_aboutus'])->name('update_aboutus');
 
-Route::post('/update_about_us', [DynamicController::class, 'update_about_us'])->name('update_about_us');
+Route::post('/update_about_us/{id}', [DynamicController::class, 'update_about_us'])->name('update_about_us');

@@ -24,6 +24,43 @@
     @include('admin.includes.styles')
 
     <style>
+        .label img {
+            width: 100%;
+            height: 200px;
+            margin: auto;
+            object-fit: cover;
+            opacity: 0.7;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            transition: .6s ease-out;
+        }
+
+        .label img:hover {
+            opacity: 1;
+        }
+
+        .upload-sec {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        label span {
+            display: inline-block;
+            text-align: center;
+            background-color: #ddd;
+            width: 100%;
+            padding: 10px;
+
+        }
+
+        .label {
+            cursor: pointer;
+        }
+    </style>
+
+    <style>
         .flex-fill {
             overflow: auto;
         }
@@ -44,34 +81,50 @@
 
                 @foreach($header as $datas)
 
-                <form action="{{url('update_about_us', $datas->id)}}" method="POST" novalidate>
+                <form action="{{url('update_about_us', $datas->id)}}" method="POST" novalidate enctype="multipart/form-data">
 
                     @csrf
 
-                    
-                        <div class="container-fluid p-0">
 
-                            <div class="mb-3">
-                                <h1 class="h3 d-inline align-middle">Update Page</h1>
+                    <div class="container-fluid p-0">
 
-                                <a href="#about" class="btn btn-primary" style="float: right;">All About</a>
-                            </div>
-                            <hr>
-                            <div>
-                                <div class="row">
-                                    <div class="input col-sm-12 mt-1">
-                                        <div>
-                                            <label for="editor" class="my-2">About Us</label>
-                                            <textarea name="body" id="editor1" value="" class="form-control" cols="30" rows="10">{{ $datas->about_us }}</textarea>
-                                            @error('about_us')
-                                            <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
+                        <div class="mb-3">
+                            <h1 class="h3 d-inline align-middle">Update About</h1>
+
+                            <a href="#about" class="btn btn-primary" style="float: right;">All About</a>
+                        </div>
+                        <hr>
+                        <div>
+                            <div class="row">
+                                <div class="input col-sm-12 mt-1">
+                                    <div>
+                                        <label for="editor" class="my-2">About Us</label>
+                                        <textarea name="about_us" id="editor1" value="" class="form-control" cols="30" rows="10">{{ $datas->about_us }}</textarea>
+                                        @error('about_us')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
                         </div>
-                  
+                    </div>
+
+                    <div class="upload-sec">
+
+                        <input type="file" name="image" style="display:none;" id="image" value="{{ old('image') }}" accept=".gif, .jpg, .png"><br>
+
+                        <label for="image" class="my-2 label">
+
+                            <img src="../assets/img/{{$datas->image}}" alt="">
+
+                            <span>Update Tracking Background</span>
+                        </label>
+
+                        @error('image')
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+
 
                     <input type="submit" name="add_shipment" value="Update About Us" class="btn btn-primary my-3 ">
 
