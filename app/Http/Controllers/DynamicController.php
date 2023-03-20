@@ -186,7 +186,7 @@ class DynamicController extends Controller
 
         $data->save();
 
-        Alert::success('Category Added Successfully');
+        Alert::success('Carousel Added Successfully');
         return redirect('carousel');
     }
 
@@ -206,6 +206,35 @@ class DynamicController extends Controller
         $data = carousel::findOrFail($id);
 
         return view('admin.site.carousel.editcarousel', compact('data')); 
+    }
+
+    //update_carousel
+    public function update_carousel($id, Request $request)
+    {
+        $request->validate([
+            'title' => 'required|string',
+            'sub_title' => 'required|string',
+        ]);
+
+        $data = carousel::findOrFail($id);
+
+        $data->title = $request->title;
+        $data->sub_title = $request->sub_title;
+
+        $image = $request->image;
+        if ($image) {
+
+            $imageName = time() . '_' . $request->image->getClientOriginalExtension();
+        
+            $request->image->move('assets/img', $imageName);
+
+            $data->image = $imageName;
+        }
+
+        $data->save();
+
+        Alert::success('Carousel Updated Successfully');
+        return redirect('carousel');
     }
 
 

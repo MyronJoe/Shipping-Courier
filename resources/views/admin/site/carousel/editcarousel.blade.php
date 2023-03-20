@@ -66,7 +66,7 @@
 
 
 
-            <form action="{{url('addCarousel')}}" method="POST" novalidate enctype="multipart/form-data">
+            <form action="{{url('update_carousel', $data->id)}}" method="POST" novalidate enctype="multipart/form-data">
 
                 @csrf
 
