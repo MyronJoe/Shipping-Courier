@@ -290,4 +290,12 @@ class DynamicController extends Controller
 
         return redirect('about');  
     }
+
+    //edit_about
+    public function edit_about($id)
+    {
+        $data = about::findOrFail($id);
+
+        return view('admin.site.about.editabout', compact('data')); 
+    }
 }
