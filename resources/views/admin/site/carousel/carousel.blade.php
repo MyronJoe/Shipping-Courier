@@ -62,13 +62,31 @@
 									<thead>
 										<tr>
 											<th>S|N</th>
-											<th>Product</th>
-											<th>Tracking ID</th>
-											<th>Shipping Type</th>
-											<th>Status</th>
+											<th>Image</th>
+											<th>Title</th>
+											<th>Sub Title</th>
 											<th>Action</th>
 										</tr>
 									</thead>
+
+                                    <tbody>
+										@foreach($data as $key => $data)
+										<tr>
+											<td>{{$key + 1}}</td>
+											<td>
+                                                <img style="width:150px; " src="assets/img/{{$data->image}}" alt="{{$data->name}}">
+                                            </td>
+											<td>{{$data->title}}</td>
+											<td>{{$data->sub_title}}</td>
+											<td>
+
+												<a href="{{route('edit_shipment', $data->id)}}" class="btn btn-primary btn-sm">Edit</a>
+
+												<a href="{{route('delete_shipment', $data->id)}}" class="btn btn-danger btn-sm" onclick="confirmation(event)">Delete</a>
+											</td>
+										</tr>
+										@endforeach
+									</tbody>
 									
 								</table>
 

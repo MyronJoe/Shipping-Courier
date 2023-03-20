@@ -151,7 +151,9 @@ class DynamicController extends Controller
     //Carousel
     public function Carousel()
     {
-        return view('admin.site.carousel.carousel');
+        $data = carousel::orderBy('id', 'desc')->get();;
+
+        return view('admin.site.carousel.carousel', compact('data'));
     }
 
     //Add_Carousel Page
