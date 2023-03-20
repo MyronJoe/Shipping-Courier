@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\about;
+
 use App\Models\carousel;
+
+use App\Models\headers;
 
 use App\Models\page_cats;
 
@@ -242,15 +245,17 @@ class DynamicController extends Controller
     //All About
     public function about()
     {
-        $data = about::orderBy('id', 'desc')->get();;
+        $header = headers::orderBy('id', 'desc')->get();
 
-        return view('admin.site.about.about', compact('data'));
+        $data = about::orderBy('id', 'desc')->get();
+
+        return view('admin.site.about.about', compact('data', 'header'));
     }
 
     //Add about page
     public function add_about()
     {
-        return view('admin.site.about.add_about');
+        return view('admin.site.about.add_about', compact('data'));
     }
 
     //add_about to DB
@@ -291,11 +296,40 @@ class DynamicController extends Controller
         return redirect('about');  
     }
 
-    //edit_about
+    //edit_about page
     public function edit_about($id)
     {
         $data = about::findOrFail($id);
 
         return view('admin.site.about.editabout', compact('data')); 
+    }
+
+    //update_about in DB
+    public function update_about($id, Request $request)
+    {
+        $request->validate([
+            'title' => 'required|string',
+            'sub_title' => 'required|string',
+        ]);
+
+        $data = about::findOrFail($id);
+
+        $data->title = $request->title;
+        $data->sub_title = $request->sub_title;
+
+        $image = $request->image;
+        if ($image) {
+
+            $imageName = time() . '_' . $request->image->getClientOriginalExtension();
+        
+            $request->image->move('assets/img', $imageName);
+
+            $data->image = $imageName;
+        }
+
+        $data->save();
+
+        Alert::success('About Updated Successfully');
+        return redirect('about');
     }
 }
