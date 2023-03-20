@@ -175,7 +175,10 @@ class DynamicController extends Controller
         $data->sub_title = $request->sub_title;
 
         $imageName = time() . '_' . $request->image->getClientOriginalExtension();
-        $request->image->move('assets.img', $imageName);
+
+        // dd($imageName);
+        
+        $request->image->move('assets/img', $imageName);
 
         $data->image = $imageName;
 

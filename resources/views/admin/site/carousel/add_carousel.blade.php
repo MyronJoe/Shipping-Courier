@@ -26,7 +26,7 @@
 
 
 
-            <form action="{{url('addCarousel')}}" method="POST" novalidate>
+            <form action="{{url('addCarousel')}}" method="POST" novalidate enctype="multipart/form-data">
 
                 @csrf
 
