@@ -141,3 +141,7 @@ Route::get('/about', [DynamicController::class, 'about'])->name('about');
 Route::get('/add_about', [DynamicController::class, 'add_about'])->name('add_about');
 
 Route::post('/addAbout', [DynamicController::class, 'addAbout'])->name('addAbout');
+
+Route::get('/delete_about/{id}', [DynamicController::class, 'delete_about'])->name('delete_about');
+
+Route::get('/edit_about/{id}', [DynamicController::class, 'edit_about'])->name('edit_about');

@@ -239,6 +239,7 @@ class DynamicController extends Controller
     }
 
 
+    //All About
     public function about()
     {
         $data = about::orderBy('id', 'desc')->get();;
@@ -246,12 +247,13 @@ class DynamicController extends Controller
         return view('admin.site.about.about', compact('data'));
     }
 
+    //Add about page
     public function add_about()
     {
         return view('admin.site.about.add_about');
     }
 
-    //add_about
+    //add_about to DB
     public function addAbout(Request $request)
     {
         $request->validate([
@@ -279,5 +281,13 @@ class DynamicController extends Controller
         return redirect('about');
     }
 
+    //delete_about
+    public function delete_about($id)
+    {
+        $data = about::findOrFail($id);
 
+        $data->delete();
+
+        return redirect('about');  
+    }
 }
