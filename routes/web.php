@@ -181,4 +181,10 @@ Route::get('/add_feature', [DynamicController::class, 'add_feature'])->name('add
 
 Route::post('/addFeatures', [DynamicController::class, 'addFeatures'])->name('addFeatures');
 
+Route::post('/update_feature_single/{id}', [DynamicController::class, 'update_feature_single'])->name('update_feature_single');
+
+Route::get('/delete_feature/{id}', [DynamicController::class, 'delete_feature'])->name('delete_feature');
+
+Route::get('/edit_feature/{id}', [DynamicController::class, 'edit_feature'])->name('edit_feature');
+
 Route::post('/update_features/{id}', [DynamicController::class, 'update_features'])->name('update_features');

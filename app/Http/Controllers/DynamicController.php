@@ -597,4 +597,41 @@ class DynamicController extends Controller
 
         return redirect('features');
     }
+
+    //edit_feature
+    public function edit_feature($id)
+    {
+        $data = feature::findOrFail($id);
+
+        return view('admin.site.features.edit_feature', compact('data'));
+    }
+
+    //update_feature_single in DB
+    public function update_feature_single($id, Request $request)
+    {
+        $request->validate([
+            'title' => 'required|string',
+            'sub_title' => 'required|string',
+        ]);
+
+        $data = feature::findOrFail($id);
+
+        $data->title = $request->title;
+        $data->sub_title = $request->sub_title;
+
+        $image = $request->image;
+        if ($image) {
+
+            $imageName = time() . '_' . $request->image->getClientOriginalExtension();
+
+            $request->image->move('assets/img', $imageName);
+
+            $data->icon = $imageName;
+        }
+
+        $data->save();
+
+        Alert::success('Feature Updated Successfully');
+        return redirect('features');
+    }
 }

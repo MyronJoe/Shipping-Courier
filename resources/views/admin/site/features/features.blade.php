@@ -184,7 +184,7 @@
                                             <td>{!! Str::limit($data->sub_title, 40, '...') !!}</td>
                                             <td>
 
-                                                <a href="{{route('edit_about', $data->id)}}" class="btn btn-primary btn-sm">Edit</a>
+                                                <a href="{{route('edit_feature', $data->id)}}" class="btn btn-primary btn-sm">Edit</a>
 
                                                 <a href="{{route('delete_feature', $data->id)}}" class="btn btn-danger btn-sm" onclick="confirmation(event)">Delete</a>
                                             </td>

@@ -70,7 +70,7 @@
 
 
 
-            <form action="{{url('update_about', $data->id)}}" method="POST" novalidate enctype="multipart/form-data">
+            <form action="{{url('update_feature_single', $data->id)}}" method="POST" novalidate enctype="multipart/form-data">
 
                 @csrf
 
@@ -78,9 +78,9 @@
                     <div class="container-fluid p-0">
 
                         <div class="mb-3">
-                            <h1 class="h3 d-inline align-middle">Update About</h1>
+                            <h1 class="h3 d-inline align-middle">Update Feature</h1>
 
-                            <a href="{{url('about')}}" class="btn btn-primary" style="float: right;">All About</a>
+                            <a href="{{url('features')}}" class="btn btn-primary" style="float: right;">All Features</a>
                         </div>
                         <hr>
                         <div>
@@ -116,9 +116,9 @@
 
                                 <label for="image" class="my-2 label">
 
-                                    <img src="../assets/img/{{$data->image}}" alt="{{$data->name}}">
+                                    <img src="../assets/img/{{$data->icon}}" alt="{{$data->name}}">
 
-                                    <span>Update About Icon</span>
+                                    <span>Update Feature Icon</span>
                                 </label>
 
                                 @error('image')
@@ -126,7 +126,7 @@
                                 @enderror
                             </div>
 
-                            <input type="submit" name="add_carousel" value="Update About" class="btn btn-primary my-3 ">
+                            <input type="submit" name="add_carousel" value="Update Feature" class="btn btn-primary my-3 ">
                         </div>
                     </div>
                 </main>
