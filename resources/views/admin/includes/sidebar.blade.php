@@ -62,6 +62,12 @@
 				</a>
 			</li>
 
+			<li class="sidebar-item">
+				<a class="sidebar-link" href="{{ url('counter')}}">
+					<i class="align-middle" data-feather="coffee"></i> <span class="align-middle">Counter</span>
+				</a>
+			</li>
+
 			<li class="sidebar-header">
 				Plugins & Addons
 			</li>

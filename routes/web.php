@@ -166,3 +166,6 @@ Route::post('/update_service_card/{id}', [DynamicController::class, 'update_serv
 Route::get('/delete_service/{id}', [DynamicController::class, 'delete_service'])->name('delete_service');
 
 Route::get('/edit_service/{id}', [DynamicController::class, 'edit_service'])->name('edit_service');
+
+//counter
+Route::get('/counter', [DynamicController::class, 'counter'])->name('counter');

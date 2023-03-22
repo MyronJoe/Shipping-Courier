@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\about;
 
 use App\Models\carousel;
-
+use App\Models\counter;
 use App\Models\headers;
 
 use App\Models\page_cats;
@@ -475,6 +475,14 @@ class DynamicController extends Controller
 
         Alert::success('Service Updated Successfully');
         return redirect('service');
+    }
+
+    //All counter
+    public function counter()
+    {
+        $data = counter::orderBy('id', 'desc')->get();
+
+        return view('admin.site.counter.counter', compact('data'));
     }
 
 }
