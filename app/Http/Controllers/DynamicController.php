@@ -492,4 +492,23 @@ class DynamicController extends Controller
         return view('admin.site.counter.edit_counter', compact('data'));
     }
 
+    //update_counter in DB
+    public function update_counter($id, Request $request)
+    {
+        $request->validate([
+            'title' => 'required|string',
+            'number' => 'required',
+        ]);
+
+        $data = counter::findOrFail($id);
+
+        $data->title = $request->title;
+        $data->number = $request->number;
+
+        $data->save();
+
+        Alert::success('Counter Updated Successfully');
+        return redirect('counter');
+    }
+
 }

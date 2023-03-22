@@ -66,7 +66,7 @@
 
 
 
-            <form action="{{url('update_carousel', $data->id)}}" method="POST" novalidate enctype="multipart/form-data">
+            <form action="{{url('update_counter', $data->id)}}" method="POST" novalidate enctype="multipart/form-data">
 
                 @csrf
 
@@ -82,7 +82,7 @@
                                 <div class="input col-sm-12 col-md-6">
                                     <div>
                                         <label for="number" class="my-2">Number</label>
-                                        <input type="text" class="form-control" name="number" id="number" value="{{ $data->number }}">
+                                        <input type="number" class="form-control" name="number" id="number" value="{{ $data->number }}">
                                         @error('number')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
