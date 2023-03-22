@@ -413,8 +413,8 @@ class DynamicController extends Controller
 
         $data = new service;
 
-        $data->title = $request->title;
-        $data->sub_title = $request->sub_title;
+        $data->card_title = $request->title;
+        $data->card_sub_title = $request->sub_title;
         $data->body = $request->body;
 
         $imageName = time() . '_' . $request->image->getClientOriginalExtension();
