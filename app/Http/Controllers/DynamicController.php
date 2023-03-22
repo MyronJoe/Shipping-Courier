@@ -461,15 +461,19 @@ class DynamicController extends Controller
         $data->card_sub_title = $request->sub_title;
         $data->body = $request->body;
 
-        $imageName = time() . '_' . $request->image->getClientOriginalExtension();
+        $image = $request->image;
+        if ($image) {
 
-        $request->image->move('assets/img', $imageName);
+            $imageName = time() . '_' . $request->image->getClientOriginalExtension();
+        
+            $request->image->move('assets/img', $imageName);
 
-        $data->image = $imageName;
+            $data->image = $imageName;
+        }
 
         $data->save();
 
-        Alert::success('Service Added Successfully');
+        Alert::success('Service Updated Successfully');
         return redirect('service');
     }
 

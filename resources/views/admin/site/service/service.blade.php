@@ -174,7 +174,7 @@
                                             </td>
                                             <td><b>{{$data->card_title}}</b></td>
                                             <td>{!! Str::limit($data->card_sub_title, 40, '...') !!}</td>
-                                            <!-- <td>{!! Str::limit($data->body, 40, '...') !!}</td> -->
+                                            <td>{!! Str::limit($data->body, 40, '...') !!}</td>
                                             <td>
 
                                                 <a href="{{route('edit_service', $data->id)}}" class="btn btn-primary btn-sm">Edit</a>
