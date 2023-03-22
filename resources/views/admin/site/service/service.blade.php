@@ -160,6 +160,7 @@
                                             <th>Image</th>
                                             <th>Title</th>
                                             <th>Sub Title</th>
+                                            <th>Body</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -172,8 +173,8 @@
                                                 <img style="width:80px; " src="assets/img/{{$data->image}}" alt="{{$data->name}}">
                                             </td>
                                             <td><b>{{$data->card_title}}</b></td>
-
                                             <td>{!! Str::limit($data->card_sub_title, 40, '...') !!}</td>
+                                            <!-- <td>{!! Str::limit($data->body, 40, '...') !!}</td> -->
                                             <td>
 
                                                 <a href="{{route('edit_service', $data->id)}}" class="btn btn-primary btn-sm">Edit</a>

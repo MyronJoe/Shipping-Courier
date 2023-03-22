@@ -360,8 +360,8 @@ class DynamicController extends Controller
 
         $data->save();
 
-        Alert::success('About Us Updated Successfully');
-        return redirect('about');
+        Alert::success('Service Updated Successfully');
+        return redirect('service');
     }
 
     //All Service
@@ -448,7 +448,29 @@ class DynamicController extends Controller
 
     //update_service_card
     public function update_service_card($id, Request $request){
-        
+
+        $request->validate([
+            'title' => 'required|string',
+            'sub_title' => 'required|string',
+            'body' => 'required|string',
+        ]);
+
+        $data = service::findOrFail($id);
+
+        $data->card_title = $request->title;
+        $data->card_sub_title = $request->sub_title;
+        $data->body = $request->body;
+
+        $imageName = time() . '_' . $request->image->getClientOriginalExtension();
+
+        $request->image->move('assets/img', $imageName);
+
+        $data->image = $imageName;
+
+        $data->save();
+
+        Alert::success('Service Added Successfully');
+        return redirect('service');
     }
 
 }
