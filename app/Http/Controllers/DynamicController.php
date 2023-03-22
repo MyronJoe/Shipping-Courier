@@ -425,8 +425,24 @@ class DynamicController extends Controller
 
         $data->save();
 
-        Alert::success('About Added Successfully');
-        return redirect('about');
+        Alert::success('Service Added Successfully');
+        return redirect('service');
+    }
+
+    //delete_service
+    public function delete_service($id)
+    {
+        $data = service::findOrFail($id);
+
+        $data->delete();
+
+        return redirect('service');  
+    }
+
+    //edit_service page
+    public function edit_service()
+    {
+        return view('admin.site.service.add_service');
     }
 
 }

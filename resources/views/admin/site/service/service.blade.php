@@ -171,14 +171,14 @@
                                             <td>
                                                 <img style="width:80px; " src="assets/img/{{$data->image}}" alt="{{$data->name}}">
                                             </td>
-                                            <td><b>{{$data->title}}</b></td>
+                                            <td><b>{{$data->card_title}}</b></td>
 
-                                            <td>{!! Str::limit($data->sub_title, 40, '...') !!}</td>
+                                            <td>{!! Str::limit($data->card_sub_title, 40, '...') !!}</td>
                                             <td>
 
-                                                <a href="{{route('edit_about', $data->id)}}" class="btn btn-primary btn-sm">Edit</a>
+                                                <a href="{{route('edit_service', $data->id)}}" class="btn btn-primary btn-sm">Edit</a>
 
-                                                <a href="{{route('delete_about', $data->id)}}" class="btn btn-danger btn-sm" onclick="confirmation(event)">Delete</a>
+                                                <a href="{{route('delete_service', $data->id)}}" class="btn btn-danger btn-sm" onclick="confirmation(event)">Delete</a>
                                             </td>
                                         </tr>
                                         @endforeach
