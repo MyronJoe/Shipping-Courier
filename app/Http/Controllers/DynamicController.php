@@ -6,6 +6,7 @@ use App\Models\about;
 
 use App\Models\carousel;
 use App\Models\counter;
+use App\Models\feature;
 use App\Models\headers;
 
 use App\Models\page_cats;
@@ -185,7 +186,7 @@ class DynamicController extends Controller
         $imageName = time() . '_' . $request->image->getClientOriginalExtension();
 
         // dd($imageName);
-        
+
         $request->image->move('assets/img', $imageName);
 
         $data->image = $imageName;
@@ -203,7 +204,7 @@ class DynamicController extends Controller
 
         $data->delete();
 
-        return redirect('carousel');  
+        return redirect('carousel');
     }
 
     //edit_carousel
@@ -211,7 +212,7 @@ class DynamicController extends Controller
     {
         $data = carousel::findOrFail($id);
 
-        return view('admin.site.carousel.editcarousel', compact('data')); 
+        return view('admin.site.carousel.editcarousel', compact('data'));
     }
 
     //update_carousel
@@ -231,7 +232,7 @@ class DynamicController extends Controller
         if ($image) {
 
             $imageName = time() . '_' . $request->image->getClientOriginalExtension();
-        
+
             $request->image->move('assets/img', $imageName);
 
             $data->image = $imageName;
@@ -277,7 +278,7 @@ class DynamicController extends Controller
         $imageName = time() . '_' . $request->image->getClientOriginalExtension();
 
         // dd($imageName);
-        
+
         $request->image->move('assets/img', $imageName);
 
         $data->image = $imageName;
@@ -295,7 +296,7 @@ class DynamicController extends Controller
 
         $data->delete();
 
-        return redirect('about');  
+        return redirect('about');
     }
 
     //edit_about page
@@ -303,7 +304,7 @@ class DynamicController extends Controller
     {
         $data = about::findOrFail($id);
 
-        return view('admin.site.about.editabout', compact('data')); 
+        return view('admin.site.about.editabout', compact('data'));
     }
 
     //update_about in DB
@@ -323,7 +324,7 @@ class DynamicController extends Controller
         if ($image) {
 
             $imageName = time() . '_' . $request->image->getClientOriginalExtension();
-        
+
             $request->image->move('assets/img', $imageName);
 
             $data->image = $imageName;
@@ -336,7 +337,7 @@ class DynamicController extends Controller
     }
 
 
-    //update_about in DB
+    //update_about us in DB
     public function update_about_us($id, Request $request)
     {
         $request->validate([
@@ -352,7 +353,7 @@ class DynamicController extends Controller
         if ($image) {
 
             $imageName = time() . '_' . $request->image->getClientOriginalExtension();
-        
+
             $request->image->move('assets/img', $imageName);
 
             $data->image = $imageName;
@@ -360,8 +361,8 @@ class DynamicController extends Controller
 
         $data->save();
 
-        Alert::success('Service Updated Successfully');
-        return redirect('service');
+        Alert::success('About Us Updated Successfully');
+        return redirect('about');
     }
 
     //All Service
@@ -381,7 +382,7 @@ class DynamicController extends Controller
         $request->validate([
             'service_title' => 'required|string',
             'service_sub' => 'required|string',
-            
+
         ]);
 
         $data = headers::findOrFail($id);
@@ -436,7 +437,7 @@ class DynamicController extends Controller
 
         $data->delete();
 
-        return redirect('service');  
+        return redirect('service');
     }
 
     //edit_service page
@@ -447,7 +448,8 @@ class DynamicController extends Controller
     }
 
     //update_service_card
-    public function update_service_card($id, Request $request){
+    public function update_service_card($id, Request $request)
+    {
 
         $request->validate([
             'title' => 'required|string',
@@ -465,7 +467,7 @@ class DynamicController extends Controller
         if ($image) {
 
             $imageName = time() . '_' . $request->image->getClientOriginalExtension();
-        
+
             $request->image->move('assets/img', $imageName);
 
             $data->image = $imageName;
@@ -511,4 +513,50 @@ class DynamicController extends Controller
         return redirect('counter');
     }
 
+    //All features
+    public function features()
+    {
+        $header = headers::orderBy('id', 'desc')->get();
+
+        $data = feature::orderBy('id', 'desc')->get();
+
+        return view('admin.site.features.features', compact('data', 'header'));
+    }
+
+    //update_features in DB
+    public function update_features($id, Request $request)
+    {
+        $request->validate([
+            'feature_title' => 'required|string',
+            'feature_sub' => 'required|string',
+
+        ]);
+
+        $data = headers::findOrFail($id);
+
+        $data->feature_title = $request->feature_title;
+        $data->feature_sub = $request->feature_sub;
+
+        $image = $request->image;
+        if ($image) {
+
+            $imageName = time() . '_' . $request->image->getClientOriginalExtension();
+
+            $request->image->move('assets/img', $imageName);
+
+            $data->feature_image = $imageName;
+        }
+
+        $data->save();
+
+        Alert::success('Features Updated Successfully');
+        return redirect('features');
+    }
+
+
+    //Add Features page
+    public function add_feature()
+    {
+        return view('admin.site.about.add_about');
+    }
 }

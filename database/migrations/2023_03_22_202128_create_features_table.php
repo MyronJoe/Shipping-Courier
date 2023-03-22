@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('features', function (Blueprint $table) {
             $table->id();
+            $table->text('icon')->nullable();
+            $table->text('title')->nullable();
+            $table->text('sub_title')->nullable();
             $table->timestamps();
         });
     }
