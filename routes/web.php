@@ -161,6 +161,8 @@ Route::post('/addService', [DynamicController::class, 'addService'])->name('addS
 
 Route::post('/update_service/{id}', [DynamicController::class, 'update_service'])->name('update_service');
 
+Route::post('/update_service_card/{id}', [DynamicController::class, 'update_service_card'])->name('update_service_card');
+
 Route::get('/delete_service/{id}', [DynamicController::class, 'delete_service'])->name('delete_service');
 
 Route::get('/edit_service/{id}', [DynamicController::class, 'edit_service'])->name('edit_service');

@@ -440,9 +440,15 @@ class DynamicController extends Controller
     }
 
     //edit_service page
-    public function edit_service()
+    public function edit_service($id)
     {
-        return view('admin.site.service.add_service');
+        $data = service::findOrFail($id);
+        return view('admin.site.service.edit_service', compact('data'));
+    }
+
+    //update_service_card
+    public function update_service_card($id, Request $request){
+        
     }
 
 }
