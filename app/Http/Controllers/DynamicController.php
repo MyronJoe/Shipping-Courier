@@ -557,6 +557,6 @@ class DynamicController extends Controller
     //Add Features page
     public function add_feature()
     {
-        return view('admin.site.about.add_about');
+        return view('admin.site.features.add_features');
     }
 }

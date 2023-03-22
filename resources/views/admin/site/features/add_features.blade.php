@@ -34,9 +34,9 @@
                     <div class="container-fluid p-0">
 
                         <div class="mb-3">
-                            <h1 class="h3 d-inline align-middle">Add About</h1>
+                            <h1 class="h3 d-inline align-middle">Add Features</h1>
 
-                            <a href="{{url('about')}}" class="btn btn-primary" style="float: right;">All About</a>
+                            <a href="{{url('about')}}" class="btn btn-primary" style="float: right;">All Features</a>
                         </div>
                         <hr>
                         <div>
@@ -76,7 +76,7 @@
                                 @enderror
                             </div>
 
-                            <input type="submit" name="add_carousel" value="Add About" class="btn btn-primary my-3 " >
+                            <input type="submit" name="add_carousel" value="Add Features" class="btn btn-primary my-3 " >
                         </div>
                     </div>
                 </main>
