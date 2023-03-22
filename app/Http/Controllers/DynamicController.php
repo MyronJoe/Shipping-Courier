@@ -560,7 +560,7 @@ class DynamicController extends Controller
         return view('admin.site.features.add_features');
     }
 
-    //add_about to DB
+    //addFeatures to DB
     public function addFeatures(Request $request)
     {
         $request->validate([
@@ -585,6 +585,16 @@ class DynamicController extends Controller
         $data->save();
 
         Alert::success('Feature Added Successfully');
+        return redirect('features');
+    }
+
+    //delete_feature
+    public function delete_feature($id)
+    {
+        $data = feature::findOrFail($id);
+
+        $data->delete();
+
         return redirect('features');
     }
 }
