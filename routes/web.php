@@ -173,3 +173,6 @@ Route::get('/counter', [DynamicController::class, 'counter'])->name('counter');
 Route::get('/edit_counter/{id}', [DynamicController::class, 'edit_counter'])->name('edit_counter');
 
 Route::post('/update_counter/{id}', [DynamicController::class, 'update_counter'])->name('update_counter');
+
+//features
+Route::get('/features', [DynamicController::class, 'features'])->name('features');

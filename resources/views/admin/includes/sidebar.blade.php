@@ -68,6 +68,12 @@
 				</a>
 			</li>
 
+			<li class="sidebar-item">
+				<a class="sidebar-link" href="{{ url('features')}}">
+					<i class="align-middle" data-feather="coffee"></i> <span class="align-middle">Features</span>
+				</a>
+			</li>
+
 			<li class="sidebar-header">
 				Plugins & Addons
 			</li>
