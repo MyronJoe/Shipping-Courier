@@ -485,4 +485,11 @@ class DynamicController extends Controller
         return view('admin.site.counter.counter', compact('data'));
     }
 
+    //edit_counter
+    public function edit_counter($id)
+    {
+        $data = counter::findOrFail($id);
+        return view('admin.site.counter.edit_counter', compact('data'));
+    }
+
 }

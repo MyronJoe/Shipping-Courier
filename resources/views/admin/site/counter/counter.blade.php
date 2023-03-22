@@ -83,9 +83,8 @@
 
                     <div class="mb-1">
 
-                        <h1 class="h3 d-inline align-middle"><strong>About</strong></h1>
+                        <h1 class="h3 d-inline align-middle"><strong>Counters</strong></h1>
 
-                        <a href="{{url('add_about')}}" class="btn btn-primary" style="float: right;">Add About</a>
                     </div>
 
                     <div class="row mt-3" id="about">
@@ -115,7 +114,7 @@
                                             <td>{{$data->title}}</td>
                                             <td>
 
-                                                <a href="{{route('edit_about', $data->id)}}" class="btn btn-primary btn-sm">Edit</a>
+                                                <a href="{{route('edit_counter', $data->id)}}" class="btn btn-primary btn-sm">Edit</a>
 
                                             </td>
                                         </tr>

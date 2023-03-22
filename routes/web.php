@@ -169,3 +169,5 @@ Route::get('/edit_service/{id}', [DynamicController::class, 'edit_service'])->na
 
 //counter
 Route::get('/counter', [DynamicController::class, 'counter'])->name('counter');
+
+Route::get('/edit_counter/{id}', [DynamicController::class, 'edit_counter'])->name('edit_counter');
