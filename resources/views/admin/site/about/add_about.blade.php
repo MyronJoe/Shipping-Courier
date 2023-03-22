@@ -36,7 +36,7 @@
                         <div class="mb-3">
                             <h1 class="h3 d-inline align-middle">Add About</h1>
 
-                            <a href="{{url('carousel')}}" class="btn btn-primary" style="float: right;">All About</a>
+                            <a href="{{url('about')}}" class="btn btn-primary" style="float: right;">All About</a>
                         </div>
                         <hr>
                         <div>

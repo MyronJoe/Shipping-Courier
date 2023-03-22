@@ -11,7 +11,9 @@ use App\Models\headers;
 use App\Models\page_cats;
 
 use App\Models\pages;
+
 use App\Models\service;
+
 use Carbon\Carbon;
 
 use Illuminate\Http\Request;
@@ -255,7 +257,7 @@ class DynamicController extends Controller
     //Add about page
     public function add_about()
     {
-        return view('admin.site.about.add_about', compact('data'));
+        return view('admin.site.about.add_about');
     }
 
     //add_about to DB
@@ -398,5 +400,33 @@ class DynamicController extends Controller
     {
         return view('admin.site.service.add_service');
     }
-    
+
+    //addService
+    public function addService(Request $request)
+    {
+        $request->validate([
+            'title' => 'required|string',
+            'sub_title' => 'required|string',
+            'body' => 'required|string',
+            'image' => 'required',
+        ]);
+
+        $data = new service;
+
+        $data->title = $request->title;
+        $data->sub_title = $request->sub_title;
+        $data->body = $request->body;
+
+        $imageName = time() . '_' . $request->image->getClientOriginalExtension();
+
+        $request->image->move('assets/img', $imageName);
+
+        $data->image = $imageName;
+
+        $data->save();
+
+        Alert::success('About Added Successfully');
+        return redirect('about');
+    }
+
 }

@@ -15,11 +15,10 @@ return new class extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->text('title')->nullable();
-            $table->text('sub_title')->nullable();
             $table->text('image')->nullable();
             $table->text('card_title')->nullable();
             $table->text('card_sub_title')->nullable();
+            $table->text('body')->nullable();
             $table->timestamps();
         });
     }
