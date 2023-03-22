@@ -26,7 +26,7 @@
 
 
 
-            <form action="{{url('addAbout')}}" method="POST" novalidate enctype="multipart/form-data">
+            <form action="{{url('addFeatures')}}" method="POST" novalidate enctype="multipart/form-data">
 
                 @csrf
 

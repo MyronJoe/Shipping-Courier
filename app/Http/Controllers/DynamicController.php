@@ -559,4 +559,32 @@ class DynamicController extends Controller
     {
         return view('admin.site.features.add_features');
     }
+
+    //add_about to DB
+    public function addFeatures(Request $request)
+    {
+        $request->validate([
+            'title' => 'required|string',
+            'sub_title' => 'required|string',
+            'image' => 'required',
+        ]);
+
+        $data = new feature;
+
+        $data->title = $request->title;
+        $data->sub_title = $request->sub_title;
+
+        $imageName = time() . '_' . $request->image->getClientOriginalExtension();
+
+        // dd($imageName);
+
+        $request->image->move('assets/img', $imageName);
+
+        $data->icon = $imageName;
+
+        $data->save();
+
+        Alert::success('Feature Added Successfully');
+        return redirect('features');
+    }
 }
