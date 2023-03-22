@@ -116,7 +116,7 @@
 
                                 <label for="image" class="my-2 label">
 
-                                    <img src="../assets/img/{{$data->image}}" alt="{{$data->name}}">
+                                    <img src="../assets/img/{{$data->icon}}" alt="{{$data->name}}">
 
                                     <span>Update About Icon</span>
                                 </label>

@@ -166,7 +166,7 @@
                                         <tr>
                                             <td>{{$key + 1}}</td>
                                             <td>
-                                                <img style="width:80px; " src="assets/img/{{$data->image}}" alt="{{$data->name}}">
+                                                <img style="width:80px; " src="assets/img/{{$data->icon}}" alt="{{$data->name}}">
                                             </td>
                                             <td><b>{{$data->title}}</b></td>
 

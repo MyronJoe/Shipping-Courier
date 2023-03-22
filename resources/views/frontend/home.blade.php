@@ -51,12 +51,12 @@
 
 
     <!-- FREIGHT Start -->
-    @include('frontend.includes.freight')
+    <!-- @include('frontend.includes.freight') -->
     <!-- FREIGHT End -->
 
 
     <!-- Quote Start -->
-    @include('frontend.includes.quote')
+    <!-- @include('frontend.includes.quote') -->
     <!-- Quote End -->
 
 

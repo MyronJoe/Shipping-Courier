@@ -281,7 +281,7 @@ class DynamicController extends Controller
 
         $request->image->move('assets/img', $imageName);
 
-        $data->image = $imageName;
+        $data->icon = $imageName;
 
         $data->save();
 
@@ -327,7 +327,7 @@ class DynamicController extends Controller
 
             $request->image->move('assets/img', $imageName);
 
-            $data->image = $imageName;
+            $data->icon = $imageName;
         }
 
         $data->save();
