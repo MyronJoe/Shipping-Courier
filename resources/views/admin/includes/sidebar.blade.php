@@ -74,6 +74,12 @@
 				</a>
 			</li>
 
+			<li class="sidebar-item">
+				<a class="sidebar-link" href="{{ url('testimonial')}}">
+					<i class="align-middle" data-feather="coffee"></i> <span class="align-middle">Testimonial</span>
+				</a>
+			</li>
+
 			<li class="sidebar-header">
 				Plugins & Addons
 			</li>

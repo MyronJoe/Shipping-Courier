@@ -634,4 +634,14 @@ class DynamicController extends Controller
         Alert::success('Feature Updated Successfully');
         return redirect('features');
     }
+
+    //testimonial
+    public function testimonial()
+    {
+        $header = headers::orderBy('id', 'desc')->get();
+
+        $data = service::orderBy('id', 'desc')->get();
+
+        return view('admin.site.testimonial.testimonial', compact('data', 'header'));
+    }
 }

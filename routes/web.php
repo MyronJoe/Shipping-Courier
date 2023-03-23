@@ -188,3 +188,6 @@ Route::get('/delete_feature/{id}', [DynamicController::class, 'delete_feature'])
 Route::get('/edit_feature/{id}', [DynamicController::class, 'edit_feature'])->name('edit_feature');
 
 Route::post('/update_features/{id}', [DynamicController::class, 'update_features'])->name('update_features');
+
+//testimonial
+Route::get('/testimonial', [DynamicController::class, 'testimonial'])->name('testimonial');
