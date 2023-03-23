@@ -22,6 +22,7 @@ return new class extends Migration
             $table->text('feature_title')->nullable();
             $table->text('feature_sub')->nullable();
             $table->text('feature_image')->nullable();
+            $table->text('test_title')->nullable();
             $table->timestamps();
         });
     }

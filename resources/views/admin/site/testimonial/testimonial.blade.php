@@ -81,7 +81,7 @@
 
                 @foreach($header as $datas)
 
-                <form action="{{url('update_service', $datas->id)}}" method="POST" novalidate enctype="multipart/form-data">
+                <form action="{{url('update_test_title', $datas->id)}}" method="POST" novalidate enctype="multipart/form-data">
 
                     @csrf
 
@@ -89,9 +89,9 @@
                     <div class="container-fluid p-0">
 
                         <div class="mb-3">
-                            <h1 class="h3 d-inline align-middle">Update Service</h1>
+                            <h1 class="h3 d-inline align-middle">Update Testimonial</h1>
 
-                            <a href="#about" class="btn btn-primary" style="float: right;">All Service</a>
+                            <a href="#about" class="btn btn-primary" style="float: right;">All Testimony</a>
                         </div>
                         <hr>
                         <div>
@@ -100,8 +100,8 @@
                                     <div class="input col-sm-12">
                                         <div>
                                             <label for="title" class="my-2">Title</label>
-                                            <input type="text" class="form-control" name="service_title" id="title" value="{{ $datas->service_title }}">
-                                            @error('service_title')
+                                            <input type="text" class="form-control" name="test_title" id="title" value="{{ $datas->test_title }}">
+                                            @error('test_title')
                                             <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
@@ -109,7 +109,7 @@
                                 </div>
                             </div>
 
-                            <input type="submit" name="add_carousel" value="Update Service" class="btn btn-primary my-3 ">
+                            <input type="submit" name="add_carousel" value="Update Testimonial" class="btn btn-primary my-3 ">
                         </div>
                     </div>
 

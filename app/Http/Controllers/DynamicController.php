@@ -644,4 +644,22 @@ class DynamicController extends Controller
 
         return view('admin.site.testimonial.testimonial', compact('data', 'header'));
     }
+
+    //update_test_title
+    public function update_test_title($id, Request $request)
+    {
+        $request->validate([
+            'test_title' => 'required|string',
+
+        ]);
+
+        $data = headers::findOrFail($id);
+
+        $data->test_title = $request->test_title;
+
+        $data->save();
+
+        Alert::success('Title Updated Successfully');
+        return redirect('testimonial');
+    }
 }
