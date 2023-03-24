@@ -704,4 +704,14 @@ class DynamicController extends Controller
         Alert::success('Testimony Added Successfully');
         return redirect('testimonial');
     }
+
+    //delete_testimonial
+    public function delete_test($id)
+    {
+        $data = testimonial::findOrFail($id);
+
+        $data->delete();
+
+        return redirect('testimonial');
+    }
 }
