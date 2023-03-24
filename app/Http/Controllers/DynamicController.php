@@ -669,13 +669,15 @@ class DynamicController extends Controller
     }
 
     //add_testimonial
-    public function add_testimonial(){
+    public function add_testimonial()
+    {
 
         return view('admin.site.testimonial.add_test');
     }
 
     //addTestimonial
-    public function addTestimonial(Request $request){
+    public function addTestimonial(Request $request)
+    {
         $request->validate([
             'name' => 'required|string',
             'rank' => 'required|string',
@@ -686,13 +688,20 @@ class DynamicController extends Controller
 
         $data = new testimonial;
 
-        $data->test_title = $request->test_title;
+        $data->name = $request->name;
+        $data->rank = $request->rank;
+        $data->word = $request->testimonial;
+
+
+        $imageName = time() . '_' . $request->image->getClientOriginalExtension();
+
+        $request->image->move('assets/img', $imageName);
+
+        $data->icon = $imageName;
 
         $data->save();
 
         Alert::success('Title Updated Successfully');
         return redirect('testimonial');
     }
-
-
 }
