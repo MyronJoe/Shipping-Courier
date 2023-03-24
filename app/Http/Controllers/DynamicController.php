@@ -666,7 +666,7 @@ class DynamicController extends Controller
     //add_testimonial
     public function add_testimonial(){
 
-        return view('admin.site.features.edit_feature', compact('data'));
+        return view('admin.site.testimonial.add_test');
     }
 
 

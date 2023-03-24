@@ -125,9 +125,9 @@
 
                     <div class="mb-1">
 
-                        <h1 class="h3 d-inline align-middle"><strong>Services</strong></h1>
+                        <h1 class="h3 d-inline align-middle"><strong>Testimonials</strong></h1>
 
-                        <a href="{{url('add_service')}}" class="btn btn-primary" style="float: right;">Add Services</a>
+                        <a href="{{url('add_testimonial')}}" class="btn btn-primary" style="float: right;">Add Testimonial</a>
                     </div>
 
                     <div class="row mt-3" id="about">
