@@ -697,11 +697,11 @@ class DynamicController extends Controller
 
         $request->image->move('assets/img', $imageName);
 
-        $data->icon = $imageName;
+        $data->image = $imageName;
 
         $data->save();
 
-        Alert::success('Title Updated Successfully');
+        Alert::success('Testimony Added Successfully');
         return redirect('testimonial');
     }
 }
