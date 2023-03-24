@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\about;
 
 use App\Models\carousel;
+
 use App\Models\counter;
+
 use App\Models\feature;
+
 use App\Models\headers;
 
 use App\Models\page_cats;
@@ -14,6 +17,8 @@ use App\Models\page_cats;
 use App\Models\pages;
 
 use App\Models\service;
+
+use App\Models\testimonial;
 
 use Carbon\Carbon;
 
@@ -670,8 +675,23 @@ class DynamicController extends Controller
     }
 
     //addTestimonial
-    public function addTestimonial(){
-        
+    public function addTestimonial(Request $request){
+        $request->validate([
+            'name' => 'required|string',
+            'rank' => 'required|string',
+            'testimonial' => 'required|string',
+            'image' => 'required',
+
+        ]);
+
+        $data = new testimonial;
+
+        $data->test_title = $request->test_title;
+
+        $data->save();
+
+        Alert::success('Title Updated Successfully');
+        return redirect('testimonial');
     }
 
 
