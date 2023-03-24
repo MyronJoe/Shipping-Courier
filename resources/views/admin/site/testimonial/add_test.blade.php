@@ -45,9 +45,9 @@
                             <div class="row">
                                 <div class="input col-sm-12 col-md-6">
                                     <div>
-                                        <label for="title" class="my-2">Title</label>
-                                        <input type="text" class="form-control" name="title" id="title" value="{{ old('title') }}">
-                                        @error('title')
+                                        <label for="name" class="my-2">Name</label>
+                                        <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
+                                        @error('name')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
@@ -57,9 +57,9 @@
 
                                 <div class="input col-sm-12 col-md-6">
                                     <div>
-                                        <label for="sub_title" class="my-2">Sub Title</label>
-                                        <input type="text" class="form-control" name="sub_title" id="sub_title" value="{{ old('sub_title') }}">
-                                        @error('sub_title')
+                                        <label for="rank" class="my-2">Rank/Position</label>
+                                        <input type="text" class="form-control" name="rank" id="rank" value="{{ old('rank') }}">
+                                        @error('rank')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
@@ -70,9 +70,9 @@
                             <div class="row">
                                 <div class="input col-sm-12 mt-1">
                                     <div>
-                                        <label for="editor" class="my-2">Body</label>
-                                        <textarea name="body" id="editor1" value="" class="form-control" cols="30" rows="10"></textarea>
-                                        @error('body')
+                                        <label for="editor" class="my-2">testimonial</label>
+                                        <textarea name="testimonial" id="editor1" value="" class="form-control" cols="30" rows="10"></textarea>
+                                        @error('testimonial')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
