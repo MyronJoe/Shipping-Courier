@@ -662,4 +662,12 @@ class DynamicController extends Controller
         Alert::success('Title Updated Successfully');
         return redirect('testimonial');
     }
+
+    //add_testimonial
+    public function add_testimonial(){
+
+        return view('admin.site.features.edit_feature', compact('data'));
+    }
+
+
 }
