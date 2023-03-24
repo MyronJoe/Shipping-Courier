@@ -669,5 +669,10 @@ class DynamicController extends Controller
         return view('admin.site.testimonial.add_test');
     }
 
+    //addTestimonial
+    public function addTestimonial(){
+        
+    }
+
 
 }

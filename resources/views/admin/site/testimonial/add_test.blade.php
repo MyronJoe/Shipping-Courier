@@ -28,7 +28,7 @@
 
 
 
-            <form action="{{url('addService')}}" method="POST" novalidate enctype="multipart/form-data">
+            <form action="{{url('addTestimonial')}}" method="POST" novalidate enctype="multipart/form-data">
 
                 @csrf
 
@@ -36,9 +36,9 @@
                     <div class="container-fluid p-0">
 
                         <div class="mb-3">
-                            <h1 class="h3 d-inline align-middle">Add Service</h1>
+                            <h1 class="h3 d-inline align-middle">Add Testimonial</h1>
 
-                            <a href="{{url('service')}}" class="btn btn-primary" style="float: right;">All Service</a>
+                            <a href="{{url('testimonial')}}" class="btn btn-primary" style="float: right;">All Testimonial</a>
                         </div>
                         <hr>
                         <div>
@@ -91,7 +91,7 @@
                             </div>
                             <br>
 
-                            <input type="submit" name="add_carousel" value="Add Service" class="btn btn-primary my-3 " >
+                            <input type="submit" name="add_carousel" value="Add Testimonial" class="btn btn-primary my-3 " >
                         </div>
                     </div>
                 </main>
