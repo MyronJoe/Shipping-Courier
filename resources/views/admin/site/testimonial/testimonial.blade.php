@@ -142,9 +142,9 @@
                                         <tr>
                                             <th>S|N</th>
                                             <th>Image</th>
-                                            <th>Title</th>
-                                            <th>Sub Title</th>
-                                            <th>Body</th>
+                                            <th>Name</th>
+                                            <th>Rank</th>
+                                            <th>Feedback</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -156,9 +156,9 @@
                                             <td>
                                                 <img style="width:80px; " src="assets/img/{{$data->image}}" alt="{{$data->name}}">
                                             </td>
-                                            <td><b>{{$data->card_title}}</b></td>
-                                            <td>{!! Str::limit($data->card_sub_title, 40, '...') !!}</td>
-                                            <td>{!! Str::limit($data->body, 40, '...') !!}</td>
+                                            <td><b>{{$data->name}}</b></td>
+                                            <td>{{$data->rank}}</td>
+                                            <td>{!! Str::limit($data->word, 40, '...') !!}</td>
                                             <td>
 
                                                 <a href="{{route('edit_service', $data->id)}}" class="btn btn-primary btn-sm">Edit</a>

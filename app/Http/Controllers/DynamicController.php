@@ -645,7 +645,7 @@ class DynamicController extends Controller
     {
         $header = headers::orderBy('id', 'desc')->get();
 
-        $data = service::orderBy('id', 'desc')->get();
+        $data = testimonial::orderBy('id', 'desc')->get();
 
         return view('admin.site.testimonial.testimonial', compact('data', 'header'));
     }
