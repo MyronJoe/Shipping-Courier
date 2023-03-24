@@ -161,7 +161,7 @@
                                             <td>{!! Str::limit($data->word, 40, '...') !!}</td>
                                             <td>
 
-                                                <a href="{{route('edit_service', $data->id)}}" class="btn btn-primary btn-sm">Edit</a>
+                                                <a href="{{route('edit_test', $data->id)}}" class="btn btn-primary btn-sm">Edit</a>
 
                                                 <a href="{{route('delete_test', $data->id)}}" class="btn btn-danger btn-sm" onclick="confirmation(event)">Delete</a>
                                             </td>

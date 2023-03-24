@@ -714,4 +714,42 @@ class DynamicController extends Controller
 
         return redirect('testimonial');
     }
+
+    //edit_testimonial
+    public function edit_test($id, Request $request)
+    {
+
+        
+    }
+
+    // public function update_test($id, Request $request)
+    // {
+
+    //     $request->validate([
+    //         'name' => 'required|string',
+    //         'rank' => 'required|string',
+    //         'word' => 'required|string',
+    //     ]);
+
+    //     $data = testimonial::findOrFail($id);
+
+    //     $data->name = $request->name;
+    //     $data->rank = $request->rank;
+    //     $data->word = $request->testimonial;
+
+    //     $image = $request->image;
+    //     if ($image) {
+
+    //         $imageName = time() . '_' . $request->image->getClientOriginalExtension();
+
+    //         $request->image->move('assets/img', $imageName);
+
+    //         $data->image = $imageName;
+    //     }
+
+    //     $data->save();
+
+    //     Alert::success('Testimonial Updated Successfully');
+    //     return redirect('testimonial');
+    // }
 }
