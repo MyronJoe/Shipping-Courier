@@ -720,37 +720,38 @@ class DynamicController extends Controller
     {
         $data = testimonial::findOrFail($id);
 
-        return view('admin.site.testimonial.edit_test', compact('data'));  
+        return view('admin.site.testimonial.edit_test', compact('data'));
     }
 
-    // public function update_test($id, Request $request)
-    // {
+    //update_testimonial
+    public function update_test($id, Request $request)
+    {
 
-    //     $request->validate([
-    //         'name' => 'required|string',
-    //         'rank' => 'required|string',
-    //         'word' => 'required|string',
-    //     ]);
+        $request->validate([
+            'name' => 'required|string',
+            'rank' => 'required|string',
+            'testimonial' => 'required|string',
+        ]);
 
-    //     $data = testimonial::findOrFail($id);
+        $data = testimonial::findOrFail($id);
 
-    //     $data->name = $request->name;
-    //     $data->rank = $request->rank;
-    //     $data->word = $request->testimonial;
+        $data->name = $request->name;
+        $data->rank = $request->rank;
+        $data->word = $request->testimonial;
 
-    //     $image = $request->image;
-    //     if ($image) {
+        $image = $request->image;
+        if ($image) {
 
-    //         $imageName = time() . '_' . $request->image->getClientOriginalExtension();
+            $imageName = time() . '_' . $request->image->getClientOriginalExtension();
 
-    //         $request->image->move('assets/img', $imageName);
+            $request->image->move('assets/img', $imageName);
 
-    //         $data->image = $imageName;
-    //     }
+            $data->image = $imageName;
+        }
 
-    //     $data->save();
+        $data->save();
 
-    //     Alert::success('Testimonial Updated Successfully');
-    //     return redirect('testimonial');
-    // }
+        Alert::success('Testimonial Updated Successfully');
+        return redirect('testimonial');
+    }
 }

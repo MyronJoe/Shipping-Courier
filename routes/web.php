@@ -196,7 +196,7 @@ Route::get('/add_testimonial', [DynamicController::class, 'add_testimonial'])->n
 
 Route::post('/addTestimonial', [DynamicController::class, 'addTestimonial'])->name('addTestimonial');
 
-Route::post('/delete_test/{id}', [DynamicController::class, 'delete_test'])->name('delete_test');
+Route::get('/delete_test/{id}', [DynamicController::class, 'delete_test'])->name('delete_test');
 
 Route::get('/edit_test/{id}', [DynamicController::class, 'edit_test'])->name('edit_test');
 
