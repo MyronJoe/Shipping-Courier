@@ -70,7 +70,7 @@
                             <div class="row">
                                 <div class="input col-sm-12 mt-1">
                                     <div>
-                                        <label for="editor" class="my-2">testimonial</label>
+                                        <label for="editor" class="my-2">Feedback</label>
                                         <textarea name="testimonial" id="editor1" value="" class="form-control" cols="30" rows="10"></textarea>
                                         @error('testimonial')
                                         <span class="text-danger">{{ $message }}</span>

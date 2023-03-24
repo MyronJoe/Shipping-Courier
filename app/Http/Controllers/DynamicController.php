@@ -716,10 +716,11 @@ class DynamicController extends Controller
     }
 
     //edit_testimonial
-    public function edit_test($id, Request $request)
+    public function edit_test($id)
     {
+        $data = testimonial::findOrFail($id);
 
-        
+        return view('admin.site.testimonial.edit_test', compact('data'));  
     }
 
     // public function update_test($id, Request $request)

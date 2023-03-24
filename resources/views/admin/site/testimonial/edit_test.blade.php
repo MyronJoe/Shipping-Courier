@@ -68,7 +68,7 @@
 
 
 
-            <form action="{{url('update_service_card', $data->id)}}" method="POST" novalidate enctype="multipart/form-data">
+            <form action="{{url('update_test', $data->id)}}" method="POST" novalidate enctype="multipart/form-data">
 
                 @csrf
 
@@ -76,18 +76,18 @@
                     <div class="container-fluid p-0">
 
                         <div class="mb-3">
-                            <h1 class="h3 d-inline align-middle">Update Service</h1>
+                            <h1 class="h3 d-inline align-middle">Update Testimonial</h1>
 
-                            <a href="{{url('service')}}" class="btn btn-primary" style="float: right;">All Service</a>
+                            <a href="{{url('testimonial')}}" class="btn btn-primary" style="float: right;">All Testimonial</a>
                         </div>
                         <hr>
                         <div>
                             <div class="row">
                                 <div class="input col-sm-12 col-md-6">
                                     <div>
-                                        <label for="title" class="my-2">Title</label>
-                                        <input type="text" class="form-control" name="title" id="title" value="{{ $data->card_title }}">
-                                        @error('title')
+                                        <label for="name" class="my-2">Name</label>
+                                        <input type="text" class="form-control" name="name" id="name" value="{{ $data->name }}">
+                                        @error('name')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
@@ -97,9 +97,9 @@
 
                                 <div class="input col-sm-12 col-md-6">
                                     <div>
-                                        <label for="sub_title" class="my-2">Sub Title</label>
-                                        <input type="text" class="form-control" name="sub_title" id="sub_title" value="{{ $data->card_sub_title }}">
-                                        @error('sub_title')
+                                        <label for="rank" class="my-2">Rank/Position</label>
+                                        <input type="text" class="form-control" name="rank" id="rank" value="{{ $data->rank }}">
+                                        @error('rank')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
@@ -110,9 +110,9 @@
                             <div class="row">
                                 <div class="input col-sm-12 mt-1">
                                     <div>
-                                        <label for="editor" class="my-2">Body</label>
-                                        <textarea name="body" id="editor1" value="" class="form-control" cols="30" rows="10">{{ $data->body }}</textarea>
-                                        @error('body')
+                                        <label for="editor" class="my-2">Feedbak</label>
+                                        <textarea name="testimonial" id="editor1" value="" class="form-control" cols="30" rows="10">{{ $data->word }}</textarea>
+                                        @error('testimonial')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
@@ -138,7 +138,7 @@
                             </div>
                             <br>
 
-                            <input type="submit" name="add_carousel" value="Update Service" class="btn btn-primary my-3 " >
+                            <input type="submit" name="add_carousel" value="Update Testimonial" class="btn btn-primary my-3 " >
                         </div>
                     </div>
                 </main>
