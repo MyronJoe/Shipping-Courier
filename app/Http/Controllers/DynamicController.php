@@ -767,18 +767,18 @@ class DynamicController extends Controller
     //update_utility
     public function update_utility($id, Request $request)
     {
-        $request->validate([
-            'logo_name' => 'required|string',
-            'site_name' => 'required|string',
-            'address' => 'required|string',
-            'phone_no' => 'required|string',
-            'mail' => 'required|string',
-            'twitter' => 'required|string',
-            'facebook' => 'required|string',
-            'linkedin' => 'required|string',
-            'youtube' => 'required|string',
-            'footer_note' => 'required|string',
-        ]);
+        // $request->validate([
+        //     'logo_name' => 'required|string',
+        //     'site_name' => 'required|string',
+        //     'address' => 'required|string',
+        //     'phone_no' => 'required|string',
+        //     'mail' => 'required|string',
+        //     'twitter' => 'required|string',
+        //     'facebook' => 'required|string',
+        //     'linkedin' => 'required|string',
+        //     'youtube' => 'required|string',
+        //     'footer_note' => 'required|string',
+        // ]);
 
         $data = utilities::findOrFail($id);
 
@@ -794,23 +794,25 @@ class DynamicController extends Controller
         $data->footer_note = $request->footer_note;
 
         $logo_img = $request->logo_img;
-        if ($logo_img) {
-
-            $imageName = time() . '_' . $request->logo_img->getClientOriginalExtension();
-
-            $request->logo_img->move('assets/img', $imageName);
-
-            $data->logo_pic = $imageName;
-        }
 
         $fav_icon = $request->fav_icon;
+
+        if ($logo_img) {
+
+            $imageName1 = time() . '_' . $request->logo_img->getClientOriginalExtension();
+
+            $request->logo_img->move('assets/img', $imageName1);
+
+            $data->logo_pic = $imageName1;
+        }
+
         if ($fav_icon) {
 
-            $imageName = time() . '_' . $request->fav_icon->getClientOriginalExtension();
+            $imageName2 = time() . '_' . $request->fav_icon->getClientOriginalExtension();
 
-            $request->fav_icon->move('assets/img', $imageName);
+            $request->fav_icon->move('assets/img', $imageName2);
 
-            $data->fav_icon = $imageName;
+            $data->fav_icon = $imageName2;
         }
 
         $data->save();
