@@ -22,18 +22,14 @@
 
     <style>
         .label img {
-            /* width: 100%; */
-            width: 200px;
+            width: 100%;
+            height: 200px;
             margin: auto;
             object-fit: cover;
             opacity: 0.7;
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
             transition: .6s ease-out;
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
         .label img:hover {
@@ -73,8 +69,8 @@
             @include('admin.includes.nav')
 
 
-
-            <form action="{{url('update_about', $data->id)}}" method="POST" novalidate enctype="multipart/form-data">
+            @foreach($data as $data)
+            <form action="{{url('update_utility', $data->id)}}" method="POST" novalidate enctype="multipart/form-data">
 
                 @csrf
 
@@ -82,9 +78,7 @@
                     <div class="container-fluid p-0">
 
                         <div class="mb-3">
-                            <h1 class="h3 d-inline align-middle">Update About</h1>
-
-                            <a href="{{url('about')}}" class="btn btn-primary" style="float: right;">All About</a>
+                            <h1 class="h3 d-inline align-middle">Update Page Utilities</h1>
                         </div>
                         <hr>
                         <div>
@@ -123,7 +117,7 @@
                                 <div class="input col-sm-12 col-md-6">
                                     <div>
                                         <label for="phone_no" class="my-2">Phone Number</label>
-                                        <input type="text" class="form-control" name="phone_no" id="phone_no" value="{{ $data->phone_no }}">
+                                        <input type="text" class="form-control" name="phone_no" id="phone_no" value="{{ $data->phone_number }}">
                                         @error('phone_no')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -187,9 +181,7 @@
                                 <div class="input col-sm-12 col-md-6">
                                     <div>
                                         <label for="footer_note" class="my-2">footer_note</label>
-                                        <textarea name="footer_note" id="footer_note" cols="30" rows="3" class="form-control">
-                                            {{ $data->footer_note }}
-                                        </textarea>
+                                        <input type="text" class="form-control" name="footer_note" id="footer_note" value="{{ $data->footer_note }}">
                                         @error('footer_note')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -197,42 +189,44 @@
 
                                 </div>
 
+                                <div class="upload-sec input col-sm-12 col-md-6">
+
+                                    <input type="file" name="logo_img" style="display:none;" id="logo_img" value="{{ old('logo_img') }}" accept=".gif, .jpg, .png"><br>
+
+                                    <label for="logo_img" class="my-2 label">
+
+                                        <img src="../assets/img/{{$data->logo_pic}}" alt="{{$data->name}}">
+
+                                        <span>Update Logo Image</span>
+                                    </label>
+
+                                    @error('logo_img')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+
+                                <div class="upload-sec input col-sm-12 col-md-6">
+
+                                    <input type="file" name="fav_icon" style="display:none;" id="fav_icon" value="{{ old('fav_icon') }}" accept=".gif, .jpg, .png"><br>
+
+                                    <label for="fav_icon" class="my-2 label">
+
+                                        <img src="../assets/img/{{$data->fav_icon}}" alt="{{$data->name}}">
+
+                                        <span>Update Fave Icon</span>
+                                    </label>
+
+                                    @error('fav_icon')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+
 
 
                             </div>
 
 
-                            <div class="upload-sec">
 
-                                <input type="file" name="logo_img" style="display:none;" id="logo_img" value="{{ old('logo_img') }}" accept=".gif, .jpg, .png"><br>
-
-                                <label for="logo_img" class="my-2 label">
-
-                                    <img src="../assets/img/{{$data->logo_pic}}" alt="{{$data->name}}">
-
-                                    <span>Update About Icon</span>
-                                </label>
-
-                                @error('logo_img')
-                                <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
-
-                            <div class="upload-sec">
-
-                                <input type="file" name="fav_icon" style="display:none;" id="fav_icon" value="{{ old('fav_icon') }}" accept=".gif, .jpg, .png"><br>
-
-                                <label for="fav_icon" class="my-2 label">
-
-                                    <img src="../assets/img/{{$data->fave}}" alt="{{$data->name}}">
-
-                                    <span>Update About Icon</span>
-                                </label>
-
-                                @error('fav_icon')
-                                <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
 
                             <input type="submit" name="add_carousel" value="Update Utility" class="btn btn-primary my-3 ">
                         </div>
@@ -240,6 +234,7 @@
                 </main>
 
             </form>
+            @endforeach
 
         </div>
     </div>

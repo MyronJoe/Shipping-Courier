@@ -45,6 +45,12 @@
 
 
 			<li class="sidebar-item">
+				<a class="sidebar-link" href="{{ url('utilities')}}">
+					<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Utilities</span>
+				</a>
+			</li>
+
+			<li class="sidebar-item">
 				<a class="sidebar-link" href="{{ url('carousel')}}">
 					<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Carousel</span>
 				</a>
