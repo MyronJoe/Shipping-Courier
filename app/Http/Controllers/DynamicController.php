@@ -19,7 +19,7 @@ use App\Models\pages;
 use App\Models\service;
 
 use App\Models\testimonial;
-
+use App\Models\utilities;
 use Carbon\Carbon;
 
 use Illuminate\Http\Request;
@@ -754,4 +754,16 @@ class DynamicController extends Controller
         Alert::success('Testimonial Updated Successfully');
         return redirect('testimonial');
     }
+
+
+    //utilities
+    public function utilities()
+    {
+        $data = utilities::all();
+
+        return view('admin.site.testimonial.edit_test', compact('data'));
+    }
+
+
+
 }

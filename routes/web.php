@@ -203,3 +203,6 @@ Route::get('/edit_test/{id}', [DynamicController::class, 'edit_test'])->name('ed
 Route::post('/update_test/{id}', [DynamicController::class, 'update_test'])->name('update_test');
 
 Route::post('/update_test_title/{id}', [DynamicController::class, 'update_test_title'])->name('update_test_title');
+
+//utilities
+Route::get('/utilities', [DynamicController::class, 'utilities'])->name('utilities');
