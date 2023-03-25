@@ -15,6 +15,18 @@ return new class extends Migration
     {
         Schema::create('utilities', function (Blueprint $table) {
             $table->id();
+            $table->text('logo_name')->nullable();
+            $table->text('logo_pic')->nullable();
+            $table->text('fav_icon')->nullable();
+            $table->text('footer_note')->nullable();
+            $table->text('address')->nullable();
+            $table->text('phone_number')->nullable();
+            $table->text('mail')->nullable();
+            $table->text('twitter')->nullable();
+            $table->text('facebook')->nullable();
+            $table->text('youtube')->nullable();
+            $table->text('linkedin')->nullable();
+            $table->text('site_name')->nullable();
             $table->timestamps();
         });
     }

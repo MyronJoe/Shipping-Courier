@@ -10,7 +10,7 @@ include 'path.php';
     <meta content="" name="keywords">
     <meta content="" name="description">
     <!-- Favicon -->
-    <link href="assets/img/favicon.ico" rel="icon">
+    <!-- <link href="assets/img/favicon.ico" rel="icon"> -->
     <!-- All Styles -->
     @include('frontend.includes.styles')
 </head>

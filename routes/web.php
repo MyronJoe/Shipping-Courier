@@ -29,7 +29,7 @@ Route::get('/404', function () {
     return view('frontend.error');
 });
 
-Route::get('/about', function () {
+Route::get('/aboutUs', function () {
     return view('frontend.about');
 });
 

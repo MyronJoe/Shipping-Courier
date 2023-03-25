@@ -6,7 +6,7 @@
 <!-- Icon Font Stylesheet -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-<script src="https://use.fontawesome.com/03aa7457ee.js"></script>
+<!-- <script src="https://use.fontawesome.com/03aa7457ee.js"></script> -->
 
 <!-- Libraries Stylesheet -->
 <link href="assets/lib/animate/animate.min.css" rel="stylesheet">
@@ -18,3 +18,6 @@
 
 <!-- Template Stylesheet -->
 <link href="assets/css/style.css" rel="stylesheet">
+
+<!-- Favicon -->
+<link href="assets/img/team-1.jpg" rel="icon">
