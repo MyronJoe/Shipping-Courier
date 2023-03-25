@@ -207,4 +207,4 @@ Route::post('/update_test_title/{id}', [DynamicController::class, 'update_test_t
 //utilities
 Route::get('/utilities', [DynamicController::class, 'utilities'])->name('utilities');
 
-Route::get('/update_utility/{id}', [DynamicController::class, 'update_utility'])->name('update_utility');
+Route::post('/update_utility/{id}', [DynamicController::class, 'update_utility'])->name('update_utility');

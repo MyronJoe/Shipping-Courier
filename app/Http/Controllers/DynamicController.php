@@ -764,6 +764,60 @@ class DynamicController extends Controller
         return view('admin.site.utilities.utilities', compact('data'));
     }
 
+    //update_utility
+    public function update_utility($id, Request $request)
+    {
+        $request->validate([
+            'logo_name' => 'required|string',
+            'site_name' => 'required|string',
+            'address' => 'required|string',
+            'phone_no' => 'required|string',
+            'mail' => 'required|string',
+            'twitter' => 'required|string',
+            'facebook' => 'required|string',
+            'linkedin' => 'required|string',
+            'youtube' => 'required|string',
+            'footer_note' => 'required|string',
+        ]);
+
+        $data = utilities::findOrFail($id);
+
+        $data->logo_name = $request->logo_name;
+        $data->site_name= $request->site_name;
+        $data->address = $request->address;
+        $data->phone_number = $request->phone_no;
+        $data->mail = $request->mail;
+        $data->twitter = $request->twitter;
+        $data->facebook = $request->facebook;
+        $data->linkedin = $request->linkedin;
+        $data->youtube = $request->youtube;
+        $data->footer_note = $request->footer_note;
+
+        $logo_img = $request->logo_img;
+        if ($logo_img) {
+
+            $imageName = time() . '_' . $request->logo_img->getClientOriginalExtension();
+
+            $request->logo_img->move('assets/img', $imageName);
+
+            $data->logo_pic = $imageName;
+        }
+
+        $fav_icon = $request->fav_icon;
+        if ($fav_icon) {
+
+            $imageName = time() . '_' . $request->fav_icon->getClientOriginalExtension();
+
+            $request->fav_icon->move('assets/img', $imageName);
+
+            $data->fav_icon = $imageName;
+        }
+
+        $data->save();
+
+        Alert::success('Utility Updated Successfully');
+        return redirect('utilities');
+    }
 
 
 }
