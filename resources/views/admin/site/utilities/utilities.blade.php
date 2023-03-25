@@ -21,7 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        .label img{
+        .label img {
             /* width: 100%; */
             width: 200px;
             margin: auto;
@@ -35,16 +35,19 @@
             justify-content: center;
             align-items: center;
         }
-        .label img:hover{
+
+        .label img:hover {
             opacity: 1;
         }
-        .upload-sec{
+
+        .upload-sec {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
         }
-        label span{
+
+        label span {
             display: inline-block;
             text-align: center;
             background-color: #ddd;
@@ -52,7 +55,8 @@
             padding: 10px;
 
         }
-        .label{
+
+        .label {
             cursor: pointer;
         }
     </style>
@@ -87,46 +91,150 @@
                             <div class="row">
                                 <div class="input col-sm-12 col-md-6">
                                     <div>
-                                        <label for="title" class="my-2">Title</label>
-                                        <input type="text" class="form-control" name="title" id="title" value="{{ $data->title }}">
-                                        @error('title')
+                                        <label for="logo_name" class="my-2">Logo Name</label>
+                                        <input type="text" class="form-control" name="logo_name" id="logo_name" value="{{ $data->logo_name }}">
+                                        @error('logo_name')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
+                                </div>
 
+                                <div class="input col-sm-12 col-md-6">
+                                    <div>
+                                        <label for="site_name" class="my-2">Website Name</label>
+                                        <input type="text" class="form-control" name="site_name" id="site_name" value="{{ $data->site_name }}">
+                                        @error('site_name')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
 
                                 </div>
 
                                 <div class="input col-sm-12 col-md-6">
                                     <div>
-                                        <label for="sub_title" class="my-2">Sub Title</label>
-                                        <input type="text" class="form-control" name="sub_title" id="sub_title" value="{{ $data->sub_title }}">
-                                        @error('sub_title')
+                                        <label for="address" class="my-2">Location/Address</label>
+                                        <input type="text" class="form-control" name="address" id="address" value="{{ $data->address }}">
+                                        @error('address')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="input col-sm-12 col-md-6">
+                                    <div>
+                                        <label for="phone_no" class="my-2">Phone Number</label>
+                                        <input type="text" class="form-control" name="phone_no" id="phone_no" value="{{ $data->phone_no }}">
+                                        @error('phone_no')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
 
                                 </div>
+
+                                <div class="input col-sm-12 col-md-6">
+                                    <div>
+                                        <label for="mail" class="my-2">Mail</label>
+                                        <input type="email" class="form-control" name="mail" id="mail" value="{{ $data->mail }}">
+                                        @error('mail')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="input col-sm-12 col-md-6">
+                                    <div>
+                                        <label for="twitter" class="my-2">Twitter</label>
+                                        <input type="text" class="form-control" name="twitter" id="twitter" value="{{ $data->twitter }}">
+                                        @error('twitter')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+
+                                </div>
+
+                                <div class="input col-sm-12 col-md-6">
+                                    <div>
+                                        <label for="facebook" class="my-2">Facebook</label>
+                                        <input type="email" class="form-control" name="facebook" id="facebook" value="{{ $data->facebook }}">
+                                        @error('facebook')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="input col-sm-12 col-md-6">
+                                    <div>
+                                        <label for="linkedin" class="my-2">Linkedin</label>
+                                        <input type="text" class="form-control" name="linkedin" id="linkedin" value="{{ $data->linkedin }}">
+                                        @error('linkedin')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+
+                                </div>
+
+                                <div class="input col-sm-12 col-md-6">
+                                    <div>
+                                        <label for="youtube" class="my-2">Youtube</label>
+                                        <input type="text" class="form-control" name="youtube" id="youtube" value="{{ $data->youtube }}">
+                                        @error('youtube')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+
+                                </div>
+
+                                <div class="input col-sm-12 col-md-6">
+                                    <div>
+                                        <label for="footer_note" class="my-2">footer_note</label>
+                                        <textarea name="footer_note" id="footer_note" cols="30" rows="3" class="form-control">
+                                            {{ $data->footer_note }}
+                                        </textarea>
+                                        @error('footer_note')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+
+                                </div>
+
+
+
                             </div>
 
 
                             <div class="upload-sec">
 
-                                <input type="file" name="image" style="display:none;" id="image" value="{{ old('image') }}" accept=".gif, .jpg, .png"><br>
+                                <input type="file" name="logo_img" style="display:none;" id="logo_img" value="{{ old('logo_img') }}" accept=".gif, .jpg, .png"><br>
 
-                                <label for="image" class="my-2 label">
+                                <label for="logo_img" class="my-2 label">
 
-                                    <img src="../assets/img/{{$data->icon}}" alt="{{$data->name}}">
+                                    <img src="../assets/img/{{$data->logo_pic}}" alt="{{$data->name}}">
 
                                     <span>Update About Icon</span>
                                 </label>
 
-                                @error('image')
+                                @error('logo_img')
                                 <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
 
-                            <input type="submit" name="add_carousel" value="Update About" class="btn btn-primary my-3 ">
+                            <div class="upload-sec">
+
+                                <input type="file" name="fav_icon" style="display:none;" id="fav_icon" value="{{ old('fav_icon') }}" accept=".gif, .jpg, .png"><br>
+
+                                <label for="fav_icon" class="my-2 label">
+
+                                    <img src="../assets/img/{{$data->fave}}" alt="{{$data->name}}">
+
+                                    <span>Update About Icon</span>
+                                </label>
+
+                                @error('fav_icon')
+                                <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                            <input type="submit" name="add_carousel" value="Update Utility" class="btn btn-primary my-3 ">
                         </div>
                     </div>
                 </main>

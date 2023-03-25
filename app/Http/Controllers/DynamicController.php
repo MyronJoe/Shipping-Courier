@@ -761,7 +761,7 @@ class DynamicController extends Controller
     {
         $data = utilities::all();
 
-        return view('admin.site.testimonial.edit_test', compact('data'));
+        return view('admin.site.utilities.utilities', compact('data'));
     }
 
 
