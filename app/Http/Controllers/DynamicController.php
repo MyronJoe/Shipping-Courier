@@ -767,18 +767,18 @@ class DynamicController extends Controller
     //update_utility
     public function update_utility($id, Request $request)
     {
-        // $request->validate([
-        //     'logo_name' => 'required|string',
-        //     'site_name' => 'required|string',
-        //     'address' => 'required|string',
-        //     'phone_no' => 'required|string',
-        //     'mail' => 'required|string',
-        //     'twitter' => 'required|string',
-        //     'facebook' => 'required|string',
-        //     'linkedin' => 'required|string',
-        //     'youtube' => 'required|string',
-        //     'footer_note' => 'required|string',
-        // ]);
+        $request->validate([
+            'logo_name' => 'required|string',
+            'site_name' => 'required|string',
+            'address' => 'required|string',
+            'phone_no' => 'required|string',
+            'mail' => 'required|string',
+            'twitter' => 'required|string',
+            'facebook' => 'required|string',
+            'linkedin' => 'required|string',
+            'youtube' => 'required|string',
+            'footer_note' => 'required|string',
+        ]);
 
         $data = utilities::findOrFail($id);
 
