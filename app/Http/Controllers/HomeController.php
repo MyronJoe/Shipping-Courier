@@ -57,4 +57,12 @@ class HomeController extends Controller
         Alert::success('Message Sent Successfully');
         return redirect('contact');
     }
+
+    //message
+    public function message()
+    {
+        $data = message::orderBy('id', 'desc')->get();
+
+        return view('admin.site.message.message', compact('data'));
+    }
 }

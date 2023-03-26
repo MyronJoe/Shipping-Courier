@@ -86,8 +86,15 @@
 				</a>
 			</li>
 
+
 			<li class="sidebar-header">
-				Plugins & Addons
+				Feedback
+			</li>
+
+			<li class="sidebar-item">
+				<a class="sidebar-link" href="{{ url('message')}}">
+					<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Messages</span>
+				</a>
 			</li>
 
 			<li class="sidebar-item">
