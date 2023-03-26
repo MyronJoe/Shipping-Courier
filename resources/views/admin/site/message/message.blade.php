@@ -114,7 +114,7 @@
                                             <td>{!! Str::limit($data->details, 40, '...') !!}</td>
                                             <td>
 
-                                                <a href="{{route('edit_test', $data->id)}}" class="btn btn-info btn-sm">View</a>
+                                                <a href="{{route('view_message', $data->id)}}" class="btn btn-info btn-sm">View</a>
 
                                                 <a href="{{route('delete_message', $data->id)}}" class="btn btn-danger btn-sm" onclick="confirmation(event)">Delete</a>
                                             </td>

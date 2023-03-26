@@ -75,4 +75,12 @@ class HomeController extends Controller
 
         return redirect('message');
     }
+
+    //view_message
+    public function view_message($id)
+    {
+        $data = message::findOrFail($id);
+
+        return view('admin.site.message.view_message', compact('data'));
+    }
 }
