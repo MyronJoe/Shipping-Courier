@@ -40,29 +40,21 @@ class HomeController extends Controller
     {
         $request->validate([
             'name' => 'required|string',
-            'rank' => 'required|string',
-            'testimonial' => 'required|string',
+            'email' => 'required|string',
+            'subject' => 'required|string',
+            'details' => 'required|string',
         ]);
 
         $data = new message;
 
         $data->name = $request->name;
-        $data->rank = $request->rank;
-        $data->word = $request->testimonial;
-
-        $image = $request->image;
-        if ($image) {
-
-            $imageName = time() . '_' . $request->image->getClientOriginalExtension();
-
-            $request->image->move('assets/img', $imageName);
-
-            $data->image = $imageName;
-        }
+        $data->email = $request->email;
+        $data->subject = $request->subject;
+        $data->details = $request->details;
 
         $data->save();
 
-        Alert::success('Testimonial Updated Successfully');
-        return redirect('testimonial');
+        Alert::success('Message Sent Successfully');
+        return redirect('contact');
     }
 }
