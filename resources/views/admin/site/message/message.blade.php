@@ -98,7 +98,7 @@
                                             <th>S|N</th>
                                             <th>Name</th>
                                             <th>Email</th>
-                                            <th>Subject</th>
+                                            <th>Phone Number</th>
                                             <th>Message</th>
                                             <th>Action</th>
                                         </tr>
@@ -116,7 +116,7 @@
 
                                                 <a href="{{route('edit_test', $data->id)}}" class="btn btn-info btn-sm">View</a>
 
-                                                <a href="{{route('delete_test', $data->id)}}" class="btn btn-danger btn-sm" onclick="confirmation(event)">Delete</a>
+                                                <a href="{{route('delete_message', $data->id)}}" class="btn btn-danger btn-sm" onclick="confirmation(event)">Delete</a>
                                             </td>
                                         </tr>
                                         @endforeach

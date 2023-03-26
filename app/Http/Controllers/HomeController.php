@@ -41,7 +41,7 @@ class HomeController extends Controller
         $request->validate([
             'name' => 'required|string',
             'email' => 'required|string',
-            'subject' => 'required|string',
+            'phone_no' => 'required|string',
             'details' => 'required|string',
         ]);
 
@@ -49,7 +49,7 @@ class HomeController extends Controller
 
         $data->name = $request->name;
         $data->email = $request->email;
-        $data->subject = $request->subject;
+        $data->subject = $request->phone_no;
         $data->details = $request->details;
 
         $data->save();
@@ -64,5 +64,15 @@ class HomeController extends Controller
         $data = message::orderBy('id', 'desc')->get();
 
         return view('admin.site.message.message', compact('data'));
+    }
+
+    //delete_message
+    public function delete_message($id)
+    {
+        $data = message::findOrFail($id);
+
+        $data->delete();
+
+        return redirect('message');
     }
 }

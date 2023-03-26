@@ -213,3 +213,5 @@ Route::post('/update_utility/{id}', [DynamicController::class, 'update_utility']
 Route::post('/send_message', [HomeController::class, 'send_message'])->name('send_message');
 
 Route::get('/message', [HomeController::class, 'message'])->name('message');
+
+Route::get('/delete_message/{id}', [HomeController::class, 'delete_message'])->name('delete_message');
