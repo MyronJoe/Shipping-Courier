@@ -208,3 +208,6 @@ Route::post('/update_test_title/{id}', [DynamicController::class, 'update_test_t
 Route::get('/utilities', [DynamicController::class, 'utilities'])->name('utilities');
 
 Route::post('/update_utility/{id}', [DynamicController::class, 'update_utility'])->name('update_utility');
+
+//send_message
+Route::post('/send_message', [HomeController::class, 'send_message'])->name('send_message');

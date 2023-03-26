@@ -47,7 +47,7 @@
                         <h6 class="text-secondary text-uppercase">Get In Touch</h6>
                         <h1 class="mb-4">Contact For Any Query</h1>
                         <div class="bg-light p-4">
-                            <form>
+                            <form action="{{url('send_message')}}" method="POST" enctype="multipart/form-data">
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
