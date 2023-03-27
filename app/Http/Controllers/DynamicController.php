@@ -783,7 +783,7 @@ class DynamicController extends Controller
         $data = utilities::findOrFail($id);
 
         $data->logo_name = $request->logo_name;
-        $data->site_name= $request->site_name;
+        $data->site_name = $request->site_name;
         $data->address = $request->address;
         $data->phone_number = $request->phone_no;
         $data->mail = $request->mail;
@@ -820,6 +820,4 @@ class DynamicController extends Controller
         Alert::success('Utility Updated Successfully');
         return redirect('utilities');
     }
-
-
 }
