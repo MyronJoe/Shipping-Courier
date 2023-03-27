@@ -78,20 +78,15 @@
             @include('admin.includes.nav')
 
             <main class="content">
-
                 <div class="container-fluid p-0 mt-2">
-
                     <div class="mb-1">
                         <h1 class="h3 d-inline align-middle"><strong>Messages</strong></h1>
                     </div>
-
                     <div class="row mt-3" id="about">
-
                         <br>
                         <br>
                         <div class="col-12 d-flex">
                             <div class="card flex-fill">
-
                                 <table class="table table-hover my-0">
                                     <thead>
                                         <tr>
