@@ -84,10 +84,7 @@
             @include('admin.includes.nav')
 
             <form class="content">
-
                 @csrf
-
-
                 <div class="container-fluid p-0">
 
                     <div class="mb-3">
