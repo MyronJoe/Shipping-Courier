@@ -86,11 +86,11 @@
                     @csrf
 
                     <div class="mb-3">
-                            <h1 class="h3 d-inline align-middle">Update Features</h1>
+                        <h1 class="h3 d-inline align-middle">Update Features</h1>
 
-                            <a href="#about" class="btn btn-primary" style="float: right;">All Features</a>
-                        </div>
-                        <hr>
+                        <a href="#about" class="btn btn-primary" style="float: right;">All Features</a>
+                    </div>
+                    <hr>
 
                     <div class="row">
                         <div class="input col-sm-12">
