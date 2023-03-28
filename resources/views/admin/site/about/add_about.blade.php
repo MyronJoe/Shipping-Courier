@@ -76,7 +76,7 @@
                                 @enderror
                             </div>
 
-                            <input type="submit" name="add_carousel" value="Add About" class="btn btn-primary my-3 " >
+                            <input type="submit" name="add_carousel" value="Add About" class="btn btn-primary my-3 ">
                         </div>
                     </div>
                 </main>
