@@ -91,7 +91,7 @@
                             </div>
                             <br>
 
-                            <input type="submit" name="add_carousel" value="Add Service" class="btn btn-primary my-3 " >
+                            <input type="submit" name="add_carousel" value="Add Service" class="btn btn-primary my-3 ">
                         </div>
                     </div>
                 </main>
