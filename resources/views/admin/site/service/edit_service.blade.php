@@ -23,7 +23,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        .label img{
+        .label img {
             width: 100%;
             height: 200px;
             margin: auto;
@@ -33,16 +33,19 @@
             border-top-right-radius: 5px;
             transition: .6s ease-out;
         }
-        .label img:hover{
+
+        .label img:hover {
             opacity: 1;
         }
-        .upload-sec{
+
+        .upload-sec {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
         }
-        label span{
+
+        label span {
             display: inline-block;
             text-align: center;
             background-color: #ddd;
@@ -50,7 +53,8 @@
             padding: 10px;
 
         }
-        .label{
+
+        .label {
             cursor: pointer;
         }
     </style>
@@ -138,7 +142,7 @@
                             </div>
                             <br>
 
-                            <input type="submit" name="add_carousel" value="Update Service" class="btn btn-primary my-3 " >
+                            <input type="submit" name="add_carousel" value="Update Service" class="btn btn-primary my-3 ">
                         </div>
                     </div>
                 </main>
