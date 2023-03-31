@@ -19,20 +19,13 @@
     <div class="wrapper">
         <!-- NAV-SIDE -->
         @include('admin.includes.sidebar')
-
         <div class="main">
             <!-- NAV-TOP -->
             @include('admin.includes.nav')
-
-
-
             <form action="{{url('addShipment')}}" method="POST" novalidate>
-
                 @csrf
-
                 <main class="content">
                     <div class="container-fluid p-0">
-
                         <div class="mb-3">
                             <h1 class="h3 d-inline align-middle">Add New Shipment</h1>
 
