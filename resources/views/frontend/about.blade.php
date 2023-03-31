@@ -14,13 +14,10 @@
 </head>
 
 <body>
-
     <!-- HEADER -->
     @include('frontend.includes.header')
     <!-- /HEADER -->
-
     <div class="content">
-
         <!-- Page Header Start -->
         <div class="container-fluid page-header py-5" style="margin-bottom: 6rem;">
             <div class="container py-5">
@@ -44,7 +41,6 @@
                     <div class="col-lg-6 wow fadeInLeft Tracker" data-wow-delay="0.1s" style="background-image: url(assets/img/about.jpg);">
 
                     </div>
-
 
                     <div class="col-lg-6 about-text wow fadeInUp" data-wow-delay="0.3s">
                         <h6 class="text-secondary text-uppercase mb-3">About Us</h6>
