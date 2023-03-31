@@ -130,13 +130,10 @@
 											</div>
 										</div>
 									</div>
-
 								</div>
 							</div>
 						</div>
-
 					</div>
-
 
 					<div class="col-12 d-flex">
 						<div class="card flex-fill">
