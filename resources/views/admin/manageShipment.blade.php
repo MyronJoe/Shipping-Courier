@@ -37,20 +37,15 @@
 		<div class="main">
 			<!-- NAV-TOP -->
 			@include('admin.includes.nav')
-
 			<main class="content">
-
 				@include('admin.includes.successmsg')
-
 				<div class="container-fluid p-0 mt-2">
-
 					<div class="mb-1">
 
 						<h1 class="h3 d-inline align-middle"><strong>Shipments</strong></h1>
 
 						<a href="{{url('add_shipment')}}" class="btn btn-primary" style="float: right;">Add Shipment</a>
 					</div>
-
 					<div class="row mt-3">
 
 						<br>
