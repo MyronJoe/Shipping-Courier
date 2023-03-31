@@ -30,13 +30,8 @@
         <div class="main">
             <!-- NAV-TOP -->
             @include('admin.includes.nav')
-
-
-
             <form action="{{route('update_shipment', $data->id)}}" method="POST" novalidate>
-
                 @csrf
-
                 <main class="content">
                     <div class="container-fluid p-0">
 
