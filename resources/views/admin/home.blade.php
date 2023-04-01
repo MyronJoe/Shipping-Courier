@@ -172,11 +172,11 @@
 
 										@if($data->deliverd == '1')
 
-										<td><a href="{{route('deliverd', $data->id)}}" class="btn btn-primary btn-sm">Deliverd</a></td>
+										<td><a href="{{route('not_deliverd', $data->id)}}" class="btn btn-primary btn-sm">Deliverd</a></td>
 
 										@else
 
-										<td><a href="{{route('receipt', $data->id)}}" class="btn btn-danger btn-sm">Not Deliverd</a></td>
+										<td><a href="{{route('deliverd', $data->id)}}" class="btn btn-danger btn-sm">Not Deliverd</a></td>
 
 										@endif
 

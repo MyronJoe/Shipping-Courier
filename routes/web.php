@@ -75,7 +75,7 @@ Route::get('/Home', [HomeController::class, 'redirect']);
 
 //Admin Routes
 
-Route::get('/admin', [AdminController::class, 'admin']);
+Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
 
 
 //Shipment Routes
@@ -97,6 +97,8 @@ Route::get('/label/{id}', [AdminController::class, 'Shipment_label'])->name('shi
 Route::get('/receipt/{id}', [AdminController::class, 'Receipt'])->name('receipt');
 
 Route::get('/deliverd/{id}', [AdminController::class, 'deliverd'])->name('deliverd');
+
+Route::get('/not_deliverd/{id}', [AdminController::class, 'not_deliverd'])->name('not_deliverd');
 
 
 //Tracking Routes

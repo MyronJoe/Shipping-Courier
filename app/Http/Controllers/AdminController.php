@@ -123,6 +123,30 @@ class AdminController extends Controller
         return redirect()->route('shipments');
     }
 
+    //change deliverd state
+    public function deliverd($id)
+    {
+        $data = Shipments::findOrFail($id);
+
+        $data->deliverd = 1;
+
+        $data->save();
+        Alert::success('Shipment Delivery State Changed');
+        return redirect()->route('admin');
+    }
+
+    //change deliverd state
+    public function not_deliverd($id)
+    {
+        $data = Shipments::findOrFail($id);
+
+        $data->deliverd = 0;
+
+        $data->save();
+        Alert::success('Shipment Delivery State Changed');
+        return redirect()->route('admin');
+    }
+
     //Edit shipment Page
     public function Edit_shipment($id)
     {
