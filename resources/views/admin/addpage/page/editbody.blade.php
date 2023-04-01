@@ -21,7 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 
-    <script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
+    <!-- <script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script> -->
 
 </head>
 
@@ -54,7 +54,7 @@
                                 <div class="input col-sm-12 mt-1">
                                     <div>
                                         <label for="editor" class="my-2">Body</label>
-                                        <textarea name="body" id="editor1" value="" class="form-control" cols="30" rows="10">{{ $data->body }}</textarea>
+                                        <textarea name="body" id="editor" value="" class="form-control" cols="30" rows="10">{{ $data->body }}</textarea>
                                         @error('body')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -73,8 +73,21 @@
         </div>
     </div>
 
+    <script src="{{ asset('ckeditor5/ckeditor.js') }}"></script>
+
     <script>
-        CKEDITOR.replace('editor1');
+        ClassicEditor
+            .create(document.querySelector('#editor'), {
+                ckfinder: {
+                    uploadUrl: "{{ route('ckeditor.upload').'?_token='.csrf_token() }}"
+                }
+            })
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
     </script>
 
     <script src="../backend/js/app.js"></script>
