@@ -71,7 +71,7 @@
                                 <div class="input col-sm-12 mt-1">
                                     <div>
                                         <label for="editor" class="my-2">Body</label>
-                                        <textarea name="body" id="editor" value="" class="form-control" cols="30" rows="10"></textarea>
+                                        <textarea name="body" id="editor" value="" class="form-control" cols="30" rows="10">{{ old('body') }}</textarea>
                                         @error('body')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -106,9 +106,9 @@
 
     <script>
         ClassicEditor
-            .create(document.querySelector('#editor'),{
-                ckfinder:{
-                    uploadUrl:"{{ route('ckeditor.upload').'?_token='.csrf_token() }}"
+            .create(document.querySelector('#editor'), {
+                ckfinder: {
+                    uploadUrl: "{{ route('ckeditor.upload').'?_token='.csrf_token() }}"
                 }
             })
             .then(editor => {
