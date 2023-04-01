@@ -72,7 +72,46 @@
         </div>
     </div>
 
+
     <script>
+        class MyUploadAdapter {
+            // The constructor method.
+            // ...
+
+            // Starts the upload process.
+            upload() {
+                return this.loader.file
+                    .then(file => new Promise((resolve, reject) => {
+                        this._initRequest();
+                        this._initListeners(resolve, reject, file);
+                        this._sendRequest(file);
+                    }));
+            }
+
+            // Aborts the upload process.
+            abort() {
+                if (this.xhr) {
+                    this.xhr.abort();
+                }
+            }
+
+            // More methods.
+            // ...
+        }
+
+        // Initializes the XMLHttpRequest object using the URL passed to the constructor.
+        _initRequest() {
+            const xhr = this.xhr = new XMLHttpRequest();
+
+            // Note that your request may look different. It is up to you and your editor
+            // integration to choose the right communication channel. This example uses
+            // a POST request with JSON as a data structure but your configuration
+            // could be different.
+            xhr.open('POST', '{{ route('admin.image_upload') }}', true);
+            xhr.setRequestHeader('x-csrf-token', '{{ csrf_token() }}');
+            xhr.responseType = 'json';
+        }
+
         ClassicEditor
             .create(document.querySelector('#editor'))
             .then(editor => {
@@ -82,6 +121,22 @@
                 console.error(error);
             });
     </script>
+
+
+    <!-- <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'),{
+                ckfinder:{
+                    uploadUrl:"{{ route('ckeditor.upload').'?_token='.csrf_token() }}"
+                }
+            })
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    </script> -->
 
     <script src="../backend/js/app.js"></script>
 
