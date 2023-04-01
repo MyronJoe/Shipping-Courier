@@ -220,4 +220,4 @@ Route::get('/view_message/{id}', [HomeController::class, 'view_message'])->name(
 
 
 // ClassicEditor
-Route::post('/ckimage_upload', [DynamicController::class, 'ckimage_upload'])->name('CKimage_upload');
+Route::post('/upload', [DynamicController::class, 'uploadImage'])->name('ckeditor.upload');
