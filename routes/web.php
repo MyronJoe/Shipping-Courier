@@ -217,3 +217,7 @@ Route::get('/message', [HomeController::class, 'message'])->name('message');
 Route::get('/delete_message/{id}', [HomeController::class, 'delete_message'])->name('delete_message');
 
 Route::get('/view_message/{id}', [HomeController::class, 'view_message'])->name('view_message');
+
+
+// ClassicEditor
+Route::post('/upload', [DynamicController::class, 'uploadImage'])->name('ckeditor.upload');

@@ -20,7 +20,7 @@
     <link href="../backend/css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
 
 </head>
 
@@ -53,7 +53,7 @@
                                 <div class="input col-sm-12 mt-1">
                                     <div>
                                         <label for="editor" class="my-2">Body</label>
-                                        <textarea name="body" id="editor1" class="form-control" cols="30" rows="10"></textarea>
+                                        <textarea name="body" id="editor" class="form-control" cols="30" rows="10"></textarea>
                                         @error('body')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -73,7 +73,14 @@
     </div>
 
     <script>
-        CKEDITOR.replace('editor1');
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
     </script>
 
     <script src="../backend/js/app.js"></script>
