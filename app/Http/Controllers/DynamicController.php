@@ -836,7 +836,7 @@ class DynamicController extends Controller
 
         //     $url = asset('media/' . $fileName);
 
-        //     return response()->jason(['fileName' => $fileName, 'uploaded' => 1, 'url' => $url]);
-        // }
+            return response()->jason(['fileName' => $fileName, 'uploaded' => 1, 'url' => $url]);
+        }
     }
 }
