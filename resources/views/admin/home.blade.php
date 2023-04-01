@@ -147,6 +147,7 @@
 										<th>Shipping Type</th>
 										<th>Status</th>
 										<th>Payment Status</th>
+										<th>Delivery</th>
 										<th>Action</th>
 									</tr>
 								</thead>
@@ -168,6 +169,17 @@
 										<td class="text-danger">{{$data->payment_status}}</td>
 
 										@endif
+
+										@if($data->deliverd == '1')
+
+										<td><a href="{{route('deliverd', $data->id)}}" class="btn btn-primary btn-sm">Deliverd</a></td>
+
+										@else
+
+										<td><a href="{{route('receipt', $data->id)}}" class="btn btn-danger btn-sm">Not Deliverd</a></td>
+
+										@endif
+
 										<td>
 											<a href="{{route('receipt', $data->id)}}" class="btn btn-success btn-sm">Reciept</a>
 

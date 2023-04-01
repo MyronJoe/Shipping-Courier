@@ -96,6 +96,8 @@ Route::get('/label/{id}', [AdminController::class, 'Shipment_label'])->name('shi
 
 Route::get('/receipt/{id}', [AdminController::class, 'Receipt'])->name('receipt');
 
+Route::get('/deliverd/{id}', [AdminController::class, 'deliverd'])->name('deliverd');
+
 
 //Tracking Routes
 Route::post('/tracking_product', [AdminController::class, 'TrackingID'])->name('tracking_product');

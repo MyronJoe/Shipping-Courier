@@ -41,6 +41,7 @@ return new class extends Migration
             $table->string('ref_no')->nullable();
             $table->string('invoice_no')->nullable();
 
+            $table->text('deliverd')->nullable();
             $table->text('payment_method')->nullable();
             $table->text('payment_status')->nullable();
             $table->text('amount')->nullable();

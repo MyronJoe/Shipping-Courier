@@ -101,6 +101,7 @@ class AdminController extends Controller
         $data->ref_no = 'RF' . rand('123456789', '098765409');
         $data->invoice_no = 'IV' . rand('123456789', '098765409');
 
+        $data->deliverd = 0;
         $data->payment_method = $request->payment_method;
         $data->payment_status = $request->payment_status;
         $data->amount = $request->amount;
