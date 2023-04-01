@@ -16,7 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
+    <!-- <script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script> -->
 
     <title>Dashboard</title>
 
@@ -99,7 +99,7 @@
                                 <div class="input col-sm-12 mt-1">
                                     <div>
                                         <label for="editor" class="my-2">About Us</label>
-                                        <textarea name="about_us" id="editor1" value="" class="form-control" cols="30" rows="10">{{ $datas->about_us }}</textarea>
+                                        <textarea name="about_us" id="editor" value="" class="form-control" cols="30" rows="10">{{ $datas->about_us }}</textarea>
                                         @error('about_us')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -226,9 +226,22 @@
         }
     </script>
 
-    <script>
-        CKEDITOR.replace('editor1');
-    </script>
+<script src="{{ asset('ckeditor5/ckeditor.js') }}"></script>
+
+<script>
+    ClassicEditor
+        .create(document.querySelector('#editor'),{
+            ckfinder:{
+                uploadUrl:"{{ route('ckeditor.upload').'?_token='.csrf_token() }}"
+            }
+        })
+        .then(editor => {
+            console.log(editor);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+</script>
 
     <script src="backend/js/app.js"></script>
 
