@@ -826,17 +826,11 @@ class DynamicController extends Controller
     //uploadImage CKEDITOR
     public function uploadImage(Request $request)
     {
-        // if ($request->hasFile('upload')) {
-        //     $originName = $request->file('upload')->getClientOriginalName();
-        //     $fileName = pathinfo($originName, PATHINFO_FILENAME);
-        //     $extension = $request->file('upload')->getClientOriginalExtension();
-        //     $fileName = $fileName . '_' . time() . '.' . $extension;
+        
 
-        //     $request->file('upload')->move(public_path('media'), $fileName);
-
-        //     $url = asset('media/' . $fileName);
-
-            return response()->jason(['fileName' => $fileName, 'uploaded' => 1, 'url' => $url]);
-        }
+        return response()->json([
+            'url' => 'https://avatars.githubusercontent.com/u/109278957?s=400&u=3f854e5950be2e2d9302b1dd0d037ea4137e0310&v=4'
+        ]);
+    
     }
 }
