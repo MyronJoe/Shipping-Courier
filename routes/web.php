@@ -10,6 +10,7 @@ use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\LogoutController;
 use App\Models\about;
+use App\Models\carousel;
 use App\Models\counter;
 use App\Models\feature;
 use App\Models\headers;
@@ -46,7 +47,9 @@ Route::get('/', function () {
 
     $testimony = testimonial::orderBy('id', 'desc')->get();
 
-    return view('frontend.home', compact('service', 'header', 'headers', 'counter', 'about', 'abouts', 'features', 'testimony'));
+    $carousel = carousel::orderBy('id', 'desc')->get();
+
+    return view('frontend.home', compact('service', 'header', 'headers', 'counter', 'about', 'abouts', 'features', 'testimony', 'carousel'));
 });
 
 Route::get('/404', function () {
