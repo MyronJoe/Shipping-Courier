@@ -98,7 +98,9 @@ class HomeController extends Controller
 
         $title = service::orderBy('id', 'desc')->get();
 
-        return view('frontend.air', compact('data', 'title'));
+        $service = service::orderBy('id', 'desc')->get();
+
+        return view('frontend.air', compact('data', 'title', 'service'));
         
     }
 
@@ -109,7 +111,9 @@ class HomeController extends Controller
 
         $title = service::orderBy('id', 'desc')->get();
 
-        return view('frontend.road', compact('data', 'title'));
+        $service = service::orderBy('id', 'desc')->get();
+
+        return view('frontend.road', compact('data', 'title', 'service'));
         
     }
 }

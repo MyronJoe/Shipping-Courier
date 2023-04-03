@@ -24,12 +24,13 @@
 
                     <div class=" col-sm-6">
                         <h4 class="text-light mb-4">Services</h4>
-                       
-                        <a class="btn btn-link" href="">Air </a>
+                        @foreach($service as $key => $title)
+                        <a class="btn btn-link" href="{{route('title_details', $title->id)}}">{{$title -> card_title}}</a>
+                        @endforeach
+                        <!-- <a class="btn btn-link" href="">Air Freight</a>
                         <a class="btn btn-link" href="">Sea Freight</a>
                         <a class="btn btn-link" href="">Road Freight</a>
-                        <a class="btn btn-link" href="">Storage</a>
-                        
+                        <a class="btn btn-link" href="">Storage</a> -->
                     </div>
                 </div>
 
