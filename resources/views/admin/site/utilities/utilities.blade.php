@@ -85,9 +85,29 @@
                             <div class="row">
                                 <div class="input col-sm-12 col-md-6">
                                     <div>
-                                        <label for="logo_name" class="my-2">Logo Name</label>
-                                        <input type="text" class="form-control" name="logo_name" id="logo_name" value="{{ $data->logo_name }}">
-                                        @error('logo_name')
+                                        <label for="year" class="my-2">Year</label>
+                                        <input type="text" class="form-control" name="year" id="year" value="{{ $data->year }}">
+                                        @error('year')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="input col-sm-12 col-md-6">
+                                    <div>
+                                        <label for="title" class="my-2">Page Title</label>
+                                        <input type="text" class="form-control" name="title" id="title" value="{{ $data->title }}">
+                                        @error('title')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="input col-sm-12 col-md-6">
+                                    <div>
+                                        <label for="key_word" class="my-2">Key Word</label>
+                                        <input type="text" class="form-control" name="key_word" id="key_word" value="{{ $data->key_word }}">
+                                        @error('key_word')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
@@ -180,7 +200,7 @@
 
                                 <div class="input col-sm-12 col-md-6">
                                     <div>
-                                        <label for="footer_note" class="my-2">footer_note</label>
+                                        <label for="footer_note" class="my-2">Footer Note</label>
                                         <input type="text" class="form-control" name="footer_note" id="footer_note" value="{{ $data->footer_note }}">
                                         @error('footer_note')
                                         <span class="text-danger">{{ $message }}</span>
@@ -188,6 +208,8 @@
                                     </div>
 
                                 </div>
+
+
 
                                 <div class="upload-sec input col-sm-12 col-md-6">
 
@@ -220,8 +242,6 @@
                                     <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
-
-
 
                             </div>
 

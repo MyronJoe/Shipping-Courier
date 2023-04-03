@@ -771,7 +771,7 @@ class DynamicController extends Controller
     public function update_utility($id, Request $request)
     {
         $request->validate([
-            'logo_name' => 'required|string',
+            'year' => 'required|string',
             'site_name' => 'required|string',
             'address' => 'required|string',
             'phone_no' => 'required|string',
@@ -785,7 +785,7 @@ class DynamicController extends Controller
 
         $data = utilities::findOrFail($id);
 
-        $data->logo_name = $request->logo_name;
+        $data->year = $request->year;
         $data->site_name = $request->site_name;
         $data->address = $request->address;
         $data->phone_number = $request->phone_no;

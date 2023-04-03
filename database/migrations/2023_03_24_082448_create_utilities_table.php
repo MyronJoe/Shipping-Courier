@@ -27,6 +27,7 @@ return new class extends Migration
             $table->text('youtube')->nullable();
             $table->text('linkedin')->nullable();
             $table->text('site_name')->nullable();
+            $table->text('year')->nullable();
             $table->timestamps();
         });
     }
