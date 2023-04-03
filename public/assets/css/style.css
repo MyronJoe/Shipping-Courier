@@ -49,6 +49,11 @@ a {
 
 .about-icon{
     width: 70px;
+    object-fit: cover;
+}
+.features-icon{
+    width: 70px;
+    object-fit: cover;
 }
 
 .bold {
@@ -407,6 +412,17 @@ h4 {
 
 
 /*** About ***/
+@media (max-width: 800px) {
+    .flx{
+       flex-direction: column !important;
+    }
+    .ms-4 {
+        margin-left: 0 !important;
+    }
+    .features-icon{
+        margin-bottom: 10px;
+    }
+}
 @media (min-width: 992px) {
     .container.about {
         max-width: 100% !important;
