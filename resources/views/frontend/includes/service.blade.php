@@ -21,7 +21,7 @@
                             </div>
                             <h4 class="mb-3">{{$service->card_title}}</h4>
                             <p>{{$service->card_sub_title}}</p>
-                            <a class="btn-slide mt-2" href="/services/air"><i class="fa fa-arrow-right"></i><span class="read">Read More</span></a>
+                            <a class="btn-slide mt-2" href="{{route('service_details', $service->id)}}"><i class="fa fa-arrow-right"></i><span class="read">Read More</span></a>
                         </div>
                     </div>
                 @endif

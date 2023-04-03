@@ -74,6 +74,8 @@ Route::middleware([
     })->name('dashboard');
 });
 
+//service_details
+Route::get('/services/{id}', [HomeController::class, 'service_details'])->name('service_details');
 
 Route::get('/logout', [LogoutController::class, 'logout']);
 

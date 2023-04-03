@@ -90,4 +90,13 @@ class HomeController extends Controller
 
         return view('admin.site.message.view_message', compact('data'));
     }
+
+    //service_details
+    public function service_details($id)
+    {
+        $data = service::findOrFail($id);
+
+        return view('frontend.air', compact('data'));
+        
+    }
 }
