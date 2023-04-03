@@ -47,6 +47,10 @@ a {
     padding: 2em;
 }
 
+.about-icon{
+    width: 70px;
+}
+
 .bold {
     font-weight: bold !important;
     /* font-size: 45px; */

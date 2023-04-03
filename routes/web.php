@@ -37,7 +37,9 @@ Route::get('/', function () {
 
     $about = about::orderBy('id', 'desc')->get();
 
-    return view('frontend.home', compact('service', 'header', 'counter', 'about'));
+    $abouts = about::orderBy('id', 'desc')->get();
+
+    return view('frontend.home', compact('service', 'header', 'counter', 'about', 'abouts'));
 });
 
 Route::get('/404', function () {
