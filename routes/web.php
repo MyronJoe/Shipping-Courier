@@ -17,6 +17,7 @@ use App\Models\headers;
 
 use App\Models\service;
 use App\Models\testimonial;
+use App\Models\utilities;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,7 +50,9 @@ Route::get('/', function () {
 
     $carousel = carousel::orderBy('id', 'desc')->get();
 
-    return view('frontend.home', compact('service', 'header', 'headers', 'counter', 'about', 'abouts', 'features', 'testimony', 'carousel'));
+    $utilities = utilities::orderBy('id', 'desc')->get();
+
+    return view('frontend.home', compact('service', 'header', 'headers', 'counter', 'about', 'abouts', 'features', 'testimony', 'carousel', 'utilities'));
 });
 
 Route::get('/404', function () {

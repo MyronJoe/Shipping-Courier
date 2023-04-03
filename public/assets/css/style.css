@@ -101,8 +101,8 @@ a {
 
 .service-item p,
 h4 {
-    margin-left: 25px;
-    margin-right: 25px;
+    /* margin-left: 25px; */
+    /* margin-right: 25px; */
 }
 
 .fact {
@@ -416,6 +416,15 @@ h4 {
 
 
 /*** About ***/
+@media (max-width: 576px) {
+    .services{
+       margin-top: 30px !important;
+    }
+    .Tracker{
+        padding: 0 !important;
+    }
+    
+}
 @media (max-width: 800px) {
     .flx{
        flex-direction: column !important;
@@ -427,6 +436,7 @@ h4 {
         margin-bottom: 10px;
     }
 }
+
 @media (min-width: 992px) {
     .container.about {
         max-width: 100% !important;

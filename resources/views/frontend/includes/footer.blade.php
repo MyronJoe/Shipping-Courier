@@ -22,7 +22,7 @@
                         </div>
                     </div>
 
-                    <div class=" col-sm-6">
+                    <div class=" col-sm-6 services">
                         <h4 class="text-light mb-4">Services</h4>
                         @foreach($service as $key => $title)
                         <a class="btn btn-link" href="{{route('title_details', $title->id)}}">{{$title -> card_title}}</a>
