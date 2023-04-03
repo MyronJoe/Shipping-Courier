@@ -437,21 +437,23 @@ h4 {
     }
 
     .feature-text {
-        padding-left: calc(((100% - 960px) / 2) + .75rem);
+        /* padding-left: calc(((100% - 960px) / 2) + .75rem); */
     }
 }
 
 @media (min-width: 1200px) {
     .feature-text {
-        padding-left: calc(((100% - 1140px) / 2) + .75rem);
+        /* padding-left: calc(((100% - 1140px) / 2) + .75rem); */
     }
 }
 
 @media (min-width: 1400px) {
     .feature-text {
-        padding-left: calc(((100% - 1320px) / 2) + .75rem);
+        /* padding-left: calc(((100% - 1320px) / 2) + .75rem); */
     }
 }
+
+
 
 
 /*** Service, Price & Team ***/

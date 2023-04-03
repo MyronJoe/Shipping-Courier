@@ -11,7 +11,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LogoutController;
 use App\Models\about;
 use App\Models\counter;
-
+use App\Models\feature;
 use App\Models\headers;
 
 use App\Models\service;
@@ -31,6 +31,8 @@ Route::get('/', function () {
 
     $header = headers::orderBy('id', 'desc')->get();
 
+    $headers = headers::orderBy('id', 'desc')->get();
+
     $service = service::orderBy('id', 'desc')->get();
 
     $counter = counter::orderBy('id', 'desc')->get();
@@ -39,7 +41,9 @@ Route::get('/', function () {
 
     $abouts = about::orderBy('id', 'desc')->get();
 
-    return view('frontend.home', compact('service', 'header', 'counter', 'about', 'abouts'));
+    $features = feature::orderBy('id', 'desc')->get();
+
+    return view('frontend.home', compact('service', 'header', 'headers', 'counter', 'about', 'abouts', 'features'));
 });
 
 Route::get('/404', function () {
