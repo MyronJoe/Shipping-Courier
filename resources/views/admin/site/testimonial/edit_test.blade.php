@@ -133,7 +133,7 @@
 
                                     <img src="../assets/img/{{$data->image}}" alt="{{$data->name}}">
 
-                                    <span>Update Service Image</span>
+                                    <span>Update Image</span>
                                 </label>
 
                                 @error('image')

@@ -56,6 +56,10 @@ a {
     object-fit: cover;
 }
 
+.img-fluid{
+    object-fit: cover !important;
+}
+
 .bold {
     font-weight: bold !important;
     /* font-size: 45px; */

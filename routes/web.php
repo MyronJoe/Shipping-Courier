@@ -15,6 +15,7 @@ use App\Models\feature;
 use App\Models\headers;
 
 use App\Models\service;
+use App\Models\testimonial;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +44,9 @@ Route::get('/', function () {
 
     $features = feature::orderBy('id', 'desc')->get();
 
-    return view('frontend.home', compact('service', 'header', 'headers', 'counter', 'about', 'abouts', 'features'));
+    $testimony = testimonial::orderBy('id', 'desc')->get();
+
+    return view('frontend.home', compact('service', 'header', 'headers', 'counter', 'about', 'abouts', 'features', 'testimony'));
 });
 
 Route::get('/404', function () {
