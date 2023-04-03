@@ -1,16 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Logistica - Shipping Company</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
-    <!-- Favicon -->
-    <!-- <link href="assets/img/favicon.ico" rel="icon"> -->
     <!-- All Styles -->
-    @include('frontend.includes.styles')
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- <script src="https://use.fontawesome.com/03aa7457ee.js"></script> -->
+
+    <!-- Libraries Stylesheet -->
+    <link href="../assets/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <!-- <link href="assets/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <!-- Template Stylesheet -->
+    <link href="../assets/css/style.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link href="../assets/img/team-1.jpg" rel="icon">
+
+    <style>
+        .image img {
+            width: 100%;
+        }
+    </style>
 </head>
+
 <body>
     <!-- HEADER -->
     @include('frontend.includes.header')
@@ -22,13 +50,14 @@
                 <h3 class="display-3 text-white mb-3 animated slideInDown" style="font-size: 45px;">SERVICE DETAILS</h3>
                 <nav aria-label="breadcrumb animated slideInDown">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a class="text-white" href="#">Road Service</a></li>
+                        <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-white" href="#">{{$data -> card_title}}</a></li>
                     </ol>
                 </nav>
             </div>
         </div>
         <!-- Page Header End -->
+
         <!-- Contact Start -->
         <div class="container overflow-hidden px-lg-0">
             <div class="container contact-page px-lg-0">
@@ -40,45 +69,27 @@
                                 <h6>Service Category</h6>
                             </div>
                             <ul class="list-group list-group-flush">
-                                <a href="/services/air">
-                                    <li class="list-group-item">Air Service</li>
+                                @foreach($title as $key => $title)
+                                <a href="{{route('title_details', $title->id)}}">
+                                    <li class="list-group-item">{{$title -> card_title}}</li>
                                 </a>
-                                <a href="/services/road">
-                                    <li class="list-group-item text-warning">Road Service</li>
-                                </a>
-                                <a href="/services/storage">
-                                    <li class="list-group-item">Storage Service</li>
-                                </a>
-                                <a href="/services/warehouse">
-                                    <li class="list-group-item">Warehouse Service</li>
-                                </a>
+                                @endforeach
+
                             </ul>
                         </div>
 
                     </div>
                     <div class="col-sm-12 col-md-8 pe-lg-0 wow fadeInRight contact" data-wow-delay="0.1s">
 
-                        <h2 class="mb-3">Details</h2>
-
-                        <p>Roadways are a crucial means of transport in America. They provide people and vehicles to commute a wide range of locations and help them to reach their destination without any hiccups. Road transport is the process of transporting goods or people from one destination to the other via roads. Road transportation is still the most heavily used mode of freight delivery service in Utah and any other regions of America. Even though marine, air or rail transport would be largely used means of solution for bigger size freight services for long distances, road transport will be dominating the freight delivery service across America for a long time.
-                        </p>
-
-                        <img src="assets/img/services_road.jpeg" alt="">
-
-                        <h2 class="my-3">Was Our Solution Best?</h2>
-
-                        <p>Roadways are a crucial means of transport in America. They provide people and vehicles to commute a wide range of locations and help them to reach their destination without any hiccups. Road transport is the process of transporting goods or people from one destination to the other via roads. Road transportation is still the most heavily used mode of freight delivery service in Utah and any other regions of America. Even though marine, air or rail transport would be largely used means of solution for bigger size freight services for long distances, road transport will be dominating the freight delivery service across America for a long time.</p>
-
-                        <p>
-                            With the evolution of the transport industry and the growth of many freight delivery service companies in the world, it would be very much unclear for the person in need of transport facilities in deciding which mode of transport would best suit their requirements. Hence it is important to understand the distance, the volume of delivery goods and speed of service for deciding on which model to prefer. Road transport is the most used of all the transport services available in the industry with the best freight delivery services in Utah like ShipTop. If you even use air/water/train transport for transporting goods from one country to another, you must use road transport for delivering them to their precise destination.
-                        </p>
-
+                        <!-- {{ $data->body }} -->
+                        {!! $data->body !!}
 
                     </div>
                 </div>
             </div>
         </div>
         <!-- Contact End -->
+
         <!-- Footer Start -->
         @include('frontend.includes.footer')
         <!-- Footer End -->
@@ -88,13 +99,13 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/lib/wow/wow.min.js"></script>
-    <script src="assets/lib/easing/easing.min.js"></script>
-    <script src="assets/lib/waypoints/waypoints.min.js"></script>
-    <script src="assets/lib/counterup/counterup.min.js"></script>
-    <script src="assets/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../assets/lib/wow/wow.min.js"></script>
+    <script src="../assets/lib/easing/easing.min.js"></script>
+    <script src="../assets/lib/waypoints/waypoints.min.js"></script>
+    <script src="../assets/lib/counterup/counterup.min.js"></script>
+    <script src="../assets/lib/owlcarousel/owl.carousel.min.js"></script>
     <!-- Template Javascript -->
-    <script src="assets/js/main.js"></script>
+    <script src="../assets/js/main.js"></script>
 </body>
 
 </html>

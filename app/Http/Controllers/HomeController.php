@@ -101,4 +101,15 @@ class HomeController extends Controller
         return view('frontend.air', compact('data', 'title'));
         
     }
+
+    //title_details
+    public function title_details($id)
+    {
+        $data = service::findOrFail($id);
+
+        $title = service::orderBy('id', 'desc')->get();
+
+        return view('frontend.road', compact('data', 'title'));
+        
+    }
 }

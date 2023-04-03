@@ -77,6 +77,8 @@ Route::middleware([
 //service_details
 Route::get('/services/{id}', [HomeController::class, 'service_details'])->name('service_details');
 
+Route::get('/details/{id}', [HomeController::class, 'title_details'])->name('title_details');
+
 Route::get('/logout', [LogoutController::class, 'logout']);
 
 Route::get('/Home', [HomeController::class, 'redirect']);

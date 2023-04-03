@@ -32,8 +32,8 @@
                 <h3 class="display-3 text-white mb-3 animated slideInDown" style="font-size: 45px;">SERVICE DETAILS</h3>
                 <nav aria-label="breadcrumb animated slideInDown">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a class="text-white" href="#">Air Service</a></li>
+                        <li class="breadcrumb-item"><a class="text-white" href="/">Home</a></li>
+                        <li class="breadcrumb-item"><a class="text-white" href="#">{{$data -> card_title}}</a></li>
                     </ol>
                 </nav>
             </div>
