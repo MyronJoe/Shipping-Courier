@@ -3,15 +3,19 @@
         <div class="container py-5">
             <div class="row g-4 align-items-center">
 
+            @foreach($counter as $key => $counter)
+                @if($key < 4) 
                 <div class="px-2 wow fadeIn col-sm-12 col-md-6 col-lg-3" data-wow-delay="0.5s">
                     <div class="inner text-center p-2">
 
-                        <h2 class="text-white mb-2"><span data-toggle="counter-up">928</span>+</h2>
+                        <h2 class="text-white mb-2"><span data-toggle="counter-up">{{$counter->number}}</span>+</h2>
                         <div class="divide"></div>
-                        <p class="text-white mb-0">Successfully Delivered</p>
+                        <p class="text-white mb-0">{{$counter->title}}</p>
                     </div>
                 </div>
-                <div class="px-2 wow fadeIn col-sm-12 col-md-6 col-lg-3" data-wow-delay="0.5s">
+                @endif
+            @endforeach
+                <!-- <div class="px-2 wow fadeIn col-sm-12 col-md-6 col-lg-3" data-wow-delay="0.5s">
                     <div class="inner text-center p-2">
 
                         <h2 class="text-white mb-2"><span data-toggle="counter-up">2572</span>+</h2>
@@ -35,7 +39,7 @@
                         <div class="divide"></div>
                         <p class="text-white mb-0">Total Km Reach So Far</p>
                     </div>
-                </div>
+                </div> -->
 
             </div>
         </div>

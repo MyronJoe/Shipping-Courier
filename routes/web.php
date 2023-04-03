@@ -9,7 +9,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\LogoutController;
+
+use App\Models\counter;
+
 use App\Models\headers;
+
 use App\Models\service;
 
 /*
@@ -29,7 +33,9 @@ Route::get('/', function () {
 
     $service = service::orderBy('id', 'desc')->get();
 
-    return view('frontend.home', compact('service', 'header'));
+    $counter = counter::orderBy('id', 'desc')->get();
+
+    return view('frontend.home', compact('service', 'header', 'counter'));
 });
 
 Route::get('/404', function () {
