@@ -11,6 +11,11 @@
     <!-- <link href="assets/img/favicon.ico" rel="icon"> -->
     <!-- All Styles -->
     @include('frontend.includes.styles')
+    <style>
+        .image img{
+            width: 100%;
+        }
+    </style>
 </head>
 
 <body>
@@ -49,15 +54,7 @@
                                 <a href="/services/air">
                                     <li class="list-group-item text-warning">Air Service</li>
                                 </a>
-                                <a href="/services/road">
-                                    <li class="list-group-item">Road Service</li>
-                                </a>
-                                <a href="/services/storage">
-                                    <li class="list-group-item">Storage Service</li>
-                                </a>
-                                <a href="/services/warehouse">
-                                    <li class="list-group-item">Warehouse Service</li>
-                                </a>
+                               
 
                             </ul>
                         </div>
@@ -65,21 +62,8 @@
                     </div>
                     <div class="col-sm-12 col-md-8 pe-lg-0 wow fadeInRight contact" data-wow-delay="0.1s">
 
-                        <h2 class="mb-3">Details</h2>
-
-                        <p>We provide an integrated network of air and ground transport options that give you the widest range of air cargo choices – all without having to make multiple calls to find the best rates. Your shipment size and speed requirements are matched to the perfect aircraft, eliminating waste and reducing expenses. If your deadline does not support using a scheduled flight, your shipment can fly via a dedicated air cargo charter service. From the moment you call until after your shipment reaches its final destination, you can trust ShipTop to deliver your freight, high quality and superior customer service – every time.</p>
-
-                        <p>
-                            A strong logistics chain is the foundation for every successful air cargo delivery. Xpress Delivery unlocks this competitive advantage for you through its experienced expediters, business longevity, relationships in the industry, advanced freight tracking technologies, and an extensive network of vehicles and airline partners.
-                        </p>
-
-
-                        <img src="assets/img/services_air.jpg" alt="">
-
-                        <h2 class="my-3">Was Our Solution Best?</h2>
-
-                        <p>ShipTop utilizes express shipping by air, allowing us to complete any air cargo delivery globally or within the United States and Canada in a matter of hours. Instead of maintaining our own aviation fleet, we coordinate the services of multiple cargo airlines to get your freight wherever you need it to be. This is the logistical strength and knowhow ShipTop provides across all of its services. We dive deep into air cargo schedules and have an in-depth understanding of global cargo routes. We investigate each airline carefully, ensuring they have the skills and resources to keep our clients’ items safe from start to finish. These critical business partnerships benefit our customers through competitive rates, superior service, and most importantly – getting to the destination on time with your air cargo safe and secure. No matter how tight a client’s deadline or how delicate the items they’re shipping, we have the resources and expertise to deliver them anytime, anywhere.</p>
-
+                    <!-- {{ $data->body }} -->
+                    {!! $data->body !!}
 
                     </div>
                 </div>
