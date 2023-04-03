@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\headers;
 use App\Models\message;
+use App\Models\service;
 use App\Models\Shipments;
 use Illuminate\Http\Request;
 
@@ -31,7 +33,12 @@ class HomeController extends Controller
 
             return view('admin.home', compact('datas', 'shipments', 'paid', 'users'));
         } else {
-            return view('frontend.home');
+            
+            $header = headers::orderBy('id', 'desc')->get();
+
+            $service = service::orderBy('id', 'desc')->get();
+
+            return view('frontend.home', compact('service', 'header'));
         }
     }
 

@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\LogoutController;
+use App\Models\headers;
+use App\Models\service;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +24,12 @@ use App\Http\Controllers\LogoutController;
 */
 
 Route::get('/', function () {
-    return view('frontend.home');
+
+    $header = headers::orderBy('id', 'desc')->get();
+
+    $service = service::orderBy('id', 'desc')->get();
+
+    return view('frontend.home', compact('service', 'header'));
 });
 
 Route::get('/404', function () {
