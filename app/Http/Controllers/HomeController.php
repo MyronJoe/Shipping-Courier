@@ -96,7 +96,9 @@ class HomeController extends Controller
     {
         $data = service::findOrFail($id);
 
-        return view('frontend.air', compact('data'));
+        $title = service::orderBy('id', 'desc')->get();
+
+        return view('frontend.air', compact('data', 'title'));
         
     }
 }

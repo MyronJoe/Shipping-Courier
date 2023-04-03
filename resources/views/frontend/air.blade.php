@@ -12,7 +12,7 @@
     <!-- All Styles -->
     @include('frontend.includes.styles')
     <style>
-        .image img{
+        .image img {
             width: 100%;
         }
     </style>
@@ -51,10 +51,11 @@
                                 <h6>Service Category</h6>
                             </div>
                             <ul class="list-group list-group-flush">
-                                <a href="/services/air">
-                                    <li class="list-group-item text-warning">Air Service</li>
+                                @foreach($title as $key => $title)
+                                <a href="{{route('title_details', $title->id)}}">
+                                    <li class="list-group-item">{{$title -> card_title}}</li>
                                 </a>
-                               
+                                @endforeach
 
                             </ul>
                         </div>
@@ -62,8 +63,8 @@
                     </div>
                     <div class="col-sm-12 col-md-8 pe-lg-0 wow fadeInRight contact" data-wow-delay="0.1s">
 
-                    <!-- {{ $data->body }} -->
-                    {!! $data->body !!}
+                        <!-- {{ $data->body }} -->
+                        {!! $data->body !!}
 
                     </div>
                 </div>
