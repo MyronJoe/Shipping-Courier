@@ -28,6 +28,8 @@ return new class extends Migration
             $table->text('linkedin')->nullable();
             $table->text('site_name')->nullable();
             $table->text('year')->nullable();
+            $table->text('title')->nullable();
+            $table->text('key_word')->nullable();
             $table->timestamps();
         });
     }

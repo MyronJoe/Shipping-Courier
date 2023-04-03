@@ -786,6 +786,8 @@ class DynamicController extends Controller
         $data = utilities::findOrFail($id);
 
         $data->year = $request->year;
+        $data->key_word = $request->key_word;
+        $data->title = $request->title;
         $data->site_name = $request->site_name;
         $data->address = $request->address;
         $data->phone_number = $request->phone_no;

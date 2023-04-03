@@ -23,5 +23,12 @@
 @if($key < 1) 
 <!-- Favicon -->
 <link href="assets/img/{{$utilities->fav_icon}}" rel="icon">
+
+<title>{{$utilities->title}}</title>
+
+<meta content="{{$utilities->key_word}}" name="keywords">
+
+<meta content="" name="description">
+
 @endif
 @endforeach

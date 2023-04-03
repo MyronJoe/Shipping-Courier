@@ -105,7 +105,7 @@
 
                                 <div class="input col-sm-12 col-md-6">
                                     <div>
-                                        <label for="key_word" class="my-2">Key Word</label>
+                                        <label for="key_word" class="my-2">Key Words</label>
                                         <input type="text" class="form-control" name="key_word" id="key_word" value="{{ $data->key_word }}">
                                         @error('key_word')
                                         <span class="text-danger">{{ $message }}</span>
