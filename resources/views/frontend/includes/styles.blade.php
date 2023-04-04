@@ -28,7 +28,7 @@
 
 <meta content="{{$utilities->key_word}}" name="keywords">
 
-<meta content="" name="description">
+<meta content="{{$utilities->description}}" name="description">
 
 @endif
 @endforeach

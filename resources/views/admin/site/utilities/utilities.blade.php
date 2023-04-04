@@ -209,6 +209,19 @@
 
                                 </div>
 
+                                <div class="input col-sm-12">
+                                    <div>
+                                        <label for="description" class="my-2">Site Description</label>
+                                        <textarea name="description" class="form-control" id="description" cols="30" rows="3">
+                                            {{ $data->description }}
+                                        </textarea>
+                                        @error('description')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+
+                                </div>
+
 
 
                                 <div class="upload-sec input col-sm-12 col-md-6">

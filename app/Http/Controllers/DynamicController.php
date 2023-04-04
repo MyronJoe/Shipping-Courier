@@ -11,7 +11,7 @@ use App\Models\counter;
 use App\Models\feature;
 
 use App\Models\headers;
-
+use App\Models\message;
 use App\Models\page_cats;
 
 use App\Models\pages;
@@ -35,7 +35,11 @@ class DynamicController extends Controller
     {
         $data = page_cats::orderBy('id', 'desc')->get();
 
-        return view('admin.addpage.all_cat', compact('data'));
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+
+        return view('admin.addpage.all_cat', compact('data', 'utilities', 'message'));
     }
 
 
@@ -91,7 +95,11 @@ class DynamicController extends Controller
     {
         $data = page_cats::findOrFail($id);
 
-        return view('admin.addpage.page.createbody', compact('data'));
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+
+        return view('admin.addpage.page.createbody', compact('data', 'utilities', 'message'));
     }
 
 
@@ -120,7 +128,10 @@ class DynamicController extends Controller
     {
         $data = pages::orderBy('id', 'desc')->get();
 
-        return view('admin.addpage.page.allpages', compact('data'));
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+        return view('admin.addpage.page.allpages', compact('data', 'utilities', 'message'));
     }
 
 
@@ -129,7 +140,10 @@ class DynamicController extends Controller
     {
         $data = pages::findOrFail($id);
 
-        return view('admin.addpage.page.editbody', compact('data'));
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+        return view('admin.addpage.page.editbody', compact('data', 'utilities', 'message'));
     }
 
 
@@ -168,13 +182,21 @@ class DynamicController extends Controller
     {
         $data = carousel::orderBy('id', 'desc')->get();;
 
-        return view('admin.site.carousel.carousel', compact('data'));
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+
+        return view('admin.site.carousel.carousel', compact('data', 'utilities', 'message'));
     }
 
     //Add_Carousel Page
     public function Add_Carousel()
-    {
-        return view('admin.site.carousel.add_carousel');
+    {   
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+
+        return view('admin.site.carousel.add_carousel', compact('utilities', 'message'));
     }
 
     //addCarousel to DB
@@ -220,7 +242,11 @@ class DynamicController extends Controller
     {
         $data = carousel::findOrFail($id);
 
-        return view('admin.site.carousel.editcarousel', compact('data'));
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+
+        return view('admin.site.carousel.editcarousel', compact('data', 'utilities', 'message'));
     }
 
     //update_carousel
@@ -260,13 +286,21 @@ class DynamicController extends Controller
 
         $data = about::orderBy('id', 'desc')->get();
 
-        return view('admin.site.about.about', compact('data', 'header'));
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+
+        return view('admin.site.about.about', compact('data', 'header', 'utilities', 'message'));
     }
 
     //Add about page
     public function add_about()
-    {
-        return view('admin.site.about.add_about');
+    {   
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+
+        return view('admin.site.about.add_about', compact('utilities', 'message'));
     }
 
     //add_about to DB
@@ -312,7 +346,11 @@ class DynamicController extends Controller
     {
         $data = about::findOrFail($id);
 
-        return view('admin.site.about.editabout', compact('data'));
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+
+        return view('admin.site.about.editabout', compact('data', 'utilities', 'message'));
     }
 
     //update_about in DB
@@ -380,7 +418,11 @@ class DynamicController extends Controller
 
         $data = service::orderBy('id', 'desc')->get();
 
-        return view('admin.site.service.service', compact('data', 'header'));
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+
+        return view('admin.site.service.service', compact('data', 'header', 'utilities', 'message'));
     }
 
 
@@ -406,8 +448,12 @@ class DynamicController extends Controller
 
     //add_service page
     public function add_service()
-    {
-        return view('admin.site.service.add_service');
+    {   
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+
+        return view('admin.site.service.add_service', compact('utilities', 'message'));
     }
 
     //addService
@@ -451,8 +497,14 @@ class DynamicController extends Controller
     //edit_service page
     public function edit_service($id)
     {
+            
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+        
         $data = service::findOrFail($id);
-        return view('admin.site.service.edit_service', compact('data'));
+
+        return view('admin.site.service.edit_service', compact('data', 'utilities', 'message'));
     }
 
     //update_service_card
@@ -492,14 +544,24 @@ class DynamicController extends Controller
     {
         $data = counter::orderBy('id', 'desc')->get();
 
-        return view('admin.site.counter.counter', compact('data'));
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+
+        return view('admin.site.counter.counter', compact('data', 'utilities', 'message'));
     }
 
     //edit_counter
     public function edit_counter($id)
     {
+            
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+        
         $data = counter::findOrFail($id);
-        return view('admin.site.counter.edit_counter', compact('data'));
+
+        return view('admin.site.counter.edit_counter', compact('data', 'utilities', 'message'));
     }
 
     //update_counter in DB
@@ -528,7 +590,11 @@ class DynamicController extends Controller
 
         $data = feature::orderBy('id', 'desc')->get();
 
-        return view('admin.site.features.features', compact('data', 'header'));
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+
+        return view('admin.site.features.features', compact('data', 'header', 'utilities', 'message'));
     }
 
     //update_features in DB
@@ -564,8 +630,12 @@ class DynamicController extends Controller
 
     //Add Features page
     public function add_feature()
-    {
-        return view('admin.site.features.add_features');
+    {   
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+
+        return view('admin.site.features.add_features', compact('utilities', 'message'));
     }
 
     //addFeatures to DB
@@ -611,7 +681,11 @@ class DynamicController extends Controller
     {
         $data = feature::findOrFail($id);
 
-        return view('admin.site.features.edit_feature', compact('data'));
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+
+        return view('admin.site.features.edit_feature', compact('data', 'utilities', 'message'));
     }
 
     //update_feature_single in DB
@@ -650,7 +724,11 @@ class DynamicController extends Controller
 
         $data = testimonial::orderBy('id', 'desc')->get();
 
-        return view('admin.site.testimonial.testimonial', compact('data', 'header'));
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+
+        return view('admin.site.testimonial.testimonial', compact('data', 'header', 'utilities', 'message'));
     }
 
     //update_test_title
@@ -675,7 +753,11 @@ class DynamicController extends Controller
     public function add_testimonial()
     {
 
-        return view('admin.site.testimonial.add_test');
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+
+        return view('admin.site.testimonial.add_test', compact('utilities', 'message'));
     }
 
     //addTestimonial
@@ -723,7 +805,11 @@ class DynamicController extends Controller
     {
         $data = testimonial::findOrFail($id);
 
-        return view('admin.site.testimonial.edit_test', compact('data'));
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+
+        return view('admin.site.testimonial.edit_test', compact('data', 'utilities', 'message'));
     }
 
     //update_testimonial
@@ -764,7 +850,11 @@ class DynamicController extends Controller
     {
         $data = utilities::all();
 
-        return view('admin.site.utilities.utilities', compact('data'));
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+
+        return view('admin.site.utilities.utilities', compact('data', 'utilities', 'message'));
     }
 
     //update_utility
@@ -781,6 +871,7 @@ class DynamicController extends Controller
             'linkedin' => 'required|string',
             'youtube' => 'required|string',
             'footer_note' => 'required|string',
+            'description' => 'required|string',
         ]);
 
         $data = utilities::findOrFail($id);
@@ -797,6 +888,7 @@ class DynamicController extends Controller
         $data->linkedin = $request->linkedin;
         $data->youtube = $request->youtube;
         $data->footer_note = $request->footer_note;
+        $data->description = $request->description;
 
         $logo_img = $request->logo_img;
 

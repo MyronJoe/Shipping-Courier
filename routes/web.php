@@ -60,32 +60,62 @@ Route::get('/404', function () {
 });
 
 Route::get('/aboutUs', function () {
-    return view('frontend.about');
+    $header = headers::orderBy('id', 'desc')->get();
+
+    $headers = headers::orderBy('id', 'desc')->get();
+
+    $service = service::orderBy('id', 'desc')->get();
+
+    $counter = counter::orderBy('id', 'desc')->get();
+
+    $about = about::orderBy('id', 'desc')->get();
+
+    $abouts = about::orderBy('id', 'desc')->get();
+
+    $features = feature::orderBy('id', 'desc')->get();
+
+    $testimony = testimonial::orderBy('id', 'desc')->get();
+
+    $carousel = carousel::orderBy('id', 'desc')->get();
+
+    $utilities = utilities::orderBy('id', 'desc')->get();
+
+    return view('frontend.about', compact('service', 'header', 'headers', 'counter', 'about', 'abouts', 'features', 'testimony', 'carousel', 'utilities'));
 });
 
 Route::get('/tracking', function () {
-    return view('frontend.tracking');
+
+    $utilities = utilities::orderBy('id', 'desc')->get();
+
+    $service = service::orderBy('id', 'desc')->get();
+
+    return view('frontend.tracking', compact('utilities', 'service'));
 });
 
 Route::get('/contact', function () {
-    return view('frontend.contact');
+
+    $utilities = utilities::orderBy('id', 'desc')->get();
+
+    $service = service::orderBy('id', 'desc')->get();
+
+    return view('frontend.contact', compact('utilities', 'service'));
 });
 
-Route::get('/services/air', function () {
-    return view('frontend.air');
-});
+// Route::get('/services/air', function () {
+//     return view('frontend.air');
+// });
 
-Route::get('/services/road', function () {
-    return view('frontend.road');
-});
+// Route::get('/services/road', function () {
+//     return view('frontend.road');
+// });
 
-Route::get('/services/storage', function () {
-    return view('frontend.storage');
-});
+// Route::get('/services/storage', function () {
+//     return view('frontend.storage');
+// });
 
-Route::get('/services/warehouse', function () {
-    return view('frontend.warehouse');
-});
+// Route::get('/services/warehouse', function () {
+//     return view('frontend.warehouse');
+// });
 
 Route::middleware([
     'auth:sanctum',

@@ -30,6 +30,7 @@ return new class extends Migration
             $table->text('year')->nullable();
             $table->text('title')->nullable();
             $table->text('key_word')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }

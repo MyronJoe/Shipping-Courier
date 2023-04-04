@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\message;
+use App\Models\service;
 use App\Models\Shipments;
 
 use App\Models\User;
-
+use App\Models\utilities;
 use Illuminate\Http\Request;
 
 use RealRashid\SweetAlert\Facades\Alert;
@@ -26,9 +28,15 @@ class AdminController extends Controller
 
         $users = User::all()->count();
 
+        $message = message::all()->count();
+
+        $delivery = Shipments::where('deliverd', '=', '0')->get()->count();
+
         $paid = Shipments::where('payment_status', '=', 'Paid')->get()->count();
 
-        return view('admin.home', compact('datas', 'shipments', 'paid', 'users'));
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        return view('admin.home', compact('datas', 'shipments', 'paid', 'users', 'utilities', 'message', 'delivery'));
     }
 
     //shipments function
@@ -38,13 +46,23 @@ class AdminController extends Controller
         // $datas = Shipments::paginate(6);
         $datas = Shipments::orderBy('id', 'desc')->paginate(10);
 
-        return view('admin.manageShipment', compact('datas'));
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+
+        return view('admin.manageShipment', compact('datas', 'utilities', 'message'));
     }
 
     //add shipment function
     public function add_shipment()
     {
-        return view('admin.add_shipment');
+
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+
+        return view('admin.add_shipment', compact('utilities', 'message'));
+        
     }
 
 
@@ -153,7 +171,11 @@ class AdminController extends Controller
 
         $data = Shipments::findOrFail($id);
 
-        return view('admin.edit_shipment', compact('data'));
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+
+        return view('admin.edit_shipment', compact('data', 'utilities', 'message'));
     }
 
 
@@ -221,7 +243,12 @@ class AdminController extends Controller
     public function Shipment_label($id)
     {
         $data = Shipments::findOrFail($id);
-        return view('admin.label.label', compact('data'));
+
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+
+        return view('admin.label.label', compact('data', 'utilities', 'message'));
     }
 
     //Download Receipt PDF Page
@@ -245,10 +272,17 @@ class AdminController extends Controller
         $tracking_id = $request->trackID;
 
         $track = Shipments::where('trackingID', $tracking_id)->get();
+        
         $tracker = Shipments::where('trackingID', $tracking_id)->exists();;
 
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+
+        $service = service::orderBy('id', 'desc')->get();
+
         if ($tracker) {
-            return view('frontend.trackdetails', compact('track'));
+            return view('frontend.trackdetails', compact('track', 'utilities', 'service'));
         } else {
             Alert::error('Tracking ID Not Found', 'Check Your Tracking ID And Try Again');
             return redirect()->back();

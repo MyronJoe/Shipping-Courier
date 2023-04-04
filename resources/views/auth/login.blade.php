@@ -23,11 +23,11 @@
         }
     </style>
     <!-- All Styles -->
-    @include('frontend.includes.styles')
+
 </head>
 <body>
 <!-- HEADER -->
-@include('frontend.includes.header')
+
 <!-- /HEADER -->
 
 <div class="body">
@@ -96,7 +96,7 @@
 </div>
 
 <!-- Footer Start -->
-@include('frontend.includes.footer')
+
 <!-- Footer End -->
 
 

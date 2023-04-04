@@ -97,7 +97,7 @@
 												<div class="card-body">
 													<div class="row">
 														<div class="col mt-0">
-															<h5 class="card-title">Deliverd Shipments</h5>
+															<h5 class="card-title">Not Deliverd Shipments</h5>
 														</div>
 
 														<div class="col-auto">
@@ -106,7 +106,7 @@
 															</div>
 														</div>
 													</div>
-													<h1 class="mt-1 mb-3">BB</h1>
+													<h1 class="mt-1 mb-3">{{$delivery}}</h1>
 
 												</div>
 											</div>

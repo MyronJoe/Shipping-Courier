@@ -2,16 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\about;
+use App\Models\carousel;
+use App\Models\counter;
+use App\Models\feature;
 use App\Models\headers;
 use App\Models\message;
 use App\Models\service;
 use App\Models\Shipments;
+use App\Models\testimonial;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
 
 use App\Models\User;
-
+use App\Models\utilities;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class HomeController extends Controller
@@ -29,16 +34,38 @@ class HomeController extends Controller
 
             $users = User::all()->count();
 
+            $message = message::all()->count();
+
             $paid = Shipments::where('payment_status', '=', 'Paid')->get()->count();
 
-            return view('admin.home', compact('datas', 'shipments', 'paid', 'users'));
+            $delivery = Shipments::where('deliverd', '=', '0')->get()->count();
+
+            $utilities = utilities::orderBy('id', 'desc')->get();
+
+            return view('admin.home', compact('datas', 'shipments', 'paid', 'users', 'utilities', 'message', 'delivery'));
         } else {
-            
+
             $header = headers::orderBy('id', 'desc')->get();
+
+            $headers = headers::orderBy('id', 'desc')->get();
 
             $service = service::orderBy('id', 'desc')->get();
 
-            return view('frontend.home', compact('service', 'header'));
+            $counter = counter::orderBy('id', 'desc')->get();
+
+            $about = about::orderBy('id', 'desc')->get();
+
+            $abouts = about::orderBy('id', 'desc')->get();
+
+            $features = feature::orderBy('id', 'desc')->get();
+
+            $testimony = testimonial::orderBy('id', 'desc')->get();
+
+            $carousel = carousel::orderBy('id', 'desc')->get();
+
+            $utilities = utilities::orderBy('id', 'desc')->get();
+
+            return view('frontend.home', compact('service', 'header', 'headers', 'counter', 'about', 'abouts', 'features', 'testimony', 'carousel', 'utilities'));
         }
     }
 
@@ -70,7 +97,11 @@ class HomeController extends Controller
     {
         $data = message::orderBy('id', 'desc')->get();
 
-        return view('admin.site.message.message', compact('data'));
+        $message = message::all()->count();
+
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        return view('admin.site.message.message', compact('data', 'utilities', 'message'));
     }
 
     //delete_message
@@ -88,7 +119,11 @@ class HomeController extends Controller
     {
         $data = message::findOrFail($id);
 
-        return view('admin.site.message.view_message', compact('data'));
+        $message = message::all()->count();
+
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        return view('admin.site.message.view_message', compact('data', 'utilities', 'message'));
     }
 
     //service_details
@@ -100,8 +135,10 @@ class HomeController extends Controller
 
         $service = service::orderBy('id', 'desc')->get();
 
-        return view('frontend.air', compact('data', 'title', 'service'));
-        
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+
+        return view('frontend.air', compact('data', 'title', 'service', 'utilities'));
     }
 
     //title_details
@@ -113,7 +150,8 @@ class HomeController extends Controller
 
         $service = service::orderBy('id', 'desc')->get();
 
-        return view('frontend.road', compact('data', 'title', 'service'));
-        
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        return view('frontend.road', compact('data', 'title', 'service', 'utilities'));
     }
 }

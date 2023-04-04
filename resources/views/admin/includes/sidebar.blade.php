@@ -1,7 +1,11 @@
 <nav id="sidebar" class="sidebar js-sidebar">
 	<div class="sidebar-content js-simplebar">
 		<a class="sidebar-brand" href="{{url('/')}}">
-			<span class="align-middle">Logistica</span>
+		@foreach($utilities as $key => $utilities)
+            @if($key < 1) 
+				<span class="align-middle">{{$utilities->site_name}}</span>
+			@endif
+		@endforeach
 		</a>
 
 		<ul class="sidebar-nav">

@@ -36,7 +36,7 @@
                         <div class="mb-3">
                             <h1 class="h3 d-inline align-middle">Add Features</h1>
 
-                            <a href="{{url('about')}}" class="btn btn-primary" style="float: right;">All Features</a>
+                            <a href="{{url('features')}}" class="btn btn-primary" style="float: right;">All Features</a>
                         </div>
                         <hr>
                         <div>

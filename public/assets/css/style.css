@@ -59,10 +59,16 @@ a {
 .img-fluid{
     object-fit: cover !important;
 }
-
+.logo-top{
+    width: 40px !important;
+}
 .bold {
     font-weight: bold !important;
     /* font-size: 45px; */
+}
+
+.tex_trans{
+    text-transform: uppercase;
 }
 
 .track-box {
@@ -101,8 +107,8 @@ a {
 
 .service-item p,
 h4 {
-    /* margin-left: 25px; */
-    /* margin-right: 25px; */
+    margin-left: 25px;
+    margin-right: 25px;
 }
 
 .fact {
@@ -570,6 +576,7 @@ h4 {
 .price-item a.btn-slide:hover span {
     background: var(--secondary);
 }
+
 
 
 /*** Testimonial ***/

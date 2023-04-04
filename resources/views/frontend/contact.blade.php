@@ -24,11 +24,11 @@
             <div class="container py-5">
                 <h1 class="display-3 text-white mb-3 animated slideInDown" style="font-size: 45px;">Contact Us</h1>
                 <nav aria-label="breadcrumb animated slideInDown">
-                    <ol class="breadcrumb">
+                    <!-- <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
                         <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
                         <li class="breadcrumb-item text-white active" aria-current="page">Contact</li>
-                    </ol>
+                    </ol> -->
                 </nav>
             </div>
         </div>
@@ -79,14 +79,15 @@
                     <div class="col-md-6 pe-lg-0 wow fadeInRight contact" data-wow-delay="0.1s">
 
                         <h2>KEEP IN TOUCH WITH US</h2>
-
+                        @foreach($utilities as $key => $utilities)
+                        @if($key < 1) 
                         <div class="d-flex mt-4">
                             <h4 class="m-0 pe-lg-5 d-none d-lg-block"><i class="fa fa-envelope text-primary me-3"></i></h4>
                             <div>
                                 <h5>
                                     Mail Us
                                 </h5>
-                                <p>compName@gmail.com</p>
+                                <p>{{$utilities->mail}}</p>
                             </div>
                         </div>
 
@@ -96,10 +97,11 @@
                                 <h5>
                                     Whatsapp Us
                                 </h5>
-                                <p>+447466578065</p>
+                                <p>{{$utilities->phone_number}}</p>
                             </div>
                         </div>
-
+                        @endif
+                        @endforeach
 
                     </div>
                 </div>
