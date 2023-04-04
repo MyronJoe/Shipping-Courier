@@ -22,7 +22,7 @@
 @foreach($utilities as $key => $utilities)
 @if($key < 1) 
 <!-- Favicon -->
-<link href="assets/img/{{$utilities->fav_icon}}" rel="icon">
+<link href="../assets/img/{{$utilities->fav_icon}}" rel="icon">
 
 <title>{{$utilities->title}}</title>
 

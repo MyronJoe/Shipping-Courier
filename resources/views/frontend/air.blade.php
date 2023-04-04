@@ -12,6 +12,10 @@
         .image img {
             width: 100%;
         }
+
+        .logo-top {
+            width: 40px !important;
+        }
     </style>
 </head>
 
