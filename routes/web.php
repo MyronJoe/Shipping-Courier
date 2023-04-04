@@ -301,3 +301,5 @@ Route::post('/addAdmin', [AdminController::class, 'addAdmin'])->name('addAdmin')
 Route::get('/delete_admin/{id}', [AdminController::class, 'delete_admin'])->name('delete_admin');
 
 Route::get('/edit_admin/{id}', [AdminController::class, 'edit_admin'])->name('edit_admin');
+
+Route::post('/updateAdmin/{id}', [AdminController::class, 'updateAdmin'])->name('updateAdmin');

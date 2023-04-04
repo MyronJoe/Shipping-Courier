@@ -363,4 +363,47 @@ class AdminController extends Controller
         return redirect()->route('user');
     }
 
+    //edit_user page
+    public function edit_admin($id)
+    {
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+
+        $data = User::findOrFail($id);
+
+        return view('admin.users.edit_user', compact('utilities', 'message', 'data'));
+    }
+
+    //updateAdmin in DB
+
+    public function updateAdmin($id, Request $request)
+    {
+        $data = User::findOrFail($id);
+
+        //checks if the email already exist && != any other email in the database b4 adding to database
+        $email = User::where('email', $request->email)->exists();
+
+
+        if ($email && $data->email !== $request->email) {
+            Alert::error('Email Already Exist');
+            return redirect()->back();
+        } else {
+
+            $data->name = $request->name;
+            $data->email = $request->email;
+            $data->password = Hash::make($request->password);
+
+            if ($request->super_admin) {
+                $data->user_type = '2';
+            } else {
+                $data->user_type = '1';
+            }
+
+            $data->save();
+            
+            Alert::success('Admin User updated Successfully');
+            return redirect()->route('user');
+        }
+    }
 }

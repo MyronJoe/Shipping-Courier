@@ -26,7 +26,7 @@ class HomeController extends Controller
     {
         $userType = Auth::user()->user_type;
 
-        if ($userType === '1') {
+        if ($userType === '1'|| $userType === '2') {
 
             $datas = Shipments::orderBy('id', 'desc')->paginate(5);
 
