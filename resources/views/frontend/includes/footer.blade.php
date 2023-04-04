@@ -5,6 +5,7 @@
             @foreach($utilities as $key => $utilities)
             @if($key < 1) 
             <div class="col-lg-6 col-md-12">
+            <h2 class="mb-2 logos"><span><img class="logo-bottom img-fluid" src="../assets/img/{{$utilities->logo_pic}}" alt="{{$utilities->site_name}}"></span></h2>
                 <p>{{$utilities->footer_note}}</p>
         </div>
 
