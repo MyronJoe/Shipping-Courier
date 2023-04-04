@@ -64,6 +64,25 @@
 										</tr>
 									</thead>
 									<tbody>
+                                        @foreach($super_admin as $key => $super_admin)
+                                            <tr>
+                                                <td>{{$key + 1}}</td>
+                                                <td>{{$super_admin->name}}</td>
+                                                <td>{{$super_admin->email}} </td>
+
+                                                @if($super_admin->user_type == 2)
+                                                    <td><a style="color: red; font-weight:bold">Super Admin</a></td>
+                                                @else
+                                                    <td><a style=" font-weight:bold">Admin</a></td>
+                                                @endif
+                                                <td>
+                                                    <a href="{{route('edit_admin', $super_admin->id)}}" class="btn btn-primary btn-sm">Edit</a>
+
+                                                    <a href="{{route('delete_admin', $super_admin->id)}}" class="btn btn-danger btn-sm" onclick="confirmation(event)">Delete</a>
+                                                </td>
+                                            </tr>
+										@endforeach
+
 										@foreach($admin_users as $key => $data)
 										<tr>
 											<td>{{$key + 1}}</td>
@@ -76,12 +95,14 @@
                                                 <td><a style=" font-weight:bold">Admin</a></td>
                                             @endif
 											<td>
-												<a href="{{route('edit_shipment', $data->id)}}" class="btn btn-primary btn-sm">Edit</a>
+												<a href="{{route('edit_admin', $data->id)}}" class="btn btn-primary btn-sm">Edit</a>
 
-												<a href="{{route('delete_shipment', $data->id)}}" class="btn btn-danger btn-sm" onclick="confirmation(event)">Delete</a>
+												<a href="{{route('delete_admin', $data->id)}}" class="btn btn-danger btn-sm" onclick="confirmation(event)">Delete</a>
 											</td>
 										</tr>
 										@endforeach
+
+										
 									</tbody>
 								</table>
 							</div>

@@ -297,3 +297,7 @@ Route::get('/users', [AdminController::class, 'User'])->name('user');
 Route::get('/add_admin', [AdminController::class, 'Add_admin'])->name('add_admin');
 
 Route::post('/addAdmin', [AdminController::class, 'addAdmin'])->name('addAdmin');
+
+Route::get('/delete_admin/{id}', [AdminController::class, 'delete_admin'])->name('delete_admin');
+
+Route::get('/edit_admin/{id}', [AdminController::class, 'edit_admin'])->name('edit_admin');

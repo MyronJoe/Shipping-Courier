@@ -296,11 +296,13 @@ class AdminController extends Controller
         // $datas = Shipments::paginate(6);
         $admin_users = User::where('user_type', '=', '1')->orderBy('id', 'desc')->get();
 
+        $super_admin = User::where('user_type', '=', '2')->orderBy('id', 'desc')->get();
+
         $utilities = utilities::orderBy('id', 'desc')->get();
 
         $message = message::all()->count();
 
-        return view('admin.users.user', compact('admin_users', 'utilities', 'message'));
+        return view('admin.users.user', compact('admin_users', 'super_admin', 'utilities', 'message'));
     }
 
     //add_admin page
@@ -324,7 +326,6 @@ class AdminController extends Controller
             'confirm_password' => 'required_with:password|same:password|min:8|string'
         ]);
 
-        dd($request->all());
         //Checks if the user already exist b4 adding to the database
         $email = User::where('email', $request->email)->exists();
         if ($email) {
@@ -351,4 +352,15 @@ class AdminController extends Controller
             return redirect()->route('user');
         }
     }
+
+    //delete_admin
+    public function delete_admin($id)
+    {
+        $data = User::findOrFail($id);
+
+        $data->delete();
+
+        return redirect()->route('user');
+    }
+
 }

@@ -85,16 +85,14 @@
                                     </div>
 
                                 </div>
-
+                                
                                 <div class="input col-sm-12">
-                                    <div>
-                                        <br>
-                                        <input type="checkbox" class="my-2" name="super_admin" id="super_admin" value="{{ old('super_admin') }}">
+                                    <div> <br>
+                                        <input type="checkbox" id="super_admin" class="" name="super_admin"/>
                                         <label for="super_admin">Make Super Admin</label>
                                     </div>
 
                                 </div>
-
                             </div>
 
 
