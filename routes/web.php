@@ -289,3 +289,7 @@ Route::get('/view_message/{id}', [HomeController::class, 'view_message'])->name(
 
 // ClassicEditor
 Route::post('/upload', [DynamicController::class, 'uploadImage'])->name('ckeditor.upload');
+
+
+//Users(admin)
+Route::get('/users', [AdminController::class, 'User'])->name('user');

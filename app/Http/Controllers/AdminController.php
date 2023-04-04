@@ -288,4 +288,18 @@ class AdminController extends Controller
             return redirect()->back();
         }
     }
+
+    //User
+    public function User()
+    {
+
+        // $datas = Shipments::paginate(6);
+        $admin_users = User::where('user_type', '=', '1')->orderBy('id', 'desc')->get();
+
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+
+        return view('admin.users.user', compact('admin_users', 'utilities', 'message'));
+    }
 }
