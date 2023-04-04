@@ -293,3 +293,7 @@ Route::post('/upload', [DynamicController::class, 'uploadImage'])->name('ckedito
 
 //Users(admin)
 Route::get('/users', [AdminController::class, 'User'])->name('user');
+
+Route::get('/add_admin', [AdminController::class, 'Add_admin'])->name('add_admin');
+
+Route::post('/addAdmin', [AdminController::class, 'addAdmin'])->name('addAdmin');

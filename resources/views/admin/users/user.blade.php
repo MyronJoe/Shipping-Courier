@@ -42,9 +42,9 @@
 				<div class="container-fluid p-0 mt-2">
 					<div class="mb-1">
 
-						<h1 class="h3 d-inline align-middle"><strong>Shipments</strong></h1>
+						<h1 class="h3 d-inline align-middle"><strong>Admin Users</strong></h1>
 
-						<a href="{{url('add_shipment')}}" class="btn btn-primary" style="float: right;">Add Admin</a>
+						<a href="{{route('add_admin')}}" class="btn btn-primary" style="float: right;">Add Admin</a>
 					</div>
 					<div class="row mt-3">
 

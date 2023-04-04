@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\message;
 use App\Models\service;
 use App\Models\Shipments;
-
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use App\Models\utilities;
 use Illuminate\Http\Request;
@@ -301,5 +301,54 @@ class AdminController extends Controller
         $message = message::all()->count();
 
         return view('admin.users.user', compact('admin_users', 'utilities', 'message'));
+    }
+
+    //add_admin page
+    public function Add_admin()
+    {
+        $utilities = utilities::orderBy('id', 'desc')->get();
+
+        $message = message::all()->count();
+
+        return view('admin.users.add_admin', compact('utilities', 'message'));
+    }
+
+    //addAdmin to DB
+    public function addAdmin(Request $request)
+    {
+        //validate user form
+        $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|string',
+            'password' => 'required|string|min:8',
+            'confirm_password' => 'required_with:password|same:password|min:8|string'
+        ]);
+
+        dd($request->all());
+        //Checks if the user already exist b4 adding to the database
+        $email = User::where('email', $request->email)->exists();
+        if ($email) {
+            Alert::error('Email Already Exist');
+            return redirect()->back();
+        }
+        else {
+
+            $data  = new User();
+
+            $data->name = $request->name;
+            $data->email = $request->email;
+            $data->password = Hash::make($request->password);
+
+            if ($request->super_admin) {
+                $data->user_type = '2';
+            } else {
+                $data->user_type = '1';
+            }
+
+            $data->save();
+
+            Alert::success('Admin Created Successfully');
+            return redirect()->route('user');
+        }
     }
 }
