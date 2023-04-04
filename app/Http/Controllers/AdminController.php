@@ -17,6 +17,7 @@ use PDF;
 // use RealRashid\Swee
 class AdminController extends Controller
 {
+   
 
     //=====================================================>>>>Shipping Functions
 
@@ -387,7 +388,7 @@ class AdminController extends Controller
             'confirm_password' => 'required_with:password|same:password|min:8|string'
         ]);
 
-        
+
         $data = User::findOrFail($id);
 
         //checks if the email already exist && != any other email in the database b4 adding to database
