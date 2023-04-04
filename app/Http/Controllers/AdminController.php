@@ -379,6 +379,15 @@ class AdminController extends Controller
 
     public function updateAdmin($id, Request $request)
     {
+        //validate user form
+        $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|string',
+            'password' => 'required|string|min:8',
+            'confirm_password' => 'required_with:password|same:password|min:8|string'
+        ]);
+
+        
         $data = User::findOrFail($id);
 
         //checks if the email already exist && != any other email in the database b4 adding to database
@@ -401,7 +410,7 @@ class AdminController extends Controller
             }
 
             $data->save();
-            
+
             Alert::success('Admin User updated Successfully');
             return redirect()->route('user');
         }

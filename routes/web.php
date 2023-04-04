@@ -127,6 +127,16 @@ Route::middleware([
     })->name('dashboard');
 });
 
+
+//send_message
+Route::post('/send_message', [HomeController::class, 'send_message'])->name('send_message');
+
+// ClassicEditor
+Route::post('/upload', [DynamicController::class, 'uploadImage'])->name('ckeditor.upload');
+
+//Tracking Routes
+Route::post('/tracking_product', [AdminController::class, 'TrackingID'])->name('tracking_product');
+
 //service_details
 Route::get('/services/{id}', [HomeController::class, 'service_details'])->name('service_details');
 
@@ -134,16 +144,19 @@ Route::get('/details/{id}', [HomeController::class, 'title_details'])->name('tit
 
 Route::get('/logout', [LogoutController::class, 'logout']);
 
-Route::get('/Home', [HomeController::class, 'redirect']);
+Route::get('/home', [HomeController::class, 'redirect']);
 
+
+
+
+
+
+Route::middleware(['auth:sanctum', 'checkadmin',  config('jetstream.auth_session')])->group(function () {
 
 //Admin Routes
-
 Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
 
-
 //Shipment Routes
-
 Route::get('/shipments', [AdminController::class, 'shipments'])->name('shipments');
 
 Route::get('/add_shipment', [AdminController::class, 'add_shipment']);
@@ -164,10 +177,14 @@ Route::get('/deliverd/{id}', [AdminController::class, 'deliverd'])->name('delive
 
 Route::get('/not_deliverd/{id}', [AdminController::class, 'not_deliverd'])->name('not_deliverd');
 
+});
 
-//Tracking Routes
-Route::post('/tracking_product', [AdminController::class, 'TrackingID'])->name('tracking_product');
 
+
+
+
+
+Route::middleware(['auth:sanctum', 'checksuperadmin',  config('jetstream.auth_session')])->group(function () {
 
 //Dynamics Routes(Create Pages)
 Route::get('/all_cat', [DynamicController::class, 'All_cat'])->name('all_cat');
@@ -277,18 +294,21 @@ Route::get('/utilities', [DynamicController::class, 'utilities'])->name('utiliti
 
 Route::post('/update_utility/{id}', [DynamicController::class, 'update_utility'])->name('update_utility');
 
-//send_message
-Route::post('/send_message', [HomeController::class, 'send_message'])->name('send_message');
+});
 
+
+
+
+
+
+Route::middleware(['auth:sanctum', 'checksuperadmin',  config('jetstream.auth_session')])->group(function () {
+
+//Message
 Route::get('/message', [HomeController::class, 'message'])->name('message');
 
 Route::get('/delete_message/{id}', [HomeController::class, 'delete_message'])->name('delete_message');
 
 Route::get('/view_message/{id}', [HomeController::class, 'view_message'])->name('view_message');
-
-
-// ClassicEditor
-Route::post('/upload', [DynamicController::class, 'uploadImage'])->name('ckeditor.upload');
 
 
 //Users(admin)
@@ -303,3 +323,5 @@ Route::get('/delete_admin/{id}', [AdminController::class, 'delete_admin'])->name
 Route::get('/edit_admin/{id}', [AdminController::class, 'edit_admin'])->name('edit_admin');
 
 Route::post('/updateAdmin/{id}', [AdminController::class, 'updateAdmin'])->name('updateAdmin');
+
+});
