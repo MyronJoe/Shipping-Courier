@@ -25,20 +25,7 @@
                 @endif
             @endforeach
 
-                <!-- <div class="d-flex mb-5 wow fadeIn" data-wow-delay="0.5s">
-                    <i class="fa fa-clock-o text-primary fa-3x flex-shrink-0"></i>
-                    <div class="ms-4">
-                        <h5>On Time Delivery</h5>
-                        <p class="mb-0">We know how to make it in time and set the right terms for deliveries.</p>
-                    </div>
-                </div>
-                <div class="d-flex mb-0 wow fadeInUp" data-wow-delay="0.7s">
-                    <i class="fa fa-credit-card-alt text-primary fa-3x flex-shrink-0"></i>
-                    <div class="ms-4">
-                        <h5>Payment Method</h5>
-                        <p class="mb-0">All payment methods are acceptable for ordering our services.</p>
-                    </div>
-                </div> -->
+
             </div>
             @foreach($headers as $key => $headers)
             @if($key < 1) 
