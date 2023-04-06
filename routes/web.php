@@ -101,15 +101,6 @@ Route::get('/contact', function () {
     return view('frontend.contact', compact('utilities', 'service'));
 });
 
-// Route::get('/services/air', function () {
-//     return view('frontend.air');
-// });
-
-// Route::get('/services/road', function () {
-//     return view('frontend.road');
-// });
-
-
 
 Route::middleware([
     'auth:sanctum',
