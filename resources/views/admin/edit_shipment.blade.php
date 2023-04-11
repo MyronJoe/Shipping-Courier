@@ -67,8 +67,16 @@
                                     </div>
 
                                     <div>
+                                        <label for="sender_contact" class="my-2">Sender's Contact</label>
+                                        <input type="text" class="form-control" name="sender_contact" id="sender_contact" value="{{ $data->sender_contact }}">
+                                        @error('sender_contact')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+
+                                    <div>
                                         <label for="sender_address" class="my-2">Sender's Address</label>
-                                        <input type="text" class="form-control mb-3" name="sender_address" id="sender_address" value="{{ $data->senderAddress }}">
+                                        <input type="text" class="form-control" name="sender_address" id="sender_address" value="{{ $data->senderAddress }}">
                                         @error('sender_address')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -91,14 +99,6 @@
                                     </div>
 
                                     <div>
-                                        <label for="receiverPhone" class="my-2">Receiver's Phone</label>
-                                        <input type="text" class="form-control" name="receiverPhone" id="receiverPhone" value="{{ $data->receiverPhone}}">
-                                        @error('receiverPhone')
-                                        <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-
-                                    <div>
                                         <label for="receiverEmail" class="my-2">Receiver's Email</label>
                                         <input type="text" class="form-control" name="receiverEmail" id="receiverEmail" value="{{ $data->receiverEmail }}">
                                         @error('receiverEmail')
@@ -107,9 +107,9 @@
                                     </div>
 
                                     <div>
-                                        <label for="receiverCountry" class="my-2">Receiver's Country</label>
-                                        <input type="text" class="form-control" name="receiverCountry" id="receiverCountry" value="{{ $data->receiverCountry }}">
-                                        @error('receiverCountry')
+                                        <label for="receiverPhone" class="my-2">Receiver's Contact</label>
+                                        <input type="text" class="form-control" name="receiverPhone" id="receiverPhone" value="{{ $data->receiverPhone}}">
+                                        @error('receiverPhone')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
@@ -132,77 +132,53 @@
                 <main class="content">
                     <div class="container-fluid p-0">
 
-                        <div class="mb-3">
-                            <h1 class="h3 d-inline align-middle" style="font-weight: bolder;">Shipment Details</h1>
-
-                        </div>
                         <div>
                             <div class="row">
                                 <div class="input col-sm-12 col-md-6">
+                                    <h1 class="h3 d-inline align-middle" style="font-weight: bolder;">Other Info</h1>
+                                    <hr>
                                     <div>
-                                        <label for="freight" class="my-2">Shipping Type</label>
-                                        <select name="freight" id="freight" class="form-control">
-                                            <option value="{{ $data->receiverAddress }}">{{ $data->shippingType }}</option>
-                                            <option value="Air Freight">Air Freight</option>
-                                            <option value="Road Freight">Road Freight</option>
-                                            <option value="Sea freight">Sea Freight</option>
+                                        <label for="status" class="my-2">Status</label>
+                                        <select name="status" id="status" class="form-control">
+                                            <option value="{{$data->status}}">Current Status - {{$data->status}}</option>
+                                            <option value="Active">Active</option>
+                                            <option value="Inactive">Inactive</option>
+                                            <option value="Picked Up">Picked Up</option>
+                                            <option value="Arrived">Arrived</option>
+                                            <option value="Delivered">Delivered</option>
+                                            <option value="On hold">On hold</option>
                                         </select>
-                                        @error('freight')
+                                        @error('status')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
 
                                     <div class="input">
-                                        <label for="weight" class="my-2">Weight</label>
-                                        <input type="text" class="form-control" name="weight" id="weight" value="{{ $data->weight }}">
-                                        @error('weight')
+                                        <label for="dispatch" class="my-2">Dispatch Location</label>
+                                        <input type="text" class="form-control" name="dispatch" id="dispatch" value="{{$data->dispatch_location}}">
+                                        @error('dispatch')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
 
                                     <div class="input">
-                                        <label for="product" class="my-2">Product</label>
-                                        <input type="text" class="form-control" name="product" id="product" value="{{ $data->product }}">
-                                        @error('product')
+                                        <label for="current_location" class="my-2">Current Location</label>
+                                        <input type="text" class="form-control" name="current_location" id="current_location" value="{{$data->current_location}}">
+                                        @error('current_location')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
-
-                                    <div class="input">
-                                        <label for="destination" class="my-2">Destination</label>
-                                        <input type="text" class="form-control" name="destination" id="destination" value="{{ $data->destination }}">
-                                        @error('destination')
-                                        <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-
-                                    <div class="input">
-                                        <label for="comment" class="my-2">Comment</label>
-                                        <input type="text" class="form-control" name="comment" id="comment" value="{{ $data->comment }}">
-                                        @error('comment')
-                                        <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-
-
-
 
                                 </div>
 
                                 <div class="input col-sm-12 col-md-6">
 
+                                    <h1 class="h3 d-inline align-middle" style="font-weight: bolder;">Other Info</h1>
+                                    <hr>
                                     <div class="input">
-                                        <label for="origin" class="my-2">Origin</label>
-                                        <input type="text" class="form-control" name="origin" id="origin" value="{{ $data->origin }}">
-                                        @error('origin')
-                                        <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-
-                                    <div class="input">
-                                        <label for="quantity" class="my-2">Quantity</label>
-                                        <input type="text" class="form-control" name="quantity" id="quantity" value="{{ $data->quality }}">
-                                        @error('quantity')
+                                        <label for="description" class="my-2">Package Description</label>
+                                        <input type="text" class="form-control" name="description" id="description" value="{{$data->package_description}}">
+                                        @error('description')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
@@ -223,50 +199,7 @@
                                         @enderror
                                     </div>
 
-                                    <div class="input">
-                                        <label for="status" class="my-2">Status</label>
-                                        <input type="text" class="form-control" name="status" id="status" value="{{ $data->status }}">
-                                        @error('status')
-                                        <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-
-
-
                                 </div>
-
-                                <h1 class="my-3">Payment Invoice</h1>
-
-                                <div class="input col-sm-12  px-4">
-
-                                    <div class="row divider">
-                                        <div class="input col-sm-12 col-md-5 mb-3">
-                                            <label for="payment_method" class="my-2">Payment Method</label>
-                                            <select name="payment_method" id="payment_method" class="form-control">
-                                                <option value="{{ $data->payment_method }}">{{ $data->payment_method }}</option>
-                                                <option value="Kuda">Card</option>
-                                                <option value="Opay">Cash</option>
-                                                <option value="air freight">Crypto</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="input col-sm-12 col-md-5 mb-3">
-                                            <label for="payment_status" class="my-2">Payment Status</label>
-                                            <select name="payment_status" id="payment_status" class="form-control">
-                                                <option value="{{ $data->payment_status }}">{{ $data->payment_status }}</option>
-                                                <option value="Paid">Paid</option>
-                                                <option value="Not Paid">Not Paid</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="input col-sm-12 col-md-2">
-                                            <label for="amount" class="my-2">Amount</label>
-                                            <input type="text" class="form-control mb-3" name="amount" id="amount" value="{{ $data->amount }}">
-                                        </div>
-                                    </div>
-
-                                </div>
-
                             </div>
                         </div>
                     </div>

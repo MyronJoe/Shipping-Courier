@@ -185,21 +185,19 @@ class AdminController extends Controller
             'sender_name' => 'required|string',
             'sender_email' => 'required|string',
             'sender_address' => 'required|string',
+            'sender_contact' => 'required|string',
             'receiverName' => 'required|string',
             'receiverEmail' => 'required|string',
-            'receiverCountry' => 'required|string',
             'receiverAddress' => 'required|string',
             'receiverPhone' => 'required|string',
-            'freight' => 'required|string',
-            'weight' => 'required|string',
-            'product' => 'required|string',
-            'comment' => 'required|string',
-            'origin' => 'required|string',
-            'quantity' => 'required|string',
+
+
+            'description' => 'required|string',
             'departure_date' => 'required|string',
             'pickup_date' => 'required|string',
             'status' => 'required|string',
-            'destination' => 'required|string',
+            'dispatch' => 'required|string',
+            'current_location' => 'required|string',
 
         ]);
 
@@ -208,28 +206,20 @@ class AdminController extends Controller
         $data->senderName = $request->sender_name;
         $data->senderEmail = $request->sender_email;
         $data->senderAddress = $request->sender_address;
+        $data->sender_contact = $request->sender_contact;
 
         $data->receiverName = $request->receiverName;
         $data->receiverEmail = $request->receiverEmail;
-        $data->receiverCountry = $request->receiverCountry;
         $data->receiverAddress = $request->receiverAddress;
         $data->receiverPhone = $request->receiverPhone;
 
-        $data->shippingType = $request->freight;
-        $data->weight = $request->weight;
-        $data->product = $request->product;
-        $data->comment = $request->comment;
-        $data->origin = $request->origin;
-        $data->quality = $request->quantity;
         $data->departDate = $request->departure_date;
         $data->pickupDate = $request->pickup_date;
-        $data->status = $request->status;
-        $data->status = $request->status;
-        $data->destination = $request->destination;
+        $data->package_description = $request->description;
 
-        $data->payment_method = $request->payment_method;
-        $data->payment_status = $request->payment_status;
-        $data->amount = $request->amount;
+        $data->status = $request->status;
+        $data->dispatch_location = $request->dispatch;
+        $data->current_location = $request->current_location;
 
         $data->save();
 
