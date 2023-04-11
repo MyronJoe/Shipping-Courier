@@ -57,9 +57,9 @@
 									<thead>
 										<tr>
 											<th>S|N</th>
-											<th>Product</th>
+											<th>Description</th>
 											<th>Tracking ID</th>
-											<th>Shipping Type</th>
+											<th>Delivery Date</th>
 											<th>Status</th>
 											<th>Action</th>
 										</tr>
@@ -68,9 +68,9 @@
 										@foreach($datas as $key => $data)
 										<tr>
 											<td>{{$key + 1}}</td>
-											<td>{{$data->product}}</td>
-											<td>{{$data->trackingID}} </td>
-											<td>{{$data->shippingType}}</td>
+											<td>{{$data->package_description}}</td>
+											<td style="color:red">{{$data->trackingID}} </td>
+											<td>{{$data->pickupDate}}</td>
 											<td>{{$data->status}}</td>
 											<td>
 												<a href="{{route('receipt', $data->id)}}" class="btn btn-success btn-sm">Reciept</a>

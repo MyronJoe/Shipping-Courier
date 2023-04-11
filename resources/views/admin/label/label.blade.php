@@ -67,7 +67,11 @@
 
                     <div class="col-sm-12 col-md-3 left p-3">
 
-                        <h1>Logistica</h1>
+
+                        @foreach($utilities as $key => $utilities)
+                        @if($key < 1) <h1>{{$utilities->site_name}}</h1>
+                            @endif
+                            @endforeach
 
                     </div>
 
@@ -82,7 +86,7 @@
 
                             <h1>Order Information</h1>
 
-                            <p>Tracking Number: <strong>{{$data->trackingID}}</strong> </p>
+                            <p>Tracking Number: <strong style="color: red;">{{$data->trackingID}}</strong> </p>
                             <p>Reference Number: <strong>{{$data->ref_no}}</strong> </p>
 
                             <hr>
@@ -91,7 +95,7 @@
 
                             <p>Name: <strong>{{$data->receiverName}}</strong> </p>
                             <p>Email: <strong>{{$data->receiverEmail}}</strong> </p>
-                            <p>Country: <strong>{{$data->receiverCountry}}</strong> </p>
+                            <p>Phone: <strong>{{$data->receiverPhone}}</strong> </p>
                             <p>Address: <strong>{{$data->receiverAddress}}</strong> </p>
 
                             <hr>
@@ -100,6 +104,7 @@
 
                             <p>Name: <strong>{{$data->senderName}}</strong> </p>
                             <p>Email: <strong>{{$data->senderEmail}}</strong> </p>
+                            <p>Phone: <strong>{{$data->sender_contact}}</strong> </p>
 
                             <br>
 
@@ -111,11 +116,11 @@
                                     <thead>
                                         <tr>
 
-                                            <th>Product</th>
-                                            <th>Origin</th>
-                                            <th>Destination</th>
-                                            <th>Shipping Type</th>
-                                            <th>Pickup Date</th>
+                                            <th>Sender</th>
+                                            <th>Receiver</th>
+                                            <th>Description</th>
+                                            <th>Dispatch Location</th>
+                                            <th>Delivery Date</th>
                                             <th>Status</th>
 
                                         </tr>
@@ -124,10 +129,10 @@
 
                                         <tr>
 
-                                            <td>{{$data->product}}</td>
-                                            <td>{{$data->origin}} </td>
-                                            <td>{{$data->destination}}</td>
-                                            <td>{{$data->shippingType}}</td>
+                                            <td>{{$data->senderName}}</td>
+                                            <td>{{$data->receiverName}} </td>
+                                            <td>{{$data->package_description}}</td>
+                                            <td>{{$data->dispatch_location}}</td>
                                             <td>{{$data->pickupDate}}</td>
                                             <td>{{$data->status}}</td>
 
