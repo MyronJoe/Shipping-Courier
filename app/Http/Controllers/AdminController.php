@@ -70,25 +70,27 @@ class AdminController extends Controller
     //Add Shipment Function:
     public function addShipment(Request $request)
     {
+        $byte = random_bytes(5);
+
+        // dd();
+
         $request->validate([
             'sender_name' => 'required|string',
             'sender_email' => 'required|string',
             'sender_address' => 'required|string',
+            'sender_contact' => 'required|string',
             'receiverName' => 'required|string',
             'receiverEmail' => 'required|string',
-            'receiverCountry' => 'required|string',
             'receiverAddress' => 'required|string',
             'receiverPhone' => 'required|string',
-            'freight' => 'required|string',
-            'weight' => 'required|string',
-            'product' => 'required|string',
-            'comment' => 'required|string',
-            'origin' => 'required|string',
-            'quantity' => 'required|string',
+
+
+            'description' => 'required|string',
             'departure_date' => 'required|string',
             'pickup_date' => 'required|string',
             'status' => 'required|string',
-            'destination' => 'required|string',
+            'dispatch' => 'required|string',
+            'current_location' => 'required|string',
 
         ]);
 
@@ -98,32 +100,27 @@ class AdminController extends Controller
         $data->senderName = $request->sender_name;
         $data->senderEmail = $request->sender_email;
         $data->senderAddress = $request->sender_address;
+        $data->sender_contact = $request->sender_contact;
 
         $data->receiverName = $request->receiverName;
         $data->receiverEmail = $request->receiverEmail;
-        $data->receiverCountry = $request->receiverCountry;
         $data->receiverAddress = $request->receiverAddress;
         $data->receiverPhone = $request->receiverPhone;
 
-        $data->shippingType = $request->freight;
-        $data->weight = $request->weight;
-        $data->product = $request->product;
-        $data->trackingID = 'TR' . rand('123456789', '098765409');
-        $data->comment = $request->comment;
-        $data->origin = $request->origin;
-        $data->quality = $request->quantity;
+        $data->trackingID = 'BL' . bin2hex($byte);
+
         $data->departDate = $request->departure_date;
         $data->pickupDate = $request->pickup_date;
+        $data->package_description = $request->description;
+
         $data->status = $request->status;
-        $data->destination = $request->destination;
+        $data->dispatch_location = $request->dispatch;
+        $data->current_location = $request->current_location;
 
         $data->ref_no = 'RF' . rand('123456789', '098765409');
         $data->invoice_no = 'IV' . rand('123456789', '098765409');
 
         $data->deliverd = 0;
-        $data->payment_method = $request->payment_method;
-        $data->payment_status = $request->payment_status;
-        $data->amount = $request->amount;
 
         $data->save();
 

@@ -19,32 +19,25 @@ return new class extends Migration
             $table->string('senderName');
             $table->string('senderEmail');
             $table->string('senderAddress');
+            $table->string('sender_contact')->nullable();
 
             $table->string('receiverName')->nullable();
             $table->string('receiverEmail')->nullable();
-            $table->string('receiverCountry')->nullable();
             $table->string('receiverAddress')->nullable();
             $table->string('receiverPhone')->nullable();
 
-            $table->string('shippingType')->nullable();
-            $table->string('weight')->nullable();
-            $table->string('product')->nullable();
             $table->string('trackingID')->nullable();
-            $table->string('comment')->nullable();
-            $table->string('origin')->nullable();
-            $table->string('quality')->nullable();
             $table->string('departDate')->nullable();
             $table->string('pickupDate')->nullable();
             $table->string('status')->nullable();
-            $table->string('destination')->nullable();
+            $table->string('current_location')->nullable();
 
             $table->string('ref_no')->nullable();
             $table->string('invoice_no')->nullable();
 
             $table->text('deliverd')->nullable();
-            $table->text('payment_method')->nullable();
-            $table->text('payment_status')->nullable();
-            $table->text('amount')->nullable();
+            $table->text('package_description')->nullable();
+            $table->text('dispatch_location')->nullable();
 
             $table->timestamps();
         });
