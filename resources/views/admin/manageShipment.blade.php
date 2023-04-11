@@ -71,7 +71,15 @@
 											<td>{{$data->package_description}}</td>
 											<td style="color:red">{{$data->trackingID}} </td>
 											<td>{{$data->pickupDate}}</td>
-											<td>{{$data->status}}</td>
+											@if($data->status == 'Active')
+
+											<td class="text-success">{{$data->status}}</td>
+
+											@else
+
+											<td class="text-danger">{{$data->status}}</td>
+
+											@endif
 											<td>
 												<a href="{{route('receipt', $data->id)}}" class="btn btn-success btn-sm">Reciept</a>
 
