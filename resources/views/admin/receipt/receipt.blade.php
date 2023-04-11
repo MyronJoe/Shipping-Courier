@@ -70,15 +70,19 @@
 
         <div class="top p-3">
 
-            <h1>Logistica <i class="fa fa-ship fa-1x"></i></h1>
+            @foreach($utilities as $key => $utilities)
+            @if($key < 1) <h1>{{$utilities->site_name}}<i class="fa fa-ship fa-1x"></i></h1>
 
-            <div class="details text-right">
-                <h4>Logistica</h4>
-                <p>No 434 A1 Chime Avenue Enugu Nigeria</p>
-                <p>logistica@gmail.com</p>
-            </div>
+                <div class="details text-right">
+                    <h4>{{$utilities->site_name}}</h4>
+                    <p>{{$utilities->address}}</p>
+                    <p>{{$utilities->mail}}</p>
+                </div>
 
         </div>
+
+        @endif
+        @endforeach
 
         <div class="top mt-4 p-3">
 
@@ -86,17 +90,7 @@
                 <p>Name: <strong>{{$data->receiverName}}</strong> </p>
                 <p>Email: <strong>{{$data->receiverEmail}}</strong> </p>
                 <p>Phone: <strong>{{$data->receiverPhone}}</strong> </p>
-                <p>Country: <strong>{{$data->receiverCountry}}</strong> </p>
                 <p>Address: <strong>{{$data->receiverAddress}}</strong> </p>
-            </div>
-
-            <div class="text-right">
-                <p><strong class="text-success">Invoice:</strong> <strong>#{{$data->invoice_no}}</strong> </p>
-                <br>
-                <p>Destination: <strong>{{$data->destination}}</strong> </p>
-                <p>Delivery Date: <strong>{{$data->pickupDate}}</strong> </p>
-                <p>Payment type: <strong>{{$data->payment_method}}</strong> </p>
-
             </div>
 
         </div>
@@ -109,16 +103,16 @@
                 <table>
                     <tr>
                         <th>Tracking Number</th>
-                        <th>Parcel</th>
-                        <th>Quantity</th>
-                        <th>Weight</th>
-                        <th>Pickup Date</th>
+                        <th>Dispatch Location</th>
+                        <th>Description</th>
+                        <th>Dispatch Date</th>
+                        <th>Delivery Date</th>
                     </tr>
                     <tr>
                         <td class="text-danger">{{$data->trackingID}}</td>
-                        <td>{{$data->product}}</td>
-                        <td>{{$data->quality}} </td>
-                        <td>{{$data->weight}}</td>
+                        <td>{{$data->dispatch_location}}</td>
+                        <td>{{$data->package_description}} </td>
+                        <td>{{$data->departDate}}</td>
                         <td>{{$data->pickupDate}}</td>
                     </tr>
                 </table>
@@ -126,15 +120,6 @@
             </div>
         </div>
 
-        <div class="total mt-4">
-
-            <h4 class="mb-3"><span class="text-success">Subtotal: </span>${{$data->amount}}</h4>
-
-            <h4 class="mb-3"><span class="text-success">Total: </span>${{$data->amount * $data->quality}}</h4>
-
-            <h4 class="mb-3"><span class="text-success">Payment Status: </span>{{$data->payment_status}}</h4>
-
-        </div>
 
     </div>
 
