@@ -92,7 +92,7 @@
 
 
 			<li class="sidebar-header">
-				Feedback
+				Management
 			</li>
 
 			<li class="sidebar-item">
@@ -107,17 +107,6 @@
 				</a>
 			</li>
 
-			<li class="sidebar-item">
-				<a class="sidebar-link" href="charts-chartjs.html">
-					<i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Charts</span>
-				</a>
-			</li>
-
-			<li class="sidebar-item">
-				<a class="sidebar-link" href="maps-google.html">
-					<i class="align-middle" data-feather="map"></i> <span class="align-middle">Maps</span>
-				</a>
-			</li>
 		</ul>
 	</div>
 </nav>

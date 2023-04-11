@@ -3,9 +3,12 @@
         <div class="row g-5 pb-5">
 
             @foreach($utilities as $key => $utilities)
-            @if($key < 1) 
-            <div class="col-lg-6 col-md-12">
-            <h2 class="mb-2 logos"><span><img class="logo-bottom img-fluid" src="../assets/img/{{$utilities->logo_pic}}" alt="{{$utilities->site_name}}"></span></h2>
+            @if($key < 1) <div class="col-lg-6 col-md-12">
+                <div class="site" style="display:flex">
+                    <!-- <p style="">{{$utilities->site_name}}</p> -->
+                    <h2 class="mb-2 logos"><span><img class="logo-bottom img-fluid" src="../assets/img/{{$utilities->logo_pic}}" alt="{{$utilities->site_name}}"></span></h2>
+
+                </div>
                 <p>{{$utilities->footer_note}}</p>
         </div>
 
@@ -24,7 +27,7 @@
                         <a class="btn btn-outline-light btn-social" href="{{$utilities->linkedin}}"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                
+
                 <div class=" col-sm-6 services">
                     <h4 class="text-light mb-4">Services</h4>
                     @foreach($service as $key => $title)
