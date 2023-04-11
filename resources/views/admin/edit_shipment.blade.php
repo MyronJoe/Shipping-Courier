@@ -145,7 +145,7 @@
                                             <option value="{{ $data->receiverAddress }}">{{ $data->shippingType }}</option>
                                             <option value="Air Freight">Air Freight</option>
                                             <option value="Road Freight">Road Freight</option>
-                                            <option value="air freight">Air Freight</option>
+                                            <option value="Sea freight">Sea Freight</option>
                                         </select>
                                         @error('freight')
                                         <span class="text-danger">{{ $message }}</span>
@@ -244,9 +244,9 @@
                                             <label for="payment_method" class="my-2">Payment Method</label>
                                             <select name="payment_method" id="payment_method" class="form-control">
                                                 <option value="{{ $data->payment_method }}">{{ $data->payment_method }}</option>
-                                                <option value="Kuda">kudah</option>
-                                                <option value="Opay">opay</option>
-                                                <option value="Palm Pay">Palm Pay</option>
+                                                <option value="Kuda">Card</option>
+                                                <option value="Opay">Cash</option>
+                                                <option value="air freight">Crypto</option>
                                             </select>
                                         </div>
 
