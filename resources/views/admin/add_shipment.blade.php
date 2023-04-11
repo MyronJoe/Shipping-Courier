@@ -136,7 +136,7 @@
                                             <option value="{{ old('freight') }}">{{ old('freight') }}</option>
                                             <option value="Air Freight">Air Freight</option>
                                             <option value="Road Freight">Road Freight</option>
-                                            <option value="air freight">Air Freight</option>
+                                            <option value="Sea freight">Sea Freight</option>
                                         </select>
                                         @error('freight')
                                         <span class="text-danger">{{ $message }}</span>
