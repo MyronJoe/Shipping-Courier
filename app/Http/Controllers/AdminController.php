@@ -33,7 +33,7 @@ class AdminController extends Controller
 
         $delivery = Shipments::where('deliverd', '=', '0')->get()->count();
 
-        $paid = Shipments::where('payment_status', '=', 'Paid')->get()->count();
+        $paid = Shipments::where('status', '=', 'Active')->get()->count();
 
         $utilities = utilities::orderBy('id', 'desc')->get();
 
@@ -116,9 +116,6 @@ class AdminController extends Controller
         $data->status = $request->status;
         $data->dispatch_location = $request->dispatch;
         $data->current_location = $request->current_location;
-
-        $data->ref_no = 'RF' . rand('123456789', '098765409');
-        $data->invoice_no = 'IV' . rand('123456789', '098765409');
 
         $data->deliverd = 0;
 

@@ -80,7 +80,7 @@
                         <div class="mb-3">
                             <h1 class="h3 d-inline align-middle">Update Carousel</h1>
 
-                            <a href="{{url('update_carousel')}}" class="btn btn-primary" style="float: right;">All Carousel</a>
+                            <a href="{{url('carousel')}}" class="btn btn-primary" style="float: right;">All Carousel</a>
                         </div>
                         <hr>
                         <div>

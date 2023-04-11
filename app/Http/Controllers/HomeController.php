@@ -36,7 +36,7 @@ class HomeController extends Controller
 
             $message = message::all()->count();
 
-            $paid = Shipments::where('payment_status', '=', 'Paid')->get()->count();
+            $paid = Shipments::where('status', '=', 'Active')->get()->count();
 
             $delivery = Shipments::where('deliverd', '=', '0')->get()->count();
 

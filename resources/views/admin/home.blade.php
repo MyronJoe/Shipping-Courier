@@ -116,7 +116,7 @@
 												<div class="card-body">
 													<div class="row">
 														<div class="col mt-0">
-															<h5 class="card-title">All Shipments Paid</h5>
+															<h5 class="card-title">Active Shipments </h5>
 														</div>
 
 														<div class="col-auto">
@@ -142,11 +142,11 @@
 								<thead>
 									<tr>
 										<th>S|N</th>
-										<th>Product</th>
+										<th>Description</th>
 										<th>Tracking ID</th>
-										<th>Shipping Type</th>
+										<th>Dispatch Location</th>
+										<th>Current Location</th>
 										<th>Status</th>
-										<th>Payment Status</th>
 										<th>Delivery</th>
 										<th>Action</th>
 									</tr>
@@ -155,18 +155,18 @@
 									@foreach($datas as $key => $data)
 									<tr>
 										<td>{{$key + 1}}</td>
-										<td>{{$data->product}}</td>
-										<td>{{$data->trackingID}} </td>
-										<td>{{$data->shippingType}}</td>
-										<td>{{$data->status}}</td>
+										<td>{{$data->package_description}}</td>
+										<td style="color:red;">{{$data->trackingID}} </td>
+										<td>{{$data->dispatch_location}}</td>
+										<td>{{$data->current_location}}</td>
 
-										@if($data->payment_status == 'Paid')
+										@if($data->status == 'Active')
 
-										<td class="text-success">{{$data->payment_status}}</td>
+										<td class="text-success">{{$data->status}}</td>
 
 										@else
 
-										<td class="text-danger">{{$data->payment_status}}</td>
+										<td class="text-danger">{{$data->status}}</td>
 
 										@endif
 

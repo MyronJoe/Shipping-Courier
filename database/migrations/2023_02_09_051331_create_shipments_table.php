@@ -27,17 +27,15 @@ return new class extends Migration
             $table->string('receiverPhone')->nullable();
 
             $table->string('trackingID')->nullable();
+
             $table->string('departDate')->nullable();
             $table->string('pickupDate')->nullable();
             $table->string('status')->nullable();
-            $table->string('current_location')->nullable();
-
-            $table->string('ref_no')->nullable();
-            $table->string('invoice_no')->nullable();
-
-            $table->text('deliverd')->nullable();
+            $table->string('current_location')->nullable();            
             $table->text('package_description')->nullable();
             $table->text('dispatch_location')->nullable();
+
+            $table->text('deliverd')->nullable();
 
             $table->timestamps();
         });
