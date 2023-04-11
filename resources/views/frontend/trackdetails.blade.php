@@ -113,8 +113,16 @@
                                         </div>
 
                                         <div>
-                                            <label for="sender_address" class="my-2">Sender's Address</label>
-                                            <input type="text" class="form-control mb-3" readonly name="sender_address" id="sender_address" value="{{ $data->senderAddress }}">
+                                            <label for="sender_email" class="my-2">Sender's Email</label>
+                                            <input type="text" class="form-control" readonly name="sender_email" id="sender_email" value="{{ $data->senderEmail }}">
+                                            @error('sender_email')
+                                            <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+
+                                        <div>
+                                            <label for="sender_address" class="my-2">Sender's Contact</label>
+                                            <input type="text" class="form-control " readonly name="sender_address" id="sender_address" value="{{ $data->sender_contact }}">
                                             @error('sender_address')
                                             <span class="text-danger">{{ $message }}</span>
                                             @enderror
@@ -137,14 +145,6 @@
                                         </div>
 
                                         <div>
-                                            <label for="receiverPhone" class="my-2">Receiver's Phone</label>
-                                            <input type="text" class="form-control" readonly name="receiverPhone" id="receiverPhone" value="{{ $data->receiverPhone}}">
-                                            @error('receiverPhone')
-                                            <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-
-                                        <div>
                                             <label for="receiverEmail" class="my-2">Receiver's Email</label>
                                             <input type="text" class="form-control" readonly name="receiverEmail" id="receiverEmail" value="{{ $data->receiverEmail }}">
                                             @error('receiverEmail')
@@ -153,9 +153,9 @@
                                         </div>
 
                                         <div>
-                                            <label for="receiverCountry" class="my-2">Receiver's Country</label>
-                                            <input type="text" class="form-control" readonly name="receiverCountry" id="receiverCountry" value="{{ $data->receiverCountry }}">
-                                            @error('receiverCountry')
+                                            <label for="receiverPhone" class="my-2">Receiver's Phone</label>
+                                            <input type="text" class="form-control" readonly name="receiverPhone" id="receiverPhone" value="{{ $data->receiverPhone}}">
+                                            @error('receiverPhone')
                                             <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
@@ -187,64 +187,37 @@
                                     <div class="input col-sm-12 col-md-6">
 
                                         <div class="input">
-                                            <label for="freight" class="my-2">Shipping Type</label>
-                                            <input type="text" class="form-control" readonly name="weight" id="weight" value="{{ $data->shippingType }}">
+                                            <label for="freight" class="my-2">Status</label>
+                                            <input type="text" class="form-control" readonly name="weight" id="weight" value="{{ $data->status }}">
                                             @error('weight')
                                             <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
 
                                         <div class="input">
-                                            <label for="weight" class="my-2">Weight</label>
-                                            <input type="text" class="form-control" readonly name="weight" id="weight" value="{{ $data->weight }}">
+                                            <label for="weight" class="my-2">Dispatch Location</label>
+                                            <input type="text" class="form-control" readonly name="weight" id="weight" value="{{ $data->dispatch_location }}">
                                             @error('weight')
                                             <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
 
                                         <div class="input">
-                                            <label for="product" class="my-2">Product</label>
-                                            <input type="text" class="form-control" readonly name="product" id="product" value="{{ $data->product }}">
+                                            <label for="product" class="my-2">Current Location</label>
+                                            <input type="text" class="form-control" readonly name="product" id="product" value="{{$data->current_location}}">
                                             @error('product')
                                             <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
-
-                                        <div class="input">
-                                            <label for="destination" class="my-2">Destination</label>
-                                            <input type="text" class="form-control" readonly name="destination" id="destination" value="{{ $data->destination }}">
-                                            @error('destination')
-                                            <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-
-                                        <div class="input">
-                                            <label for="comment" class="my-2">Comment</label>
-                                            <input type="text" class="form-control" readonly name="comment" id="comment" value="{{ $data->comment }}">
-                                            @error('comment')
-                                            <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-
-
-
 
                                     </div>
 
                                     <div class="input col-sm-12 col-md-6">
 
                                         <div class="input">
-                                            <label for="origin" class="my-2">Origin</label>
-                                            <input type="text" class="form-control" readonly name="origin" id="origin" value="{{ $data->origin }}">
+                                            <label for="origin" class="my-2">Package Description</label>
+                                            <input type="text" class="form-control" readonly name="origin" id="origin" value="{{$data->package_description }}">
                                             @error('origin')
-                                            <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-
-                                        <div class="input">
-                                            <label for="quantity" class="my-2">Quantity</label>
-                                            <input type="text" class="form-control" readonly name="quantity" id="quantity" value="{{ $data->quality }}">
-                                            @error('quantity')
                                             <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
@@ -258,20 +231,13 @@
                                         </div>
 
                                         <div class="input">
-                                            <label for="pickup_date" class="my-2">Pickup Date</label>
+                                            <label for="pickup_date" class="my-2">Estimated Delivery Date</label>
                                             <input type="date" class="form-control" readonly name="pickup_date" id="pickup_date" value="{{ $data->pickupDate }}">
                                             @error('pickup_date')
                                             <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
-                                        <div class="input">
-                                            <label for="status" class="my-2">Status</label>
-                                            <input type="text" class="form-control" readonly name="pickup_date" id="status" value="{{ $data->status }}">
-                                            @error('pickup_date')
-                                            <span class="text-danger">{{ $message }}</span>
-                                            @enderror
-                                        </div>
-
+   
                                         <div style="height:90px">
 
                                         </div>
