@@ -14,7 +14,7 @@
                 <div class="testimonial-item p-4 my-5">
                     <i class="fa fa-quote-right fa-3x text-light position-absolute top-0 end-0 mt-n3 me-4"></i>
                     <div class="d-flex align-items-end mb-4">
-                        <img class="img-fluid flex-shrink-0" src="assets/img/{{$testimony->image}}" style="width: 80px; height: 80px;">
+                        <img class="img-fluid flex-shrink-0" src="assets/img/{{$testimony->image}}" style="width: 80px; height: 80px; margin-right:10px;">
                         <div class="ms-4">
                             <h5 class="mb-1">{{$testimony->name}}</h5>
                             <p class="m-0">{{$testimony->rank}}</p>
