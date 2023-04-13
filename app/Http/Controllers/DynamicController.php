@@ -191,7 +191,7 @@ class DynamicController extends Controller
 
     //Add_Carousel Page
     public function Add_Carousel()
-    {   
+    {
         $utilities = utilities::orderBy('id', 'desc')->get();
 
         $message = message::all()->count();
@@ -295,7 +295,7 @@ class DynamicController extends Controller
 
     //Add about page
     public function add_about()
-    {   
+    {
         $utilities = utilities::orderBy('id', 'desc')->get();
 
         $message = message::all()->count();
@@ -448,7 +448,7 @@ class DynamicController extends Controller
 
     //add_service page
     public function add_service()
-    {   
+    {
         $utilities = utilities::orderBy('id', 'desc')->get();
 
         $message = message::all()->count();
@@ -497,11 +497,11 @@ class DynamicController extends Controller
     //edit_service page
     public function edit_service($id)
     {
-            
+
         $utilities = utilities::orderBy('id', 'desc')->get();
 
         $message = message::all()->count();
-        
+
         $data = service::findOrFail($id);
 
         return view('admin.site.service.edit_service', compact('data', 'utilities', 'message'));
@@ -554,11 +554,11 @@ class DynamicController extends Controller
     //edit_counter
     public function edit_counter($id)
     {
-            
+
         $utilities = utilities::orderBy('id', 'desc')->get();
 
         $message = message::all()->count();
-        
+
         $data = counter::findOrFail($id);
 
         return view('admin.site.counter.edit_counter', compact('data', 'utilities', 'message'));
@@ -630,7 +630,7 @@ class DynamicController extends Controller
 
     //Add Features page
     public function add_feature()
-    {   
+    {
         $utilities = utilities::orderBy('id', 'desc')->get();
 
         $message = message::all()->count();
