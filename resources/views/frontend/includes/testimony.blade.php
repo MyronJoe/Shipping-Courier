@@ -1,4 +1,4 @@
-<div class="container-xxl wow fadeInUp mt-5" data-wow-delay="0.1s">
+<div class="container-xxl wow fadeInUp mb-5" data-wow-delay="0.1s">
         <div class="container">
             <div class="text-center">
             <h6 class="text-secondary text-uppercase">Testimonial</h6>
