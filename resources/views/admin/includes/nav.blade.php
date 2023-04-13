@@ -32,8 +32,6 @@
 				<a class="nav-link  d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
 					<!-- <img src="backend/img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1"/>  -->
 					<span class="text-dark">{{ Auth::user()->name }}</span>
-					
-					
 				</a>
 				
 			</li>
