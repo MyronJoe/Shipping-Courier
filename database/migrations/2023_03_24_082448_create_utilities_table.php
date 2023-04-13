@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('utilities', function (Blueprint $table) {
             $table->id();
-            $table->text('logo_name')->nullable();
+            $table->text('top_logo')->nullable();
             $table->text('logo_pic')->nullable();
             $table->text('fav_icon')->nullable();
             $table->text('footer_note')->nullable();

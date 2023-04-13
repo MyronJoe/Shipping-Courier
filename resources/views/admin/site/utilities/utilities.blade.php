@@ -262,9 +262,9 @@
 
                                     <label for="top_logo" class="my-2 label">
 
-                                        <img src="../assets/img/{{$data->fav_icon}}" alt="{{$data->name}}">
+                                        <img src="../assets/img/{{$data->top_logo}}" alt="{{$data->name}}">
 
-                                        <span>Update Top</span>
+                                        <span>Update Top Logo</span>
                                     </label>
 
                                     @error('top_logo')
