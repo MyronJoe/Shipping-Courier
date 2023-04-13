@@ -8,9 +8,9 @@
 
 			<li class="nav-item dropdown">
 				<div>
-					<form action="">
+					<!-- <form action="">
 						<input type="text" class="form-control1" name="search" placeholder="Search...">
-					</form>
+					</form> -->
 				</div>
 			</li>
 
@@ -26,19 +26,18 @@
 			
 			<li class="nav-item dropdown">
 				<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
-					<i class="align-middle" data-feather="settings"></i>
+					<!-- <i class="align-middle" data-feather="settings"></i> -->
 				</a>
 
-				<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
+				<a class="nav-link  d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
 					<!-- <img src="backend/img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1"/>  -->
 					<span class="text-dark">{{ Auth::user()->name }}</span>
 					
-					<a class="dropdown-item" href="{{url('logout')}}">Log out</a>
-				</a>
-				<div class="dropdown-menu dropdown-menu-end">
 					
-				</div>
+				</a>
+				
 			</li>
+			<a class="dropdown-item mt-1" href="{{url('logout')}}">Log out</a>
 		</ul>
 	</div>
 </nav>
