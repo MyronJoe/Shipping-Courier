@@ -894,6 +894,8 @@ class DynamicController extends Controller
 
         $fav_icon = $request->fav_icon;
 
+        $top_logo = $request->top_logo;
+
         if ($logo_img) {
 
             $imageName1 = time() . '_' . $request->logo_img->getClientOriginalExtension();
@@ -910,6 +912,15 @@ class DynamicController extends Controller
             $request->fav_icon->move('assets/img', $imageName2);
 
             $data->fav_icon = $imageName2;
+        }
+
+        if ($top_logo) {
+
+            $imageName3 = time() . '_' . $request->top_logo->getClientOriginalExtension();
+
+            $request->top_logo->move('assets/img', $imageName3);
+
+            $data->top_logo = $imageName3;
         }
 
         $data->save();

@@ -256,6 +256,22 @@
                                     @enderror
                                 </div>
 
+                                <div class="upload-sec input col-sm-12 col-md-6">
+
+                                    <input type="file" name="top_logo" style="display:none;" id="top_logo" value="{{ old('top_logo') }}" accept=".gif, .jpg, .png"><br>
+
+                                    <label for="top_logo" class="my-2 label">
+
+                                        <img src="../assets/img/{{$data->fav_icon}}" alt="{{$data->name}}">
+
+                                        <span>Update Top</span>
+                                    </label>
+
+                                    @error('top_logo')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+
                             </div>
 
 
