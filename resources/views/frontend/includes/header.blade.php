@@ -12,8 +12,8 @@
     <a href="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
     @foreach($utilities as $key => $utilities)
         @if($key < 1) 
-        <!-- <h2 class="mb-2 logos"><span><img class="logo-top" src="../assets/img/{{$utilities->logo_pic}}" alt="{{$utilities->site_name}}"></span></h2> -->
-        <h2 class="mb-2 logos"><span>{{$utilities->site_name}}</span></h2>
+        <h2 class="mb-2 logos"><span><img class="logo-top" src="../assets/img/{{$utilities->top_logo}}" alt="{{$utilities->site_name}}"></span></h2>
+        <!-- <h2 class="mb-2 logos"><span>{{$utilities->site_name}}</span></h2> -->
         
         @endif
 	@endforeach

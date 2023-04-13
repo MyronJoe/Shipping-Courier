@@ -60,7 +60,7 @@ a {
     object-fit: cover !important;
 }
 .logo-top{
-    width: 40px !important;
+    width: 250px !important;
 }
 .bold {
     font-weight: bold !important;
@@ -156,6 +156,20 @@ h4 {
 
 .fa-phone {
     transform: rotate(10deg) !important;
+}
+
+
+
+@media screen and (max-width:650px) {
+    .logo-top{
+        width: 200px !important;
+    }
+}
+
+@media screen and (max-width:460px) {
+    .logo-top{
+        width: 170px !important;
+    }
 }
 
 @media screen and (min-width:992px) {
