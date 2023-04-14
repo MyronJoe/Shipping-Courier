@@ -107,7 +107,7 @@ class AdminController extends Controller
         $data->receiverAddress = $request->receiverAddress;
         $data->receiverPhone = $request->receiverPhone;
 
-        $data->trackingID = 'BL' . bin2hex($byte);
+        $data->trackingID = 'SN' . bin2hex($byte);
 
         $data->departDate = $request->departure_date;
         $data->pickupDate = $request->pickup_date;
