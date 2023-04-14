@@ -114,7 +114,7 @@
                             <div class="row">
                                 <div class="input col-sm-12 mt-1">
                                     <div>
-                                        <label for="editor" class="my-2">Feedbak</label>
+                                        <label for="editor" class="my-2">Feedback</label>
                                         <textarea name="testimonial" id="editor" value="" class="form-control" cols="30" rows="10">{{ $data->word }}</textarea>
                                         @error('testimonial')
                                         <span class="text-danger">{{ $message }}</span>

@@ -18,7 +18,7 @@
                 <div class="col-sm-6">
                     <h4 class="text-light mb-4">Contact Us</h4>
                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>{{$utilities->address}}</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>{{$utilities->phone_number}}</p>
+                    <!-- <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>{{$utilities->phone_number}}</p> -->
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>{{$utilities->mail}}</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-outline-light btn-social" href="{{$utilities->twitter}}"><i class="fab fa-twitter"></i></a>

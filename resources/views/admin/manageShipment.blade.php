@@ -85,7 +85,7 @@
 
 												<a href="{{route('shipment_label', $data->id)}}" class="btn btn-info btn-sm">Label</a>
 
-												<a href="{{route('edit_shipment', $data->id)}}" class="btn btn-primary btn-sm">Edit</a>
+												<a href="{{route('edit_shipment', $data->id)}}" class="btn btn-primary btn-sm">Update</a>
 
 												<a href="{{route('delete_shipment', $data->id)}}" class="btn btn-danger btn-sm" onclick="confirmation(event)">Delete</a>
 											</td>

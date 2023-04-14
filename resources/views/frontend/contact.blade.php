@@ -91,7 +91,7 @@
                             </div>
                         </div>
 
-                        <div class="d-flex mt-4">
+                        <!-- <div class="d-flex mt-4">
                             <h4 class="m-0 pe-lg-5 d-none d-lg-block"><i class="fa fa-phone text-primary me-3"></i></h4>
                             <div>
                                 <h5>
@@ -99,7 +99,7 @@
                                 </h5>
                                 <p>{{$utilities->phone_number}}</p>
                             </div>
-                        </div>
+                        </div> -->
                         @endif
                         @endforeach
 

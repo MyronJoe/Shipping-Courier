@@ -41,9 +41,9 @@
                             <a href="{{url('shipments')}}" class="btn btn-primary" style="float: right;">Manage Shipment</a>
                         </div>
                         <hr>
-                        <div>
-                            <div class="row">
-                                <div class="input col-sm-12 col-md-6">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                <div class="input">
 
                                     <h4 style="font-weight: bolder;">Sender's Details</h4>
 
@@ -84,7 +84,49 @@
 
                                 </div>
 
-                                <div class="input col-sm-12 col-md-6">
+                                <div class="input my-3">
+                                    <h1 class="h3 d-inline align-middle" style="font-weight: bolder;">Other Info</h1>
+                                    <hr>
+                                    <div>
+                                        <label for="status" class="my-2">Status</label>
+                                        <select name="status" id="status" class="form-control">
+                                            <option value="{{$data->status}}">Current Status - {{$data->status}}</option>
+                                            <option value="Active">Active</option>
+                                            <option value="Inactive">Inactive</option>
+                                            <option value="Picked Up">Picked Up</option>
+                                            <option value="Arrived">Arrived</option>
+                                            <option value="Delivered">Delivered</option>
+                                            <option value="On hold">On hold</option>
+                                        </select>
+                                        @error('status')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+
+                                    <div class="input">
+                                        <label for="dispatch" class="my-2">Dispatch Location</label>
+                                        <input type="text" class="form-control" name="dispatch" id="dispatch" value="{{$data->dispatch_location}}">
+                                        @error('dispatch')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+
+                                    <div class="input">
+                                        <label for="current_location" class="my-2">Current Location</label>
+                                        <input type="text" class="form-control" name="current_location" id="current_location" value="{{$data->current_location}}">
+                                        @error('current_location')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-sm-12 col-md-6">
+
+                                <div class="input">
 
                                     <h4 style="font-weight: bolder;">Receiver's Details</h4>
 
@@ -123,55 +165,8 @@
                                     </div>
 
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </main>
 
-
-                <main class="content">
-                    <div class="container-fluid p-0">
-
-                        <div>
-                            <div class="row">
-                                <div class="input col-sm-12 col-md-6">
-                                    <h1 class="h3 d-inline align-middle" style="font-weight: bolder;">Other Info</h1>
-                                    <hr>
-                                    <div>
-                                        <label for="status" class="my-2">Status</label>
-                                        <select name="status" id="status" class="form-control">
-                                            <option value="{{$data->status}}">Current Status - {{$data->status}}</option>
-                                            <option value="Active">Active</option>
-                                            <option value="Inactive">Inactive</option>
-                                            <option value="Picked Up">Picked Up</option>
-                                            <option value="Arrived">Arrived</option>
-                                            <option value="Delivered">Delivered</option>
-                                            <option value="On hold">On hold</option>
-                                        </select>
-                                        @error('status')
-                                        <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-
-                                    <div class="input">
-                                        <label for="dispatch" class="my-2">Dispatch Location</label>
-                                        <input type="text" class="form-control" name="dispatch" id="dispatch" value="{{$data->dispatch_location}}">
-                                        @error('dispatch')
-                                        <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-
-                                    <div class="input">
-                                        <label for="current_location" class="my-2">Current Location</label>
-                                        <input type="text" class="form-control" name="current_location" id="current_location" value="{{$data->current_location}}">
-                                        @error('current_location')
-                                        <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-
-                                </div>
-
-                                <div class="input col-sm-12 col-md-6">
+                                <div class="input my-3">
 
                                     <h1 class="h3 d-inline align-middle" style="font-weight: bolder;">Other Info</h1>
                                     <hr>
