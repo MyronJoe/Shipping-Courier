@@ -55,9 +55,12 @@ Route::get('/', function () {
     return view('frontend.home', compact('service', 'header', 'headers', 'counter', 'about', 'abouts', 'features', 'testimony', 'carousel', 'utilities'));
 });
 
-Route::get('/404', function () {
-    return view('frontend.error');
-});
+// Route::view('/{path}', 'frontend.home', compact('service', 'header', 'headers', 'counter', 'about', 'abouts', 'features', 'testimony', 'carousel', 'utilities'));
+
+// Route::get('/{path}', function () {
+//     return view('frontend.error');
+// });
+
 
 Route::get('/aboutUs', function () {
     $header = headers::orderBy('id', 'desc')->get();
