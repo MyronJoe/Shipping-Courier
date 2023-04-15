@@ -23,7 +23,7 @@ class AdminController extends Controller
 
     public function admin()
     {
-        $datas = Shipments::orderBy('id', 'desc')->paginate(5);
+        $datas = Shipments::orderBy('id', 'desc')->paginate(20);
 
         $shipments = Shipments::all()->count();
 
@@ -45,7 +45,7 @@ class AdminController extends Controller
     {
 
         // $datas = Shipments::paginate(6);
-        $datas = Shipments::orderBy('id', 'desc')->paginate(10);
+        $datas = Shipments::orderBy('id', 'desc')->paginate(20);
 
         $utilities = utilities::orderBy('id', 'desc')->get();
 
@@ -70,9 +70,6 @@ class AdminController extends Controller
     //Add Shipment Function:
     public function addShipment(Request $request)
     {
-        $byte = random_bytes(5);
-
-        // dd();
 
         $request->validate([
             'sender_name' => 'required|string',
@@ -107,7 +104,7 @@ class AdminController extends Controller
         $data->receiverAddress = $request->receiverAddress;
         $data->receiverPhone = $request->receiverPhone;
 
-        $data->trackingID = bin2hex($byte);
+        $data->trackingID = substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'), 0, 10);;
 
         $data->departDate = $request->departure_date;
         $data->pickupDate = $request->pickup_date;

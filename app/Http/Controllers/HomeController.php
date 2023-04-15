@@ -28,7 +28,7 @@ class HomeController extends Controller
 
         if ($userType === '1'|| $userType === '2') {
 
-            $datas = Shipments::orderBy('id', 'desc')->paginate(5);
+            $datas = Shipments::orderBy('id', 'desc')->paginate(20);
 
             $shipments = Shipments::all()->count();
 
