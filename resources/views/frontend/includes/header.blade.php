@@ -38,10 +38,6 @@
                     <a href="{{route('title_details', $title->id)}}" class="dropdown-item tex_trans">{{$title -> card_title}}</a>
                     @endforeach
 
-                    <!-- <a href="/services/road" class="dropdown-item">ROAD SERVICE</a>
-                    <a href="/services/storage" class="dropdown-item">STORAGE SERVICE</a>
-                    <a href="/services/warehouse" class="dropdown-item">WAREHOUSE SERVICE</a> -->
-
                     @if (Route::has('login'))
 
                     @auth
