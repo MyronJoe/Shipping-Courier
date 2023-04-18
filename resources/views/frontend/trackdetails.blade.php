@@ -86,12 +86,12 @@
                             <div class="mb-3 text-center">
                                 <h1 class="h3 d-inline text-danger">{{ $data->trackingID }}</h1>
                             </div>
-                            <hr>
+
                             <div>
                                 <div class="row">
-                                    <div class="input col-sm-12 col-md-6">
+                                    <div class="input col-sm-12 col-md-6 mt-3">
 
-                                        <h4 style="font-weight: bolder;">Sender's Details</h4>
+                                        <h4 style="font-weight: bolder; margin-left:0px;">Sender's Details</h4>
 
                                         <hr>
 
@@ -130,9 +130,9 @@
 
                                     </div>
 
-                                    <div class="input col-sm-12 col-md-6">
+                                    <div class="input col-sm-12 col-md-6 mt-3">
 
-                                        <h4 style="font-weight: bolder;">Receiver's Details</h4>
+                                        <h4 style="font-weight: bolder; margin-left:0px;">Receiver's Details</h4>
 
                                         <hr>
 
