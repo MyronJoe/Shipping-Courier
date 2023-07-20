@@ -14,8 +14,26 @@
         }
 
         .logo-top {
-            width: 40px !important;
-        }
+                width: 250px !important;
+            }
+
+            @media screen and (max-width:650px) {
+                .logo-top {
+                    width: 190px !important;
+                }
+            }
+
+            @media screen and (max-width:460px) {
+                .logo-top {
+                    width: 170px !important;
+                }
+            }
+
+            @media screen and (max-width:290px) {
+                .logo-top {
+                    width: 130px !important;
+                }
+            }
     </style>
 </head>
 

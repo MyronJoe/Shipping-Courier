@@ -10,13 +10,12 @@
 <!-- Navbar Start -->
 <nav style="position: absolute; z-index:100; width:100%;" class="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary  p-0">
     <a href="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-    @foreach($utilities as $key => $utilities)
-        @if($key < 1) 
-        <h2 class="mb-2 logos"><span><img class="logo-top" src="../assets/img/{{$utilities->top_logo}}" alt="{{$utilities->site_name}}"></span></h2>
-        <!-- <h2 class="mb-2 logos"><span>{{$utilities->site_name}}</span></h2> -->
-        
-        @endif
-	@endforeach
+        @foreach($utilities as $key => $utilities)
+        @if($key < 1) <h2 class="mb-2 logos"><span><img class="logo-top" src="../assets/img/{{$utilities->top_logo}}" alt="{{$utilities->site_name}}"></span></h2>
+            <!-- <h2 class="mb-2 logos"><span>{{$utilities->site_name}}</span></h2> -->
+
+            @endif
+            @endforeach
     </a>
 
     <input type="checkbox" id="show-menu">
@@ -33,22 +32,17 @@
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
                 <div class="dropdown-menu fade-up m-0">
                     
-
                     @foreach($service as $key => $title)
                     <a href="{{route('title_details', $title->id)}}" class="dropdown-item tex_trans">{{$title -> card_title}}</a>
                     @endforeach
 
-                    <!-- <a href="/services/road" class="dropdown-item">ROAD SERVICE</a>
-                    <a href="/services/storage" class="dropdown-item">STORAGE SERVICE</a>
-                    <a href="/services/warehouse" class="dropdown-item">WAREHOUSE SERVICE</a> -->
-
                     @if (Route::has('login'))
 
                     @auth
-                    <a href="{{url('logout')}}" class="dropdown-item">Logout</a>
+                    <!-- <a href="{{url('logout')}}" class="dropdown-item">Logout</a> -->
 
                     @else
-                    <a href="{{url('login')}}" class="dropdown-item">Login</a>
+                    <!-- <a href="{{url('login')}}" class="dropdown-item">Login</a> -->
                     @endauth
                     @endif
 
