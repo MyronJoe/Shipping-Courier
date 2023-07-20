@@ -18,7 +18,6 @@ use PDF;
 class AdminController extends Controller
 {
    
-
     //=====================================================>>>>Shipping Functions
 
     public function admin()
@@ -43,7 +42,6 @@ class AdminController extends Controller
     //shipments function
     public function shipments()
     {
-
         // $datas = Shipments::paginate(6);
         $datas = Shipments::orderBy('id', 'desc')->paginate(20);
 
